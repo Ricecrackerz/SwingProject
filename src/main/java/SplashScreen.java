@@ -36,7 +36,6 @@ public class SplashScreen extends javax.swing.JFrame {
         setBackground(new java.awt.Color(255, 204, 204));
         setLocation(new java.awt.Point(0, 0));
         setName("SplashFrame"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(600, 400));
         setResizable(false);
         setSize(new java.awt.Dimension(600, 400));
 
@@ -101,5 +100,5 @@ public class SplashScreen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
-
+}
 
