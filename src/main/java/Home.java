@@ -35,7 +35,6 @@ public class Home extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 204, 204));
-        setPreferredSize(new java.awt.Dimension(600, 400));
         setResizable(false);
         setSize(new java.awt.Dimension(600, 400));
 
@@ -45,6 +44,11 @@ public class Home extends javax.swing.JFrame {
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);
         jButton1.setFocusable(false);
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jButton1MouseReleased(evt);
+            }
+        });
 
         jButton2.setBackground(new java.awt.Color(236, 179, 144));
         jButton2.setFont(new java.awt.Font("Comic Sans MS", 0, 25)); // NOI18N
@@ -110,6 +114,13 @@ public class Home extends javax.swing.JFrame {
         credits.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton3MouseReleased
+
+    private void jButton1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseReleased
+        setVisible(false); 
+        Game game = new Game(); 
+        game.setVisible(true);
+        this.dispose(); 
+    }//GEN-LAST:event_jButton1MouseReleased
 
     /**
      * @param args the command line arguments
