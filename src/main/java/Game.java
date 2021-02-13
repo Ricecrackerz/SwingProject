@@ -14,7 +14,11 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.Timer;
-
+import java.awt.Graphics; 
+import java.awt.image.BufferedImage; 
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 
 public class Game extends javax.swing.JFrame {
 
@@ -47,6 +51,14 @@ public class Game extends javax.swing.JFrame {
         timer.setInitialDelay(0); 
         timer.start(); 
         
+        BufferedImage img = null; 
+        try{
+            img = ImageIO.read(new File("hangman_0_thanksgiving.png")); 
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
+        
     }
 
     /**
@@ -76,7 +88,7 @@ public class Game extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 416, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 568, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addContainerGap())
         );
@@ -87,7 +99,7 @@ public class Game extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(352, Short.MAX_VALUE))
+                .addContainerGap(450, Short.MAX_VALUE))
         );
 
         pack();
