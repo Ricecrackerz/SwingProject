@@ -8,7 +8,6 @@
  *
  * @author Bryant
  */
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -94,11 +93,11 @@ public class Game extends javax.swing.JFrame {
         Letter7.setVisible(false);
         Letter8.setVisible(false);
     }
-    private int SCORE = 100;
+    public int SCORE = 100;
     private int COUNTER = 0; 
     public void hangMan(){
         Random random = new Random(); 
-        int wordNumber = random.nextInt(1);
+        int wordNumber = random.nextInt(wordBank.length);
         
         switch (wordNumber) { 
             case 0: //word "nurse"
@@ -705,11 +704,11 @@ public class Game extends javax.swing.JFrame {
                 });
                 aButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        Letter3.setText("M");
-                        Letter6.setText("M");
+                        Letter3.setText("A");
+                        Letter6.setText("A");
                         Letter3.setVisible(true);
                         Letter6.setVisible(true);
-                        COUNTER++;
+                        COUNTER+= 2;
                         if(COUNTER == 8) {
                             System.out.print("You win!");
                         }
@@ -717,7 +716,7 @@ public class Game extends javax.swing.JFrame {
                 });
                 mButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        Letter5.setText("T");
+                        Letter5.setText("M");
                         Letter5.setVisible(true);
                         COUNTER++;
                         if(COUNTER == 8) {
@@ -899,7 +898,7 @@ public class Game extends javax.swing.JFrame {
                         Letter6.setText("I");
                         Letter3.setVisible(true);
                         Letter6.setVisible(true); 
-                        COUNTER++; 
+                        COUNTER+= 2; 
                         if(COUNTER == 8){
                             System.out.println("You win!");
                         }
@@ -1105,7 +1104,11 @@ public class Game extends javax.swing.JFrame {
         }
         else if(SCORE == 40) {
             bbRightL.setVisible(true);
-            System.out.print("Game Over!");
+            //go to EndScreen
+            String n = String.valueOf(SCORE) ;
+            new EndScreen(n).setVisible(true);
+            setVisible(false);
+            this.dispose();
         }
     }
     /**
@@ -1239,6 +1242,11 @@ public class Game extends javax.swing.JFrame {
         jLabel1.setText("Date and Time");
 
         jButton27.setText("Skip");
+        jButton27.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jButton27MouseReleased(evt);
+            }
+        });
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hmtop.png"))); // NOI18N
 
@@ -1558,6 +1566,14 @@ public class Game extends javax.swing.JFrame {
 
     }//GEN-LAST:event_nButtonActionPerformed
 
+    private void jButton27MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton27MouseReleased
+        SCORE = 0;
+        String n = String.valueOf(SCORE) ;
+        new EndScreen(n).setVisible(true);
+        setVisible(false);
+        this.dispose();
+    }//GEN-LAST:event_jButton27MouseReleased
+
     public static void main(String args[]) {
         
         java.awt.EventQueue.invokeLater(new Runnable() { 
@@ -1565,6 +1581,7 @@ public class Game extends javax.swing.JFrame {
                 new Game().setVisible(true);
             }
         });
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
