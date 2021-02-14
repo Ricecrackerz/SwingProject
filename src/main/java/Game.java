@@ -1163,7 +1163,6 @@ public class Game extends javax.swing.JFrame {
     }
     public void wrongLetter(){
         SCORE-=10;
-        System.out.println(SCORE);
         if(SCORE == 90) {
             bbHead.setVisible(true);
         }
@@ -1187,6 +1186,8 @@ public class Game extends javax.swing.JFrame {
             setVisible(false);
             this.dispose();
         }
+        String score = String.valueOf(SCORE);
+        pointsLabel.setText(score);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -1242,6 +1243,8 @@ public class Game extends javax.swing.JFrame {
         Letter6 = new javax.swing.JLabel();
         Letter7 = new javax.swing.JLabel();
         Letter8 = new javax.swing.JLabel();
+        scLabel = new javax.swing.JLabel();
+        pointsLabel = new javax.swing.JLabel();
         kButton = new javax.swing.JButton();
         pButton = new javax.swing.JButton();
         jButton = new javax.swing.JButton();
@@ -1441,6 +1444,13 @@ public class Game extends javax.swing.JFrame {
         Letter8.setFont(new java.awt.Font("Comic Sans MS", 0, 20)); // NOI18N
         Letter8.setText("A");
 
+        scLabel.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        scLabel.setText("Score:");
+
+        pointsLabel.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        pointsLabel.setText("100");
+        pointsLabel.setToolTipText("");
+
         javax.swing.GroupLayout hmTopLayout = new javax.swing.GroupLayout(hmTop);
         hmTop.setLayout(hmTopLayout);
         hmTopLayout.setHorizontalGroup(
@@ -1495,11 +1505,19 @@ public class Game extends javax.swing.JFrame {
                         .addGap(110, 110, 110)
                         .addComponent(jLabel13))
                     .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(hmTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
-                    .addComponent(jButton27))
-                .addGap(17, 17, 17))
+                .addGroup(hmTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(hmTopLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(hmTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addComponent(jButton27))
+                        .addGap(17, 17, 17))
+                    .addGroup(hmTopLayout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addComponent(scLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pointsLabel)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         hmTopLayout.setVerticalGroup(
             hmTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1509,7 +1527,12 @@ public class Game extends javax.swing.JFrame {
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(hmTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton27)
+                    .addGroup(hmTopLayout.createSequentialGroup()
+                        .addComponent(jButton27)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(hmTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(pointsLabel)
+                            .addComponent(scLabel)))
                     .addGroup(hmTopLayout.createSequentialGroup()
                         .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 5, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1790,9 +1813,11 @@ public class Game extends javax.swing.JFrame {
     private javax.swing.JButton nButton;
     private javax.swing.JButton oButton;
     private javax.swing.JButton pButton;
+    private javax.swing.JLabel pointsLabel;
     private javax.swing.JButton qButton;
     private javax.swing.JButton rButton;
     private javax.swing.JButton sButton;
+    private javax.swing.JLabel scLabel;
     private javax.swing.JButton tButton;
     private javax.swing.JButton uButton;
     private javax.swing.JButton vButton;
