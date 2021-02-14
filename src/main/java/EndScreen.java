@@ -8,6 +8,7 @@
  *
  * @author Mio
  */
+// hello
 public class EndScreen extends javax.swing.JFrame {
 
     /**
