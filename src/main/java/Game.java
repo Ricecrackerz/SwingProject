@@ -30,6 +30,7 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 public class Game extends javax.swing.JFrame {
 
@@ -37,7 +38,7 @@ public class Game extends javax.swing.JFrame {
      * Creates new form Game
      */
     Timer timer; 
-    public static final String[] wordBank = {"abstract", "cemetery", "nurse", "pharmacy", "climbing"}; 
+    public static final String[] wordBank = {"nurse", "cemetery", "abstract", "pharmacy", "climbing"}; 
     public static final int MAX_ERRORS = 5; 
     private String wordToFind; 
     private char[] wordFound; 
@@ -71,6 +72,7 @@ public class Game extends javax.swing.JFrame {
         timer.setInitialDelay(0); 
         timer.start(); 
         
+        hangMan();
         //idk if this works
     }
     public void startGame(){
@@ -92,26 +94,193 @@ public class Game extends javax.swing.JFrame {
         Letter7.setVisible(false);
         Letter8.setVisible(false);
     }
-    private boolean n = false;
+    private int SCORE = 100;
+    private int COUNTER = 0;
     public void hangMan(){
-        int wordNumber = 0;
-        boolean over = false;
+        Random random = new Random(); 
+        int wordNumber = random.nextInt(2);
+        
         switch (wordNumber) {
             case 0:
+                line6.setVisible(false);
+                line7.setVisible(false);
+                line8.setVisible(false);
                 nButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        System.out.print("We get boba!");
-                        n = true;
+                        Letter1.setText("N");
+                        Letter1.setVisible(true);
+                        COUNTER++;
+                        if(COUNTER == 5) {
+                            System.out.print("You win!");
+                        }
                     }
                 });
-                while(over){
-                    if(n){
-                        Letter1.setVisible(true);
+                uButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        Letter2.setText("U");
+                        Letter2.setVisible(true);
+                        COUNTER++;
+                        if(COUNTER == 5) {
+                            System.out.print("You win!");
+                        }
                     }
-                }    
+                });
+                rButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        Letter3.setText("R");
+                        Letter3.setVisible(true);
+                        COUNTER++;
+                        if(COUNTER == 5) {
+                            System.out.print("You win!");
+                        }
+                    }
+                });
+                sButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        Letter4.setText("S");
+                        Letter4.setVisible(true);
+                        COUNTER++;
+                        if(COUNTER == 5) {
+                            System.out.print("You win!");
+                        }
+                    }
+                });
+                eButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        Letter5.setText("E");
+                        Letter5.setVisible(true);
+                        COUNTER++;
+                        if(COUNTER == 5) {
+                            System.out.print("You win!");
+                        }
+                    }
+                });
+                aButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        aButton.setEnabled(false);
+                    }
+                });
+                bButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        bButton.setEnabled(false);
+                    }
+                });
+                cButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        cButton.setEnabled(false);
+                    }
+                });
+                dButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        dButton.setEnabled(false);
+                    }
+                });
+                fButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        fButton.setEnabled(false);
+                    }
+                });
+                gButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        gButton.setEnabled(false);
+                    }
+                });
+            case 1:
+                cButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        Letter1.setText("C");
+                        Letter1.setVisible(true);
+                        COUNTER++;
+                        if(COUNTER == 8) {
+                            System.out.print("You win!");
+                        }
+                    }
+                });
+                eButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        Letter2.setText("E");
+                        Letter4.setText("E");
+                        Letter6.setText("E");
+                        Letter2.setVisible(true);
+                        Letter4.setVisible(true);
+                        Letter6.setVisible(true);
+                        COUNTER+= 3;
+                        if(COUNTER == 8) {
+                            System.out.print("You win!");
+                        }
+                    }
+                });
+                mButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        Letter3.setText("M");
+                        Letter3.setVisible(true);
+                        COUNTER++;
+                        if(COUNTER == 8) {
+                            System.out.print("You win!");
+                        }
+                    }
+                });
+                tButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        Letter5.setText("T");
+                        Letter5.setVisible(true);
+                        COUNTER++;
+                        if(COUNTER == 8) {
+                            System.out.print("You win!");
+                        }
+                    }
+                });
+                rButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        Letter7.setText("R");
+                        Letter7.setVisible(true);
+                        COUNTER++;
+                        if(COUNTER == 8) {
+                            System.out.print("You win!");
+                        }
+                    }
+                });
+                yButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        Letter8.setText("Y");
+                        Letter8.setVisible(true);
+                        COUNTER++;
+                        if(COUNTER == 8) {
+                            System.out.print("You win!");
+                        }
+                    }
+                });
         }
     }
-  
+    public void wrongLetter(){
+        SCORE-=10;
+        System.out.println(SCORE);
+        if(SCORE == 90) {
+            bbHead.setVisible(true);
+        }
+        else if(SCORE == 80) {
+            bbLeftA.setVisible(true);
+        }
+        else if(SCORE == 70) {
+            bbBody.setVisible(true);
+        }
+        else if(SCORE == 60) {
+            bbLeftL.setVisible(true);
+        }
+        else if(SCORE == 50) {
+            bbRightA.setVisible(true);
+        }
+        else if(SCORE == 40) {
+            bbRightL.setVisible(true);
+            System.out.print("Game Over!");
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -210,6 +379,11 @@ public class Game extends javax.swing.JFrame {
         rButton.setText("R");
 
         nButton.setText("N");
+        nButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nButtonActionPerformed(evt);
+            }
+        });
 
         mButton.setText("M");
 
@@ -552,6 +726,10 @@ public class Game extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void nButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nButtonActionPerformed
+
+    }//GEN-LAST:event_nButtonActionPerformed
 
     public static void main(String args[]) {
         
