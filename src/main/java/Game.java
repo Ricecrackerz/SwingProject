@@ -47,6 +47,7 @@ public class Game extends javax.swing.JFrame {
     
     public Game() {
         initComponents();
+        getContentPane().setBackground(new java.awt.Color(252, 248, 232));
         setSize(600, 400);
         setLocationRelativeTo(null);
         
@@ -1262,54 +1263,122 @@ public class Game extends javax.swing.JFrame {
         setResizable(false);
         setSize(new java.awt.Dimension(600, 400));
 
+        bButton.setBackground(new java.awt.Color(212, 226, 212));
         bButton.setText("B");
+        bButton.setBorderPainted(false);
+        bButton.setFocusPainted(false);
 
+        cButton.setBackground(new java.awt.Color(212, 226, 212));
         cButton.setText("C");
+        cButton.setBorderPainted(false);
+        cButton.setFocusPainted(false);
 
+        dButton.setBackground(new java.awt.Color(212, 226, 212));
         dButton.setText("D");
+        dButton.setBorderPainted(false);
+        dButton.setFocusPainted(false);
 
+        eButton.setBackground(new java.awt.Color(212, 226, 212));
         eButton.setText("E");
+        eButton.setBorderPainted(false);
+        eButton.setFocusPainted(false);
 
+        fButton.setBackground(new java.awt.Color(212, 226, 212));
         fButton.setText("F");
+        fButton.setBorderPainted(false);
+        fButton.setFocusPainted(false);
 
+        iButton.setBackground(new java.awt.Color(212, 226, 212));
         iButton.setText("I");
+        iButton.setBorderPainted(false);
+        iButton.setFocusPainted(false);
 
+        lButton.setBackground(new java.awt.Color(212, 226, 212));
         lButton.setText("L");
+        lButton.setBorderPainted(false);
+        lButton.setFocusPainted(false);
 
+        gButton.setBackground(new java.awt.Color(212, 226, 212));
         gButton.setText("G");
+        gButton.setBorderPainted(false);
+        gButton.setFocusPainted(false);
 
+        hButton.setBackground(new java.awt.Color(212, 226, 212));
         hButton.setText("H");
+        hButton.setBorderPainted(false);
+        hButton.setFocusPainted(false);
 
+        qButton.setBackground(new java.awt.Color(212, 226, 212));
         qButton.setText("Q");
+        qButton.setBorderPainted(false);
+        qButton.setFocusPainted(false);
 
+        rButton.setBackground(new java.awt.Color(212, 226, 212));
         rButton.setText("R");
+        rButton.setBorderPainted(false);
+        rButton.setFocusPainted(false);
 
+        nButton.setBackground(new java.awt.Color(212, 226, 212));
         nButton.setText("N");
+        nButton.setBorderPainted(false);
+        nButton.setFocusPainted(false);
         nButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nButtonActionPerformed(evt);
             }
         });
 
+        mButton.setBackground(new java.awt.Color(212, 226, 212));
         mButton.setText("M");
+        mButton.setBorderPainted(false);
+        mButton.setFocusPainted(false);
 
+        oButton.setBackground(new java.awt.Color(212, 226, 212));
         oButton.setText("O");
+        oButton.setBorderPainted(false);
+        oButton.setFocusPainted(false);
 
+        zButton.setBackground(new java.awt.Color(212, 226, 212));
         zButton.setText("Z");
+        zButton.setBorderPainted(false);
+        zButton.setFocusPainted(false);
 
+        yButton.setBackground(new java.awt.Color(212, 226, 212));
         yButton.setText("Y");
+        yButton.setBorderPainted(false);
+        yButton.setFocusPainted(false);
 
+        xButton.setBackground(new java.awt.Color(212, 226, 212));
         xButton.setText("X");
+        xButton.setBorderPainted(false);
+        xButton.setFocusPainted(false);
 
+        wButton.setBackground(new java.awt.Color(212, 226, 212));
         wButton.setText("W");
+        wButton.setBorderPainted(false);
+        wButton.setFocusPainted(false);
 
+        vButton.setBackground(new java.awt.Color(212, 226, 212));
         vButton.setText("V");
+        vButton.setBorderPainted(false);
+        vButton.setFocusPainted(false);
 
+        uButton.setBackground(new java.awt.Color(212, 226, 212));
         uButton.setText("U");
+        uButton.setBorderPainted(false);
+        uButton.setFocusPainted(false);
 
+        tButton.setBackground(new java.awt.Color(212, 226, 212));
         tButton.setText("T");
+        tButton.setBorderPainted(false);
+        tButton.setFocusPainted(false);
 
+        sButton.setBackground(new java.awt.Color(212, 226, 212));
         sButton.setText("S");
+        sButton.setBorderPainted(false);
+        sButton.setFocusPainted(false);
+
+        hmTop.setBackground(new java.awt.Color(252, 248, 232));
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jLabel2.setText("Hangman");
@@ -1317,7 +1386,11 @@ public class Game extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         jLabel1.setText("Date and Time");
 
+        jButton27.setBackground(new java.awt.Color(212, 226, 212));
+        jButton27.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jButton27.setText("Skip");
+        jButton27.setBorderPainted(false);
+        jButton27.setFocusPainted(false);
         jButton27.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 jButton27MouseReleased(evt);
@@ -1373,8 +1446,25 @@ public class Game extends javax.swing.JFrame {
         hmTopLayout.setHorizontalGroup(
             hmTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, hmTopLayout.createSequentialGroup()
-                .addGroup(hmTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, hmTopLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(Letter1)
+                .addGap(48, 48, 48)
+                .addComponent(Letter2)
+                .addGap(44, 44, 44)
+                .addComponent(Letter3)
+                .addGap(42, 42, 42)
+                .addComponent(Letter4)
+                .addGap(49, 49, 49)
+                .addComponent(Letter5)
+                .addGap(46, 46, 46)
+                .addComponent(Letter6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addComponent(Letter7)
+                .addGap(47, 47, 47)
+                .addComponent(Letter8))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, hmTopLayout.createSequentialGroup()
+                .addGroup(hmTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(hmTopLayout.createSequentialGroup()
                         .addGroup(hmTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(hmTopLayout.createSequentialGroup()
                                 .addGap(131, 131, 131)
@@ -1402,34 +1492,14 @@ public class Game extends javax.swing.JFrame {
                                 .addGap(72, 72, 72)
                                 .addComponent(hmHang))))
                     .addGroup(hmTopLayout.createSequentialGroup()
-                        .addGroup(hmTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(hmTopLayout.createSequentialGroup()
-                                .addGap(41, 41, 41)
-                                .addComponent(Letter1)
-                                .addGap(48, 48, 48)
-                                .addComponent(Letter2)
-                                .addGap(44, 44, 44)
-                                .addComponent(Letter3)
-                                .addGap(42, 42, 42)
-                                .addComponent(Letter4)
-                                .addGap(49, 49, 49)
-                                .addComponent(Letter5)
-                                .addGap(46, 46, 46)
-                                .addComponent(Letter6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(Letter7))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, hmTopLayout.createSequentialGroup()
-                                .addGap(110, 110, 110)
-                                .addComponent(jLabel13)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
-                                .addComponent(jButton27))
-                            .addGroup(hmTopLayout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel1)))
-                        .addGap(35, 35, 35)))
-                .addGap(12, 12, 12)
-                .addComponent(Letter8))
+                        .addGap(110, 110, 110)
+                        .addComponent(jLabel13))
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(hmTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addComponent(jButton27))
+                .addGap(17, 17, 17))
         );
         hmTopLayout.setVerticalGroup(
             hmTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1462,7 +1532,7 @@ public class Game extends javax.swing.JFrame {
                                 .addGroup(hmTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(bbLeftL, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(bbRightL, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addGroup(hmTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Letter1)
                     .addComponent(Letter2)
@@ -1475,13 +1545,25 @@ public class Game extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        kButton.setBackground(new java.awt.Color(212, 226, 212));
         kButton.setText("K");
+        kButton.setBorderPainted(false);
+        kButton.setFocusPainted(false);
 
+        pButton.setBackground(new java.awt.Color(212, 226, 212));
         pButton.setText("P");
+        pButton.setBorderPainted(false);
+        pButton.setFocusPainted(false);
 
+        jButton.setBackground(new java.awt.Color(212, 226, 212));
         jButton.setText("J");
+        jButton.setBorderPainted(false);
+        jButton.setFocusPainted(false);
 
+        aButton.setBackground(new java.awt.Color(212, 226, 212));
         aButton.setText("A");
+        aButton.setBorderPainted(false);
+        aButton.setFocusPainted(false);
 
         line1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lines1.png"))); // NOI18N
 
@@ -1585,7 +1667,7 @@ public class Game extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(hmTop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 3, Short.MAX_VALUE)
+                .addGap(0, 5, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
