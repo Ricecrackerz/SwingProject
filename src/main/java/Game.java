@@ -95,13 +95,13 @@ public class Game extends javax.swing.JFrame {
         Letter8.setVisible(false);
     }
     private int SCORE = 100;
-    private int COUNTER = 0;
+    private int COUNTER = 0; 
     public void hangMan(){
         Random random = new Random(); 
-        int wordNumber = random.nextInt(2);
+        int wordNumber = random.nextInt(1);
         
-        switch (wordNumber) {
-            case 0:
+        switch (wordNumber) { 
+            case 0: //word "nurse"
                 line6.setVisible(false);
                 line7.setVisible(false);
                 line8.setVisible(false);
@@ -191,7 +191,98 @@ public class Game extends javax.swing.JFrame {
                         gButton.setEnabled(false);
                     }
                 });
-            case 1:
+                hButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        hButton.setEnabled(false);
+                    }
+                });
+                iButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        iButton.setEnabled(false);
+                    }
+                });
+                jButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        jButton.setEnabled(false);
+                    }
+                });
+                kButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        kButton.setEnabled(false);
+                    }
+                });
+                lButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        lButton.setEnabled(false);
+                    }
+                });
+                mButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        mButton.setEnabled(false);
+                    }
+                });
+                oButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        oButton.setEnabled(false);
+                    }
+                });
+                pButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        pButton.setEnabled(false);
+                    }
+                });
+                qButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        qButton.setEnabled(false);
+                    }
+                });
+                tButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        tButton.setEnabled(false);
+                    }
+                });
+                vButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        vButton.setEnabled(false);
+                    }
+                });
+                wButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        wButton.setEnabled(false);
+                    }
+                });
+                xButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        xButton.setEnabled(false);
+                    }
+                });
+                yButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        yButton.setEnabled(false);
+                    }
+                });
+                zButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        zButton.setEnabled(false);
+                    }
+                });
+                break; 
+            case 1: // Cemetery
                 cButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         Letter1.setText("C");
@@ -256,6 +347,742 @@ public class Game extends javax.swing.JFrame {
                         }
                     }
                 });
+                aButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        aButton.setEnabled(false);
+                    }
+                });
+                bButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        bButton.setEnabled(false);
+                    }
+                });
+                dButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        dButton.setEnabled(false);
+                    }
+                });
+                fButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        fButton.setEnabled(false);
+                    }
+                });
+                gButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        gButton.setEnabled(false);
+                    }
+                });
+                hButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        hButton.setEnabled(false);
+                    }
+                });
+                iButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        iButton.setEnabled(false);
+                    }
+                });
+                jButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        jButton.setEnabled(false);
+                    }
+                });
+                kButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        kButton.setEnabled(false);
+                    }
+                });
+                lButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        lButton.setEnabled(false);
+                    }
+                });
+                nButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        nButton.setEnabled(false);
+                    }
+                });
+                oButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        oButton.setEnabled(false);
+                    }
+                });
+                pButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        pButton.setEnabled(false);
+                    }
+                });
+                qButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        qButton.setEnabled(false);
+                    }
+                });
+                sButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        sButton.setEnabled(false);
+                    }
+                });
+                uButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        uButton.setEnabled(false);
+                    }
+                });
+                vButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        vButton.setEnabled(false);
+                    }
+                });
+                wButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        wButton.setEnabled(false);
+                    }
+                });
+                xButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        xButton.setEnabled(false);
+                    }
+                });
+                zButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        zButton.setEnabled(false);
+                    }
+                });
+                break;
+            case 2: // word abstract
+                aButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        Letter1.setText("A");
+                        Letter6.setText("A");
+                        Letter1.setVisible(true);
+                        Letter6.setVisible(true);
+                        COUNTER += 2;
+                        if(COUNTER == 8) {
+                            System.out.print("You win!");
+                        }
+                    }
+                });
+                bButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        Letter2.setText("B");
+                        Letter2.setVisible(true);
+                        COUNTER++;
+                        if(COUNTER == 8) {
+                            System.out.print("You win!");
+                        }
+                    }
+                });
+                sButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        Letter3.setText("S");
+                        Letter3.setVisible(true);
+                        COUNTER++;
+                        if(COUNTER == 8) {
+                            System.out.print("You win!");
+                        }
+                    }
+                });
+                tButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        Letter4.setText("T");
+                        Letter8.setText("T");
+                        Letter4.setVisible(true);
+                        Letter8.setVisible(true);
+                        COUNTER+= 2;
+                        if(COUNTER == 8) {
+                            System.out.print("You win!");
+                        }
+                    }
+                });
+                sButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        Letter3.setText("S");
+                        Letter3.setVisible(true);
+                        COUNTER++;
+                        if(COUNTER == 8) {
+                            System.out.print("You win!");
+                        }
+                    }
+                });
+                rButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        Letter5.setText("R");
+                        Letter5.setVisible(true);
+                        COUNTER++;
+                        if(COUNTER == 8) {
+                            System.out.print("You win!");
+                        }
+                    }
+                });
+                cButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        Letter7.setText("C");
+                        Letter7.setVisible(true);
+                        COUNTER++;
+                        if(COUNTER == 8) {
+                            System.out.print("You win!");
+                        }
+                    }
+                });
+                dButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        dButton.setEnabled(false);
+                    }
+                });
+                eButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        eButton.setEnabled(false);
+                    }
+                });
+                
+                fButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        fButton.setEnabled(false);
+                    }
+                });
+                
+                gButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        gButton.setEnabled(false);
+                    }
+                });
+                
+                hButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        hButton.setEnabled(false);
+                    }
+                });
+                
+                iButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        iButton.setEnabled(false);
+                    }
+                });
+                
+                jButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        jButton.setEnabled(false);
+                    }
+                });
+                
+                kButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        kButton.setEnabled(false);
+                    }
+                });
+                
+                lButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        lButton.setEnabled(false);
+                    }
+                });
+                
+                mButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        mButton.setEnabled(false);
+                    }
+                });
+                
+                nButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        nButton.setEnabled(false);
+                    }
+                });
+                
+                oButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        oButton.setEnabled(false);
+                    }
+                });
+                
+                pButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        pButton.setEnabled(false);
+                    }
+                });
+                
+                qButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        qButton.setEnabled(false);
+                    }
+                });
+                
+                uButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        uButton.setEnabled(false);
+                    }
+                });
+                
+                vButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        vButton.setEnabled(false);
+                    }
+                });
+                
+                wButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        wButton.setEnabled(false);
+                    }
+                });
+                
+                xButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        xButton.setEnabled(false);
+                    }
+                });
+                
+                yButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        yButton.setEnabled(false);
+                    }
+                });
+                
+                zButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        zButton.setEnabled(false);
+                    }
+                });
+                break;
+            case 3: //word "pharmacy"
+                pButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        Letter1.setText("P");
+                        Letter1.setVisible(true);
+                        COUNTER++;
+                        if(COUNTER == 8) {
+                            System.out.print("You win!");
+                        }
+                    }
+                });
+                hButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        Letter2.setText("H");
+                        Letter2.setVisible(true);
+                        COUNTER++;
+                        if(COUNTER == 8) {
+                            System.out.print("You win!");
+                        }
+                    }
+                });
+                aButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        Letter3.setText("M");
+                        Letter6.setText("M");
+                        Letter3.setVisible(true);
+                        Letter6.setVisible(true);
+                        COUNTER++;
+                        if(COUNTER == 8) {
+                            System.out.print("You win!");
+                        }
+                    }
+                });
+                mButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        Letter5.setText("T");
+                        Letter5.setVisible(true);
+                        COUNTER++;
+                        if(COUNTER == 8) {
+                            System.out.print("You win!");
+                        }
+                    }
+                });
+                rButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        Letter4.setText("R");
+                        Letter4.setVisible(true);
+                        COUNTER++;
+                        if(COUNTER == 8) {
+                            System.out.print("You win!");
+                        }
+                    }
+                });
+                cButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        Letter7.setText("C");
+                        Letter7.setVisible(true);
+                        COUNTER++;
+                        if(COUNTER == 8) {
+                            System.out.print("You win!");
+                        }
+                    }
+                });
+                yButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        Letter8.setText("Y");
+                        Letter8.setVisible(true);
+                        COUNTER++;
+                        if(COUNTER == 8) {
+                            System.out.print("You win!");
+                        }
+                    }
+                });
+                bButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        bButton.setEnabled(false);
+                    }
+                });
+                dButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        dButton.setEnabled(false);
+                    }
+                });
+                eButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        eButton.setEnabled(false);
+                    }
+                });
+                fButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        fButton.setEnabled(false);
+                    }
+                });
+                gButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        gButton.setEnabled(false);
+                    }
+                });
+                iButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        iButton.setEnabled(false);
+                    }
+                });
+                jButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        jButton.setEnabled(false);
+                    }
+                });
+                kButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        kButton.setEnabled(false);
+                    }
+                });
+                lButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        lButton.setEnabled(false);
+                    }
+                });
+                nButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        nButton.setEnabled(false);
+                    }
+                });
+                oButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        oButton.setEnabled(false);
+                    }
+                });
+                qButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        qButton.setEnabled(false);
+                    }
+                });
+                sButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        sButton.setEnabled(false);
+                    }
+                });
+                tButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        tButton.setEnabled(false);
+                    }
+                });
+                uButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        uButton.setEnabled(false);
+                    }
+                });
+                vButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        vButton.setEnabled(false);
+                    }
+                });
+                wButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        wButton.setEnabled(false);
+                    }
+                });
+                xButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        xButton.setEnabled(false);
+                    }
+                });
+                zButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        zButton.setEnabled(false);
+                    }
+                });
+                break;
+            case 4: // word "climbing"
+                cButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        Letter1.setText("C");
+                        Letter1.setVisible(true);
+                        COUNTER++;
+                        if(COUNTER == 8) {
+                            System.out.print("You win!");
+                        }
+                    }
+                });
+                
+                lButton.addActionListener(new ActionListener(){
+                    public void actionPerformed(ActionEvent e){
+                        Letter2.setText("L"); 
+                        Letter2.setVisible(true);
+                        COUNTER++; 
+                        if(COUNTER == 8){
+                            System.out.println("You win!");
+                        }
+                    }
+                }); 
+                
+                iButton.addActionListener(new ActionListener(){
+                    public void actionPerformed(ActionEvent e){
+                        Letter3.setText("I"); 
+                        Letter6.setText("I");
+                        Letter3.setVisible(true);
+                        Letter6.setVisible(true); 
+                        COUNTER++; 
+                        if(COUNTER == 8){
+                            System.out.println("You win!");
+                        }
+                    }
+                }); 
+                
+                mButton.addActionListener(new ActionListener(){
+                    public void actionPerformed(ActionEvent e){
+                        Letter4.setText("M"); 
+                        Letter4.setVisible(true);
+                        COUNTER++; 
+                        if(COUNTER == 8){
+                            System.out.println("You win!");
+                        }
+                    }
+                }); 
+                
+                bButton.addActionListener(new ActionListener(){
+                    public void actionPerformed(ActionEvent e){
+                        Letter5.setText("B"); 
+                        Letter5.setVisible(true);
+                        COUNTER++; 
+                        if(COUNTER == 8){
+                            System.out.println("You win!");
+                        }
+                    }
+                });
+                
+                nButton.addActionListener(new ActionListener(){
+                    public void actionPerformed(ActionEvent e){
+                        Letter7.setText("N"); 
+                        Letter7.setVisible(true);
+                        COUNTER++; 
+                        if(COUNTER == 8){
+                            System.out.println("You win!");
+                        }
+                    }
+                });
+                
+                gButton.addActionListener(new ActionListener(){
+                    public void actionPerformed(ActionEvent e){
+                        Letter8.setText("G"); 
+                        Letter8.setVisible(true);
+                        COUNTER++; 
+                        if(COUNTER == 8){
+                            System.out.println("You win!");
+                        }
+                    }
+                });
+                
+                aButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        aButton.setEnabled(false);
+                    }
+                });
+                
+                dButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        dButton.setEnabled(false);
+                    }
+                });
+                
+                eButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        eButton.setEnabled(false);
+                    }
+                });
+                
+                fButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        fButton.setEnabled(false);
+                    }
+                });
+                
+                hButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        hButton.setEnabled(false);
+                    }
+                });
+                
+                jButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        jButton.setEnabled(false);
+                    }
+                });
+                
+                kButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        kButton.setEnabled(false);
+                    }
+                });
+                
+                oButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        oButton.setEnabled(false);
+                    }
+                });
+                
+                pButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        pButton.setEnabled(false);
+                    }
+                });
+                
+                qButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        qButton.setEnabled(false);
+                    }
+                });
+                
+                rButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        rButton.setEnabled(false);
+                    }
+                });
+                
+                sButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        sButton.setEnabled(false);
+                    }
+                });
+                
+                tButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        tButton.setEnabled(false);
+                    }
+                });
+                
+                uButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        uButton.setEnabled(false);
+                    }
+                });
+                
+                vButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        vButton.setEnabled(false);
+                    }
+                });
+                
+                wButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        wButton.setEnabled(false);
+                    }
+                });
+                
+                xButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        xButton.setEnabled(false);
+                    }
+                });
+                
+                yButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        yButton.setEnabled(false);
+                    }
+                });
+                
+                zButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        wrongLetter();
+                        zButton.setEnabled(false);
+                    }
+                });
+                break;   
         }
     }
     public void wrongLetter(){
