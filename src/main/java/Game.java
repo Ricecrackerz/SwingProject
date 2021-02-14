@@ -85,15 +85,15 @@ public class Game extends javax.swing.JFrame {
         bbLeftL.setVisible(false);
         bbRightL.setVisible(false);
         
-        //Make Letters Invisible
-        Letter1.setVisible(false);
-        Letter2.setVisible(false);
-        Letter3.setVisible(false);
-        Letter4.setVisible(false);
-        Letter5.setVisible(false);
-        Letter6.setVisible(false);
-        Letter7.setVisible(false);
-        Letter8.setVisible(false);
+        //Make Letters Blank
+        Letter1.setText("   ");
+        Letter2.setText("   ");
+        Letter3.setText("   ");
+        Letter4.setText("   ");
+        Letter5.setText("   ");
+        Letter6.setText("   ");
+        Letter7.setText("   ");
+        Letter8.setText("   ");
     }
     public int SCORE = 100;
     private int COUNTER = 0; 
@@ -121,6 +121,7 @@ public class Game extends javax.swing.JFrame {
                     public void actionPerformed(ActionEvent e) {
                         Letter1.setText("N");
                         Letter1.setVisible(true);
+                        nButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 5) {
                             String n = String.valueOf(SCORE);
@@ -133,6 +134,7 @@ public class Game extends javax.swing.JFrame {
                     public void actionPerformed(ActionEvent e) {
                         Letter2.setText("U");
                         Letter2.setVisible(true);
+                        uButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 5) {
                             String n = String.valueOf(SCORE); 
@@ -145,6 +147,7 @@ public class Game extends javax.swing.JFrame {
                     public void actionPerformed(ActionEvent e) {
                         Letter3.setText("R");
                         Letter3.setVisible(true);
+                        rButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 5) {
                             String n = String.valueOf(SCORE); 
@@ -157,6 +160,7 @@ public class Game extends javax.swing.JFrame {
                     public void actionPerformed(ActionEvent e) {
                         Letter4.setText("S");
                         Letter4.setVisible(true);
+                        sButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 5) {
                             String n = String.valueOf(SCORE); 
@@ -169,6 +173,7 @@ public class Game extends javax.swing.JFrame {
                     public void actionPerformed(ActionEvent e) {
                         Letter5.setText("E");
                         Letter5.setVisible(true);
+                        eButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 5) {
                             String n = String.valueOf(SCORE); 
@@ -309,6 +314,7 @@ public class Game extends javax.swing.JFrame {
                     public void actionPerformed(ActionEvent e) {
                         Letter1.setText("C");
                         Letter1.setVisible(true);
+                        cButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
                             String n = String.valueOf(SCORE); 
@@ -325,6 +331,7 @@ public class Game extends javax.swing.JFrame {
                         Letter2.setVisible(true);
                         Letter4.setVisible(true);
                         Letter6.setVisible(true);
+                        eButton.setEnabled(false);
                         COUNTER+= 3;
                         if(COUNTER == 8) {
                             String n = String.valueOf(SCORE); 
@@ -337,6 +344,7 @@ public class Game extends javax.swing.JFrame {
                     public void actionPerformed(ActionEvent e) {
                         Letter3.setText("M");
                         Letter3.setVisible(true);
+                        mButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
                             String n = String.valueOf(SCORE); 
@@ -349,6 +357,7 @@ public class Game extends javax.swing.JFrame {
                     public void actionPerformed(ActionEvent e) {
                         Letter5.setText("T");
                         Letter5.setVisible(true);
+                        tButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
                             String n = String.valueOf(SCORE); 
@@ -361,6 +370,7 @@ public class Game extends javax.swing.JFrame {
                     public void actionPerformed(ActionEvent e) {
                         Letter7.setText("R");
                         Letter7.setVisible(true);
+                        rButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
                             String n = String.valueOf(SCORE); 
@@ -373,6 +383,7 @@ public class Game extends javax.swing.JFrame {
                     public void actionPerformed(ActionEvent e) {
                         Letter8.setText("Y");
                         Letter8.setVisible(true);
+                        yButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
                             String n = String.valueOf(SCORE); 
@@ -509,6 +520,7 @@ public class Game extends javax.swing.JFrame {
                         Letter6.setText("A");
                         Letter1.setVisible(true);
                         Letter6.setVisible(true);
+                        aButton.setEnabled(false);
                         COUNTER += 2;
                         if(COUNTER == 8) {
                             String n = String.valueOf(SCORE); 
@@ -521,6 +533,7 @@ public class Game extends javax.swing.JFrame {
                     public void actionPerformed(ActionEvent e) {
                         Letter2.setText("B");
                         Letter2.setVisible(true);
+                        bButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
                             String n = String.valueOf(SCORE); 
@@ -533,6 +546,7 @@ public class Game extends javax.swing.JFrame {
                     public void actionPerformed(ActionEvent e) {
                         Letter3.setText("S");
                         Letter3.setVisible(true);
+                        bButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
                             String n = String.valueOf(SCORE); 
@@ -547,6 +561,7 @@ public class Game extends javax.swing.JFrame {
                         Letter8.setText("T");
                         Letter4.setVisible(true);
                         Letter8.setVisible(true);
+                        tButton.setEnabled(false);
                         COUNTER+= 2;
                         if(COUNTER == 8) {
                             String n = String.valueOf(SCORE); 
@@ -559,6 +574,7 @@ public class Game extends javax.swing.JFrame {
                     public void actionPerformed(ActionEvent e) {
                         Letter3.setText("S");
                         Letter3.setVisible(true);
+                        sButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
                             String n = String.valueOf(SCORE); 
@@ -571,6 +587,7 @@ public class Game extends javax.swing.JFrame {
                     public void actionPerformed(ActionEvent e) {
                         Letter5.setText("R");
                         Letter5.setVisible(true);
+                        rButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
                             String n = String.valueOf(SCORE); 
@@ -583,6 +600,7 @@ public class Game extends javax.swing.JFrame {
                     public void actionPerformed(ActionEvent e) {
                         Letter7.setText("C");
                         Letter7.setVisible(true);
+                        cButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
                             String n = String.valueOf(SCORE); 
@@ -735,6 +753,7 @@ public class Game extends javax.swing.JFrame {
                     public void actionPerformed(ActionEvent e) {
                         Letter1.setText("P");
                         Letter1.setVisible(true);
+                        pButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
                             String n = String.valueOf(SCORE); 
@@ -747,6 +766,7 @@ public class Game extends javax.swing.JFrame {
                     public void actionPerformed(ActionEvent e) {
                         Letter2.setText("H");
                         Letter2.setVisible(true);
+                        hButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
                             String n = String.valueOf(SCORE); 
@@ -761,6 +781,7 @@ public class Game extends javax.swing.JFrame {
                         Letter6.setText("A");
                         Letter3.setVisible(true);
                         Letter6.setVisible(true);
+                        aButton.setEnabled(false);
                         COUNTER+= 2;
                         if(COUNTER == 8) {
                             String n = String.valueOf(SCORE); 
@@ -773,6 +794,7 @@ public class Game extends javax.swing.JFrame {
                     public void actionPerformed(ActionEvent e) {
                         Letter5.setText("M");
                         Letter5.setVisible(true);
+                        mButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
                             String n = String.valueOf(SCORE); 
