@@ -104,13 +104,26 @@ public class Game extends javax.swing.JFrame {
                 line6.setVisible(false);
                 line7.setVisible(false);
                 line8.setVisible(false);
+                // loop (COUNTER < 5) {
+                //     if each needed letter: n, u, r, s, e
+                       // COUNTER++;
+                       // repeat loop;
+                    // else if enter letter not needed (rest of the alphabet) --> paste
+                //exit loop when COUNTER == 5 to do this:
+                    // String n = String.valueOf(SCORE) ; where n us just the string form of the score
+                    // new EndScreen(n).setVisible(true);
+                    // setVisible(false);
+                    // this.dispose();
+                //break; 
                 nButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         Letter1.setText("N");
                         Letter1.setVisible(true);
                         COUNTER++;
                         if(COUNTER == 5) {
-                            System.out.print("You win!");
+                            String n = String.valueOf(SCORE);
+                            new EndScreen(n).setVisible(true);
+                            setVisible(false);
                         }
                     }
                 });
@@ -120,7 +133,9 @@ public class Game extends javax.swing.JFrame {
                         Letter2.setVisible(true);
                         COUNTER++;
                         if(COUNTER == 5) {
-                            System.out.print("You win!");
+                            String n = String.valueOf(SCORE); 
+                            new EndScreen(n).setVisible(true);
+                            setVisible(false);
                         }
                     }
                 });
@@ -130,7 +145,9 @@ public class Game extends javax.swing.JFrame {
                         Letter3.setVisible(true);
                         COUNTER++;
                         if(COUNTER == 5) {
-                            System.out.print("You win!");
+                            String n = String.valueOf(SCORE); 
+                            new EndScreen(n).setVisible(true);
+                            setVisible(false);
                         }
                     }
                 });
@@ -140,7 +157,9 @@ public class Game extends javax.swing.JFrame {
                         Letter4.setVisible(true);
                         COUNTER++;
                         if(COUNTER == 5) {
-                            System.out.print("You win!");
+                            String n = String.valueOf(SCORE); 
+                            new EndScreen(n).setVisible(true);
+                            setVisible(false);
                         }
                     }
                 });
@@ -150,7 +169,9 @@ public class Game extends javax.swing.JFrame {
                         Letter5.setVisible(true);
                         COUNTER++;
                         if(COUNTER == 5) {
-                            System.out.print("You win!");
+                            String n = String.valueOf(SCORE); 
+                            new EndScreen(n).setVisible(true);
+                            setVisible(false);
                         }
                     }
                 });
@@ -288,7 +309,9 @@ public class Game extends javax.swing.JFrame {
                         Letter1.setVisible(true);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            System.out.print("You win!");
+                            String n = String.valueOf(SCORE); 
+                            new EndScreen(n).setVisible(true);
+                            setVisible(false);
                         }
                     }
                 });
@@ -302,7 +325,9 @@ public class Game extends javax.swing.JFrame {
                         Letter6.setVisible(true);
                         COUNTER+= 3;
                         if(COUNTER == 8) {
-                            System.out.print("You win!");
+                            String n = String.valueOf(SCORE); 
+                            new EndScreen(n).setVisible(true);
+                            setVisible(false);
                         }
                     }
                 });
@@ -312,7 +337,9 @@ public class Game extends javax.swing.JFrame {
                         Letter3.setVisible(true);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            System.out.print("You win!");
+                            String n = String.valueOf(SCORE); 
+                            new EndScreen(n).setVisible(true);
+                            setVisible(false);
                         }
                     }
                 });
@@ -322,7 +349,9 @@ public class Game extends javax.swing.JFrame {
                         Letter5.setVisible(true);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            System.out.print("You win!");
+                            String n = String.valueOf(SCORE); 
+                            new EndScreen(n).setVisible(true);
+                            setVisible(false);
                         }
                     }
                 });
@@ -332,7 +361,9 @@ public class Game extends javax.swing.JFrame {
                         Letter7.setVisible(true);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            System.out.print("You win!");
+                            String n = String.valueOf(SCORE); 
+                            new EndScreen(n).setVisible(true);
+                            setVisible(false);
                         }
                     }
                 });
@@ -342,7 +373,9 @@ public class Game extends javax.swing.JFrame {
                         Letter8.setVisible(true);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            System.out.print("You win!");
+                            String n = String.valueOf(SCORE); 
+                            new EndScreen(n).setVisible(true);
+                            setVisible(false);
                         }
                     }
                 });
@@ -476,7 +509,9 @@ public class Game extends javax.swing.JFrame {
                         Letter6.setVisible(true);
                         COUNTER += 2;
                         if(COUNTER == 8) {
-                            System.out.print("You win!");
+                            String n = String.valueOf(SCORE); 
+                            new EndScreen(n).setVisible(true);
+                            setVisible(false);
                         }
                     }
                 });
@@ -486,7 +521,9 @@ public class Game extends javax.swing.JFrame {
                         Letter2.setVisible(true);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            System.out.print("You win!");
+                            String n = String.valueOf(SCORE); 
+                            new EndScreen(n).setVisible(true);
+                            setVisible(false);
                         }
                     }
                 });
@@ -496,7 +533,9 @@ public class Game extends javax.swing.JFrame {
                         Letter3.setVisible(true);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            System.out.print("You win!");
+                            String n = String.valueOf(SCORE); 
+                            new EndScreen(n).setVisible(true);
+                            setVisible(false);
                         }
                     }
                 });
@@ -508,7 +547,9 @@ public class Game extends javax.swing.JFrame {
                         Letter8.setVisible(true);
                         COUNTER+= 2;
                         if(COUNTER == 8) {
-                            System.out.print("You win!");
+                            String n = String.valueOf(SCORE); 
+                            new EndScreen(n).setVisible(true);
+                            setVisible(false);
                         }
                     }
                 });
@@ -518,7 +559,9 @@ public class Game extends javax.swing.JFrame {
                         Letter3.setVisible(true);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            System.out.print("You win!");
+                            String n = String.valueOf(SCORE); 
+                            new EndScreen(n).setVisible(true);
+                            setVisible(false);
                         }
                     }
                 });
@@ -528,7 +571,9 @@ public class Game extends javax.swing.JFrame {
                         Letter5.setVisible(true);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            System.out.print("You win!");
+                            String n = String.valueOf(SCORE); 
+                            new EndScreen(n).setVisible(true);
+                            setVisible(false);
                         }
                     }
                 });
@@ -538,7 +583,9 @@ public class Game extends javax.swing.JFrame {
                         Letter7.setVisible(true);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            System.out.print("You win!");
+                            String n = String.valueOf(SCORE); 
+                            new EndScreen(n).setVisible(true);
+                            setVisible(false);
                         }
                     }
                 });
@@ -688,7 +735,9 @@ public class Game extends javax.swing.JFrame {
                         Letter1.setVisible(true);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            System.out.print("You win!");
+                            String n = String.valueOf(SCORE); 
+                            new EndScreen(n).setVisible(true);
+                            setVisible(false);
                         }
                     }
                 });
@@ -698,7 +747,9 @@ public class Game extends javax.swing.JFrame {
                         Letter2.setVisible(true);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            System.out.print("You win!");
+                            String n = String.valueOf(SCORE); 
+                            new EndScreen(n).setVisible(true);
+                            setVisible(false);
                         }
                     }
                 });
@@ -710,7 +761,9 @@ public class Game extends javax.swing.JFrame {
                         Letter6.setVisible(true);
                         COUNTER+= 2;
                         if(COUNTER == 8) {
-                            System.out.print("You win!");
+                            String n = String.valueOf(SCORE); 
+                            new EndScreen(n).setVisible(true);
+                            setVisible(false);
                         }
                     }
                 });
@@ -720,7 +773,9 @@ public class Game extends javax.swing.JFrame {
                         Letter5.setVisible(true);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            System.out.print("You win!");
+                            String n = String.valueOf(SCORE); 
+                            new EndScreen(n).setVisible(true);
+                            setVisible(false);
                         }
                     }
                 });
@@ -730,7 +785,9 @@ public class Game extends javax.swing.JFrame {
                         Letter4.setVisible(true);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            System.out.print("You win!");
+                            String n = String.valueOf(SCORE); 
+                            new EndScreen(n).setVisible(true);
+                            setVisible(false);
                         }
                     }
                 });
@@ -740,7 +797,9 @@ public class Game extends javax.swing.JFrame {
                         Letter7.setVisible(true);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            System.out.print("You win!");
+                            String n = String.valueOf(SCORE); 
+                            new EndScreen(n).setVisible(true);
+                            setVisible(false);
                         }
                     }
                 });
@@ -750,7 +809,9 @@ public class Game extends javax.swing.JFrame {
                         Letter8.setVisible(true);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            System.out.print("You win!");
+                            String n = String.valueOf(SCORE); 
+                            new EndScreen(n).setVisible(true);
+                            setVisible(false);
                         }
                     }
                 });
@@ -876,7 +937,9 @@ public class Game extends javax.swing.JFrame {
                         Letter1.setVisible(true);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            System.out.print("You win!");
+                            String n = String.valueOf(SCORE); 
+                            new EndScreen(n).setVisible(true);
+                            setVisible(false);
                         }
                     }
                 });
@@ -887,7 +950,9 @@ public class Game extends javax.swing.JFrame {
                         Letter2.setVisible(true);
                         COUNTER++; 
                         if(COUNTER == 8){
-                            System.out.println("You win!");
+                            String n = String.valueOf(SCORE); 
+                            new EndScreen(n).setVisible(true);
+                            setVisible(false);
                         }
                     }
                 }); 
@@ -900,7 +965,9 @@ public class Game extends javax.swing.JFrame {
                         Letter6.setVisible(true); 
                         COUNTER+= 2; 
                         if(COUNTER == 8){
-                            System.out.println("You win!");
+                            String n = String.valueOf(SCORE); 
+                            new EndScreen(n).setVisible(true);
+                            setVisible(false);
                         }
                     }
                 }); 
@@ -911,7 +978,9 @@ public class Game extends javax.swing.JFrame {
                         Letter4.setVisible(true);
                         COUNTER++; 
                         if(COUNTER == 8){
-                            System.out.println("You win!");
+                            String n = String.valueOf(SCORE); 
+                            new EndScreen(n).setVisible(true);
+                            setVisible(false);
                         }
                     }
                 }); 
@@ -922,7 +991,9 @@ public class Game extends javax.swing.JFrame {
                         Letter5.setVisible(true);
                         COUNTER++; 
                         if(COUNTER == 8){
-                            System.out.println("You win!");
+                            String n = String.valueOf(SCORE); 
+                            new EndScreen(n).setVisible(true);
+                            setVisible(false);
                         }
                     }
                 });
@@ -933,7 +1004,9 @@ public class Game extends javax.swing.JFrame {
                         Letter7.setVisible(true);
                         COUNTER++; 
                         if(COUNTER == 8){
-                            System.out.println("You win!");
+                            String n = String.valueOf(SCORE); 
+                            new EndScreen(n).setVisible(true);
+                            setVisible(false);
                         }
                     }
                 });
@@ -944,7 +1017,9 @@ public class Game extends javax.swing.JFrame {
                         Letter8.setVisible(true);
                         COUNTER++; 
                         if(COUNTER == 8){
-                            System.out.println("You win!");
+                            String n = String.valueOf(SCORE); 
+                            new EndScreen(n).setVisible(true);
+                            setVisible(false);
                         }
                     }
                 });
