@@ -20,6 +20,7 @@ Game$70.class
 Game$85.class
 Game$22.class
 Game$82.class
+ColorGame$2.class
 Game$10.class
 Game$30.class
 Game$93.class
@@ -67,6 +68,7 @@ Home$4.class
 Game$35.class
 Game$40.class
 Game$75.class
+ColorGame$1.class
 Game$63.class
 Game$114.class
 Game$18.class
@@ -77,6 +79,7 @@ Game$131.class
 Game$61.class
 Game$81.class
 Highscore.class
+ColorGame$3.class
 EndScreen$1.class
 Game$101.class
 Game$111.class
@@ -110,8 +113,10 @@ Credits$1.class
 Game$16.class
 Highscore$1.class
 Game$9.class
+Game$3.class
 Game$107.class
 Game$104.class
+Game.class
 Game$124.class
 Game$6.class
 Game$33.class
@@ -122,6 +127,7 @@ Game$56.class
 Game$96.class
 Game$106.class
 Game$100.class
+Game$2.class
 Game$110.class
 Game$27.class
 Game$89.class
@@ -129,6 +135,7 @@ Game$79.class
 Game$37.class
 Game$133.class
 Game$123.class
+ColorGame$4.class
 Game$122.class
 Game$49.class
 Game$129.class
@@ -145,6 +152,8 @@ Game$55.class
 Game$134.class
 Game$83.class
 Credits.class
+Game$1.class
 Game$60.class
 Game$38.class
+ColorGame.class
 Game$78.class
