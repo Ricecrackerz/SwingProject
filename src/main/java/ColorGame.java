@@ -1,11 +1,13 @@
 
 import java.awt.Color;
+import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
+import javax.swing.JFrame;
 import javax.swing.Timer;
 
 /*
@@ -24,13 +26,14 @@ public class ColorGame extends javax.swing.JFrame {
      * Creates new form ColorGame
      */
     Timer timer;
-    String[] colorsList = {"Green", "Red", "Yellow", "Pink", "Blue"}; 
+    String[] colorsList = {"Green", "Red", "Yellow", "Orange", "Blue"}; 
     
     public ColorGame() {
         initComponents();
         
         startTimer(); 
         setGameLabel(); 
+        setButton();
         
         
     }
@@ -86,12 +89,28 @@ public class ColorGame extends javax.swing.JFrame {
             gameLabel.setForeground(Color.BLUE);
         }
         else if (textColor == 3){
-            gameLabel.setForeground(Color.PINK);
+            gameLabel.setForeground(Color.ORANGE);
         }
         else if (textColor == 4){
             gameLabel.setForeground(Color.YELLOW);
         }
         
+    }
+    public void setButton(){
+        
+         redButton.setBounds(0, 0, 75, 75); 
+         this.add(redButton);
+         blueButton.setBounds(400, 100, 75, 75); 
+         this.add(blueButton);
+         yellowButton.setBounds(300, 100, 75, 75); 
+         this.add(yellowButton);
+         greenButton.setBounds(250, 300, 75, 75); 
+         this.add(greenButton);
+         orangeButton.setBounds(100, 300, 75, 75); 
+         this.add(orangeButton);
+
+        
+                
     }
     
 
@@ -107,10 +126,10 @@ public class ColorGame extends javax.swing.JFrame {
         time_dateLabel = new javax.swing.JLabel();
         gameLabel = new javax.swing.JLabel();
         redButton = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        blueButton = new javax.swing.JButton();
+        yellowButton = new javax.swing.JButton();
+        greenButton = new javax.swing.JButton();
+        orangeButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(600, 400));
@@ -128,13 +147,18 @@ public class ColorGame extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("blueButton");
+        blueButton.setText("blueButton");
 
-        jButton3.setText("yellowButton");
+        yellowButton.setText("yellowButton");
 
-        jButton4.setText("greenColors");
+        greenButton.setText("greenButton");
 
-        jButton5.setText("pinkButton");
+        orangeButton.setText("orangeButton");
+        orangeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                orangeButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -150,15 +174,15 @@ public class ColorGame extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addComponent(redButton)
                 .addGap(140, 140, 140)
-                .addComponent(jButton2)
+                .addComponent(blueButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
-                .addComponent(jButton3)
+                .addComponent(yellowButton)
                 .addGap(62, 62, 62))
             .addGroup(layout.createSequentialGroup()
                 .addGap(120, 120, 120)
-                .addComponent(jButton4)
+                .addComponent(greenButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton5)
+                .addComponent(orangeButton)
                 .addGap(112, 112, 112))
         );
         layout.setVerticalGroup(
@@ -178,12 +202,12 @@ public class ColorGame extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(71, 71, 71)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton2)
-                            .addComponent(jButton3))))
+                            .addComponent(blueButton)
+                            .addComponent(yellowButton))))
                 .addGap(76, 76, 76)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5))
+                    .addComponent(greenButton)
+                    .addComponent(orangeButton))
                 .addContainerGap(125, Short.MAX_VALUE))
         );
 
@@ -193,6 +217,10 @@ public class ColorGame extends javax.swing.JFrame {
     private void redButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_redButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_redButtonActionPerformed
+
+    private void orangeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orangeButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_orangeButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -230,12 +258,12 @@ public class ColorGame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton blueButton;
     private javax.swing.JLabel gameLabel;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton greenButton;
+    private javax.swing.JButton orangeButton;
     private javax.swing.JButton redButton;
     private javax.swing.JLabel time_dateLabel;
+    private javax.swing.JButton yellowButton;
     // End of variables declaration//GEN-END:variables
 }
