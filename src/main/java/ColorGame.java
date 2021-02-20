@@ -36,7 +36,7 @@ public class ColorGame extends javax.swing.JFrame {
     int score = 0;
     boolean gameOver = true;
     String textColor; 
-    int rounds =  5;
+    int rounds =  0;
    
     
     public ColorGame() {
@@ -147,7 +147,8 @@ public class ColorGame extends javax.swing.JFrame {
                             setButton();
                             System.out.println("Wrong"); 
                         }
-                        rounds--;
+                        rounds++;
+                        System.out.println(rounds);
                     }
             }); 
             
@@ -163,7 +164,8 @@ public class ColorGame extends javax.swing.JFrame {
                             setButton(); 
                             System.out.println("Wrong"); 
                         }
-                        rounds--; 
+                        rounds++; 
+                        System.out.println(rounds);
                     }
             }); 
             
@@ -179,7 +181,8 @@ public class ColorGame extends javax.swing.JFrame {
                             setButton();  
                             System.out.println("Wrong"); 
                         }
-                        rounds--; 
+                        rounds++; 
+                        System.out.println(rounds);
                     }
             }); 
             
@@ -195,7 +198,8 @@ public class ColorGame extends javax.swing.JFrame {
                             setButton(); 
                             System.out.println("Wrong"); 
                         }
-                        rounds--; 
+                        rounds++; 
+                        System.out.println(rounds);
                     }
             }); 
             
@@ -211,7 +215,8 @@ public class ColorGame extends javax.swing.JFrame {
                             setButton();  
                             System.out.println("Wrong"); 
                         }
-                        rounds--; 
+                        rounds++; 
+                        System.out.println(rounds);
                     }
             }); 
             } 
@@ -250,7 +255,7 @@ public class ColorGame extends javax.swing.JFrame {
     
     public void setButton(){
          Random random = new Random(); 
-         int setPosition = random.nextInt(1);
+         int setPosition = random.nextInt(2);
          redButton.setForeground(Color.RED); 
          blueButton.setForeground(Color.BLUE); 
          yellowButton.setForeground(Color.YELLOW); 
@@ -270,15 +275,15 @@ public class ColorGame extends javax.swing.JFrame {
                 this.add(orangeButton);
                 break;
              case 1:
-                redButton.setBounds(150, 150, 75, 75); 
+                redButton.setBounds(250, 150, 75, 75); 
                 this.add(redButton);
-                blueButton.setBounds(410, 225, 75, 75); 
+                blueButton.setBounds(310, 225, 75, 75); 
                 this.add(blueButton);
-                yellowButton.setBounds(300, 100, 75, 75); 
+                yellowButton.setBounds(400, 100, 75, 75); 
                 this.add(yellowButton);
-                greenButton.setBounds(250, 250, 75, 75); 
+                greenButton.setBounds(350, 250, 75, 75); 
                 this.add(greenButton);
-                orangeButton.setBounds(70, 280, 75, 75); 
+                orangeButton.setBounds(170, 280, 75, 75); 
                 this.add(orangeButton);
                 break;
          }
