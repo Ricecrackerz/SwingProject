@@ -21,7 +21,7 @@ import javax.swing.Timer;
  * @author Bryant
  */
 public class ColorGame extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form ColorGame
      */
@@ -30,7 +30,9 @@ public class ColorGame extends javax.swing.JFrame {
     
     public ColorGame() {
         initComponents();
-        
+        getContentPane().setBackground(new java.awt.Color(250, 250, 250));
+        setSize(600,400);
+        setLocationRelativeTo(null);
         startTimer(); 
         setGameLabel(); 
         setButton();
@@ -104,9 +106,9 @@ public class ColorGame extends javax.swing.JFrame {
          this.add(blueButton);
          yellowButton.setBounds(300, 100, 75, 75); 
          this.add(yellowButton);
-         greenButton.setBounds(250, 300, 75, 75); 
+         greenButton.setBounds(250, 250, 75, 75); 
          this.add(greenButton);
-         orangeButton.setBounds(70, 320, 75, 75); 
+         orangeButton.setBounds(70, 280, 75, 75); 
          this.add(orangeButton);
 
         
@@ -133,6 +135,8 @@ public class ColorGame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(600, 400));
+        setPreferredSize(new java.awt.Dimension(600, 400));
+        setResizable(false);
 
         time_dateLabel.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         time_dateLabel.setText("Time and Date");
@@ -140,20 +144,29 @@ public class ColorGame extends javax.swing.JFrame {
         gameLabel.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         gameLabel.setText("Color ");
 
-        redButton.setText("redButton");
+        redButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/redButton.png"))); // NOI18N
+        redButton.setBorderPainted(false);
+        redButton.setContentAreaFilled(false);
         redButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 redButtonActionPerformed(evt);
             }
         });
 
-        blueButton.setText("blueButton");
+        blueButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/blueButton.png"))); // NOI18N
+        blueButton.setContentAreaFilled(false);
+        blueButton.setMaximumSize(new java.awt.Dimension(75, 75));
+        blueButton.setMinimumSize(new java.awt.Dimension(75, 75));
+        blueButton.setPreferredSize(new java.awt.Dimension(75, 75));
 
-        yellowButton.setText("yellowButton");
+        yellowButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/yellowButton.png"))); // NOI18N
+        yellowButton.setContentAreaFilled(false);
 
-        greenButton.setText("greenButton");
+        greenButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/greenButton.png"))); // NOI18N
+        greenButton.setContentAreaFilled(false);
 
-        orangeButton.setText("orangeButton");
+        orangeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/orangeButton.png"))); // NOI18N
+        orangeButton.setContentAreaFilled(false);
         orangeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 orangeButtonActionPerformed(evt);
@@ -166,25 +179,25 @@ public class ColorGame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addComponent(redButton)
-                .addGap(140, 140, 140)
-                .addComponent(blueButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
-                .addComponent(yellowButton)
+                .addComponent(redButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(172, 172, 172)
+                .addComponent(blueButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(yellowButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(62, 62, 62))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(120, 120, 120)
-                        .addComponent(greenButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(greenButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 196, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(gameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(32, 32, 32)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(time_dateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(orangeButton))
+                    .addComponent(orangeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -199,18 +212,18 @@ public class ColorGame extends javax.swing.JFrame {
                         .addComponent(gameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addComponent(redButton))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(71, 71, 71)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(blueButton)
-                            .addComponent(yellowButton))))
-                .addGap(76, 76, 76)
+                            .addComponent(blueButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(yellowButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(63, 63, 63)
+                        .addComponent(redButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(84, 84, 84)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(greenButton)
-                    .addComponent(orangeButton))
-                .addContainerGap(125, Short.MAX_VALUE))
+                    .addComponent(greenButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(orangeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();

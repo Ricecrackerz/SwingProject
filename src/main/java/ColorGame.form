@@ -6,6 +6,10 @@
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[600, 400]"/>
     </Property>
+    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[600, 400]"/>
+    </Property>
+    <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -28,19 +32,19 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-              <Component id="redButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
-              <Component id="blueButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="104" max="32767" attributes="0"/>
-              <Component id="yellowButton" min="-2" max="-2" attributes="0"/>
+              <Component id="redButton" min="-2" pref="75" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="172" max="-2" attributes="0"/>
+              <Component id="blueButton" min="-2" pref="75" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="yellowButton" min="-2" pref="75" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
-                      <Component id="greenButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="greenButton" min="-2" pref="75" max="-2" attributes="0"/>
+                      <EmptySpace pref="196" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
@@ -50,7 +54,7 @@
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="time_dateLabel" alignment="0" min="-2" pref="199" max="-2" attributes="0"/>
-                  <Component id="orangeButton" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="orangeButton" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -71,23 +75,23 @@
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
-                      <Component id="redButton" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="blueButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="yellowButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="blueButton" alignment="3" min="-2" pref="75" max="-2" attributes="0"/>
+                          <Component id="yellowButton" alignment="3" min="-2" pref="75" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                      <Component id="redButton" min="-2" pref="75" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="greenButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="orangeButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="greenButton" alignment="3" min="-2" pref="75" max="-2" attributes="0"/>
+                  <Component id="orangeButton" alignment="3" min="-2" pref="75" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="125" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -111,7 +115,11 @@
     </Component>
     <Component class="javax.swing.JButton" name="redButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="redButton"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/redButton.png"/>
+        </Property>
+        <Property name="borderPainted" type="boolean" value="false"/>
+        <Property name="contentAreaFilled" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="redButtonActionPerformed"/>
@@ -119,22 +127,43 @@
     </Component>
     <Component class="javax.swing.JButton" name="blueButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="blueButton"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/blueButton.png"/>
+        </Property>
+        <Property name="contentAreaFilled" type="boolean" value="false"/>
+        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[75, 75]"/>
+        </Property>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[75, 75]"/>
+        </Property>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[75, 75]"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="yellowButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="yellowButton"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/yellowButton.png"/>
+        </Property>
+        <Property name="contentAreaFilled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="greenButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="greenButton"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/greenButton.png"/>
+        </Property>
+        <Property name="contentAreaFilled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="orangeButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="orangeButton"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/orangeButton.png"/>
+        </Property>
+        <Property name="contentAreaFilled" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="orangeButtonActionPerformed"/>
