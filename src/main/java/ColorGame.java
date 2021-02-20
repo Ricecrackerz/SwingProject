@@ -5,9 +5,11 @@ import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
+import java.awt.image.ColorModel;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Random;
 import javax.swing.JFrame;
 import javax.swing.Timer;
@@ -33,6 +35,9 @@ public class ColorGame extends javax.swing.JFrame {
     int gameRound = 0;
     int score = 0;
     boolean gameOver = true;
+    String textColor; 
+    int rounds =  1;
+   
     
     public ColorGame() {
         initComponents();
@@ -42,7 +47,9 @@ public class ColorGame extends javax.swing.JFrame {
         startTimer(); 
         setGameLabel(); 
         setButton();
+        startGame(); 
         
+
     }
     
     public void startTimer(){
@@ -123,9 +130,64 @@ public class ColorGame extends javax.swing.JFrame {
         }
         
     }
+    /*
+    *TO DO: adding score 
+    */
+    public void startGame(){
+        
+  
+            
+            redButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        if(gameLabel.getForeground() == redButton.getForeground()){
+                            System.out.println("Colors match"); 
+                            setGameLabel(); 
+                            rounds++; 
+                            setButton(); 
+                        }       
+                        else{
+                            setGameLabel(); 
+                            setButton(); 
+                            rounds++; 
+                            System.out.println("Wrong"); 
+                        }
+                    }
+            }); 
+            /*
+            if(gameLabel.getForeground() == redButton.getForeground() ){
+                System.out.println("Colors match"); 
+                rounds++; 
+            }
+            else if(gameLabel.getForeground() == greenButton.getForeground() ){
+                System.out.println("Colors match"); 
+                rounds++; 
+            }
+            else if(gameLabel.getForeground() == blueButton.getForeground() ){
+                System.out.println("Colors match"); 
+                rounds++; 
+            }
+            else if(gameLabel.getForeground() == yellowButton.getForeground() ){
+                System.out.println("Colors match"); 
+                rounds++; 
+            }
+            else if(gameLabel.getForeground() == orangeButton.getForeground() ){
+                System.out.println("Colors match"); 
+                rounds++; 
+            }
+            */ 
+            
+        
+    }
+   
+    
     public void setButton(){
          Random random = new Random(); 
          int setPosition = random.nextInt(1);
+         redButton.setForeground(Color.RED); 
+         blueButton.setForeground(Color.BLUE); 
+         yellowButton.setForeground(Color.YELLOW); 
+         greenButton.setForeground(Color.GREEN); 
+         orangeButton.setForeground(Color.ORANGE); 
          switch(setPosition) {
              case 0:
                 redButton.setBounds(150, 150, 75, 75); 
@@ -152,7 +214,6 @@ public class ColorGame extends javax.swing.JFrame {
                 this.add(orangeButton);
                 break;
          }
-         setGame();
     }
     public void setGame() {
             switch(correctColor){
@@ -433,7 +494,7 @@ public class ColorGame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void redButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_redButtonActionPerformed
-        // TODO add your handling code here:
+ 
     }//GEN-LAST:event_redButtonActionPerformed
 
     private void orangeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orangeButtonActionPerformed
