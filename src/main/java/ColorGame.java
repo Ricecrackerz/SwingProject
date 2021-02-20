@@ -36,7 +36,7 @@ public class ColorGame extends javax.swing.JFrame {
     int score = 0;
     boolean gameOver = true;
     String textColor; 
-    int rounds =  1;
+    int rounds =  5;
    
     
     public ColorGame() {
@@ -134,25 +134,93 @@ public class ColorGame extends javax.swing.JFrame {
     *TO DO: adding score 
     */
     public void startGame(){
-        
-  
-            
-            redButton.addActionListener(new ActionListener() {
+            {
+                redButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         if(gameLabel.getForeground() == redButton.getForeground()){
                             System.out.println("Colors match"); 
+                            setGameLabel();  
+                            setButton(); 
+                        }       
+                        else{
                             setGameLabel(); 
-                            rounds++; 
+                            setButton();
+                            System.out.println("Wrong"); 
+                        }
+                        rounds--;
+                    }
+            }); 
+            
+                greenButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        if(gameLabel.getForeground() == greenButton.getForeground()){
+                            System.out.println("Colors match"); 
+                            setGameLabel(); 
                             setButton(); 
                         }       
                         else{
                             setGameLabel(); 
                             setButton(); 
-                            rounds++; 
                             System.out.println("Wrong"); 
                         }
+                        rounds--; 
                     }
             }); 
+            
+            blueButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        if(gameLabel.getForeground() == blueButton.getForeground()){
+                            System.out.println("Colors match"); 
+                            setGameLabel(); 
+                            setButton(); 
+                        }       
+                        else{
+                            setGameLabel(); 
+                            setButton();  
+                            System.out.println("Wrong"); 
+                        }
+                        rounds--; 
+                    }
+            }); 
+            
+            yellowButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        if(gameLabel.getForeground() == yellowButton.getForeground()){
+                            System.out.println("Colors match"); 
+                            setGameLabel(); 
+                            setButton(); 
+                        }       
+                        else{
+                            setGameLabel(); 
+                            setButton(); 
+                            System.out.println("Wrong"); 
+                        }
+                        rounds--; 
+                    }
+            }); 
+            
+            orangeButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        if(gameLabel.getForeground() == orangeButton.getForeground()){
+                            System.out.println("Colors match"); 
+                            setGameLabel(); 
+                            setButton(); 
+                        }       
+                        else{
+                            setGameLabel(); 
+                            setButton();  
+                            System.out.println("Wrong"); 
+                        }
+                        rounds--; 
+                    }
+            }); 
+            } 
+                
+                
+            
+            
+            
+            
             /*
             if(gameLabel.getForeground() == redButton.getForeground() ){
                 System.out.println("Colors match"); 
