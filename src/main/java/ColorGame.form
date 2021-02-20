@@ -157,6 +157,9 @@
         </Property>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="greenButtonMouseReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="orangeButton">
       <Properties>

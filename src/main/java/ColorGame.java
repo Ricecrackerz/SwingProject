@@ -1,8 +1,10 @@
 
+import java.awt.Button;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -26,7 +28,11 @@ public class ColorGame extends javax.swing.JFrame {
      * Creates new form ColorGame
      */
     Timer timer;
-    String[] colorsList = {"Green", "Red", "Yellow", "Orange", "Blue"}; 
+    String[] colorsList = {"Green", "Red", "Yellow", "Orange", "Blue"};
+    int correctColor = 0;
+    int gameRound = 0;
+    int score = 0;
+    boolean gameOver = true;
     
     public ColorGame() {
         initComponents();
@@ -36,7 +42,6 @@ public class ColorGame extends javax.swing.JFrame {
         startTimer(); 
         setGameLabel(); 
         setButton();
-        
         
     }
     
@@ -68,8 +73,28 @@ public class ColorGame extends javax.swing.JFrame {
     public void setGameLabel(){
         
         Random random = new Random(); 
-        int color = random.nextInt(colorsList.length);
-        gameLabel.setText(colorsList[color]); 
+        int color = random.nextInt(2);
+//      gameLabel.setText(colorsList[color]); 
+        if(color == 0){
+            gameLabel.setText("Green");
+            correctColor = 0;
+        }
+        else if (color == 1){
+            gameLabel.setText("Red");
+            correctColor = 1;
+        }
+        else if (color == 2){
+            gameLabel.setText("Blue");
+            correctColor = 2;
+        }
+        else if (color == 3){
+            gameLabel.setText("Orange");
+            correctColor = 3;
+        }
+        else if (color == 4){
+            gameLabel.setText("Yellow");
+            correctColor = 4;
+        }
         
         
         int textColor = random.nextInt(colorsList.length); 
@@ -99,20 +124,193 @@ public class ColorGame extends javax.swing.JFrame {
         
     }
     public void setButton(){
-        
-         redButton.setBounds(150, 150, 75, 75); 
-         this.add(redButton);
-         blueButton.setBounds(410, 225, 75, 75); 
-         this.add(blueButton);
-         yellowButton.setBounds(300, 100, 75, 75); 
-         this.add(yellowButton);
-         greenButton.setBounds(250, 250, 75, 75); 
-         this.add(greenButton);
-         orangeButton.setBounds(70, 280, 75, 75); 
-         this.add(orangeButton);
-
-        
+         Random random = new Random(); 
+         int setPosition = random.nextInt(1);
+         switch(setPosition) {
+             case 0:
+                redButton.setBounds(150, 150, 75, 75); 
+                this.add(redButton);
+                blueButton.setBounds(410, 225, 75, 75); 
+                this.add(blueButton);
+                yellowButton.setBounds(300, 100, 75, 75); 
+                this.add(yellowButton);
+                greenButton.setBounds(250, 250, 75, 75); 
+                this.add(greenButton);
+                orangeButton.setBounds(70, 280, 75, 75); 
+                this.add(orangeButton);
+                break;
+             case 1:
+                redButton.setBounds(150, 150, 75, 75); 
+                this.add(redButton);
+                blueButton.setBounds(410, 225, 75, 75); 
+                this.add(blueButton);
+                yellowButton.setBounds(300, 100, 75, 75); 
+                this.add(yellowButton);
+                greenButton.setBounds(250, 250, 75, 75); 
+                this.add(greenButton);
+                orangeButton.setBounds(70, 280, 75, 75); 
+                this.add(orangeButton);
+                break;
+         }
+         setGame();
+    }
+    public void setGame() {
+            switch(correctColor){
+            case 0:
+                greenButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        System.out.println("Im in the green case!");
+                        score += 100;
+                        if(gameRound < 4){
+                            gameRound++;
+                            setGameLabel();
+                            setButton();
+                            System.out.println("score: " + score);
+                            System.out.println(gameRound);
+                        }else {
+                            System.out.println("The End");
+                            System.out.println(score);
+                        }
+                    }
+                });
                 
+                redButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        System.out.println("Im in the green case!");
+                        if(gameRound < 4){
+                            gameRound++;
+                            setGameLabel();
+                            setButton();
+                            System.out.println("score: " + score);
+                            System.out.println(gameRound);
+                        }else {
+                            System.out.println("The End");
+                            System.out.println(score);
+                        }
+                    }
+                });
+                
+                blueButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        if(gameRound < 4){
+                            gameRound++;
+                            setGameLabel();
+                            setButton();
+                            System.out.println("score: " + score);
+                            System.out.println(gameRound);
+                        }else {
+                            System.out.println("The End");
+                            System.out.println(score);
+                        }
+                    }
+                });
+                
+                orangeButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        if(gameRound < 4){
+                            gameRound++;
+                            setGameLabel();
+                            setButton();
+                            System.out.println("score: " + score);
+                            System.out.println(gameRound);
+                        }else {
+                            System.out.println("The End");
+                            System.out.println(score);
+                        }
+                    }
+                });
+                
+                yellowButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        if(gameRound < 4){
+                            gameRound++;
+                            setGameLabel();
+                            setButton();
+                            System.out.println("score: " + score);
+                            System.out.println(gameRound);
+                        }else {
+                            System.out.println("The End");
+                            System.out.println(score);
+                        }
+                    }
+                });
+                break;
+            case 1:
+                redButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        System.out.println("Im in the red case!");
+                        score += 100;
+                        if(gameRound < 4){
+                            gameRound++;
+                            setGameLabel();
+                            setButton();
+                            System.out.println("score: " + score);
+                            System.out.println(gameRound);
+                        }else {
+                            System.out.println("The End");
+                            System.out.println(score);
+                        }
+                    }
+                });
+                yellowButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        if(gameRound < 4){
+                            gameRound++;
+                            setGameLabel();
+                            setButton();
+                            System.out.println("score: " + score);
+                            System.out.println(gameRound);
+                        }else {
+                            System.out.println("The End");
+                            System.out.println(score);
+                        }
+                    }
+                });
+                greenButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        System.out.println("Im in the red case!");
+                        if(gameRound < 4){
+                            gameRound++;
+                            setGameLabel();
+                            setButton();
+                            System.out.println("score: " + score);
+                            System.out.println(gameRound);
+                        }else {
+                            System.out.println("The End");
+                            System.out.println(score);
+                        }
+                    }
+                });
+                orangeButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        if(gameRound < 4){
+                            gameRound++;
+                            setGameLabel();
+                            setButton();
+                            System.out.println("score: " + score);
+                            System.out.println(gameRound);
+                        }else {
+                            System.out.println("The End");
+                            System.out.println(score);
+                        }
+                    }
+                });
+                blueButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        if(gameRound < 4){
+                            gameRound++;
+                            setGameLabel();
+                            setButton();
+                            System.out.println("score: " + score);
+                            System.out.println(gameRound);
+                        }else {
+                            System.out.println("The End");
+                            System.out.println(score);
+                        }
+                    }
+                });
+                break;
+            }
     }
     
 
@@ -164,6 +362,11 @@ public class ColorGame extends javax.swing.JFrame {
 
         greenButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/greenButton.png"))); // NOI18N
         greenButton.setContentAreaFilled(false);
+        greenButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                greenButtonMouseReleased(evt);
+            }
+        });
 
         orangeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/orangeButton.png"))); // NOI18N
         orangeButton.setContentAreaFilled(false);
@@ -236,6 +439,10 @@ public class ColorGame extends javax.swing.JFrame {
     private void orangeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orangeButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_orangeButtonActionPerformed
+
+    private void greenButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_greenButtonMouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_greenButtonMouseReleased
 
     /**
      * @param args the command line arguments
