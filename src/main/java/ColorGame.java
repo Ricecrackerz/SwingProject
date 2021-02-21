@@ -22,8 +22,15 @@ import javax.swing.Timer;
 
 /**
  *
- * @author Bryant
+ * @author TonyDiaz Stans
  */
+
+/* 
+* To Do List: 
+        Score System/Displaying on screen
+        Persist
+        Button is highlighted when moused over
+*/
 public class ColorGame extends javax.swing.JFrame {
     
     /**
@@ -31,14 +38,10 @@ public class ColorGame extends javax.swing.JFrame {
      */
     Timer timer;
     String[] colorsList = {"Green", "Red", "Yellow", "Orange", "Blue"};
-    int correctColor = 0;
-    int gameRound = 0;
     int score = 0;
-    boolean gameOver = true;
     String textColor; 
-    int rounds =  0;
-   
-    
+    int rounds = 6;
+      
     public ColorGame() {
         initComponents();
         getContentPane().setBackground(new java.awt.Color(250, 250, 250));
@@ -48,12 +51,10 @@ public class ColorGame extends javax.swing.JFrame {
         setGameLabel(); 
         setButton();
         startGame(); 
-        
-
     }
     
     public void startTimer(){
-        //timer 
+        // Date and Time 
         ActionListener actionListener = new ActionListener()
         {
             @Override
@@ -79,40 +80,27 @@ public class ColorGame extends javax.swing.JFrame {
      */
     public void setGameLabel(){
         
-        Random random = new Random(); 
-        int color = random.nextInt(2);
-//      gameLabel.setText(colorsList[color]); 
-        if(color == 0){
+        Random random = new Random();
+        // Randomize the text  
+        int text = random.nextInt(colorsList.length);
+        if(text == 0){
             gameLabel.setText("Green");
-            correctColor = 0;
         }
-        else if (color == 1){
+        else if (text == 1){
             gameLabel.setText("Red");
-            correctColor = 1;
         }
-        else if (color == 2){
+        else if (text == 2){
             gameLabel.setText("Blue");
-            correctColor = 2;
         }
-        else if (color == 3){
+        else if (text == 3){
             gameLabel.setText("Orange");
-            correctColor = 3;
         }
-        else if (color == 4){
+        else if (text == 4){
             gameLabel.setText("Yellow");
-            correctColor = 4;
         }
         
-        
-        int textColor = random.nextInt(colorsList.length); 
-        /*
-        float r = random.nextFloat();
-        float g = random.nextFloat();
-        float b = random.nextFloat(); 
-        
-        Color randomColor = new Color(r, g, b);
-        */ 
-        
+        // Randomize the text color       
+        int textColor = random.nextInt(colorsList.length);         
         if(textColor == 0){
             gameLabel.setForeground(Color.GREEN);
         }
@@ -130,139 +118,122 @@ public class ColorGame extends javax.swing.JFrame {
         }
         
     }
-    /*
-    *TO DO: adding score 
-    */
-    public void startGame(){
-            {
-                redButton.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        if(gameLabel.getForeground() == redButton.getForeground()){
-                            System.out.println("Colors match"); 
-                            setGameLabel();  
-                            setButton(); 
-                        }       
-                        else{
-                            setGameLabel(); 
-                            setButton();
-                            System.out.println("Wrong"); 
-                        }
-                        rounds++;
-                        System.out.println(rounds);
-                    }
-            }); 
-            
-                greenButton.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        if(gameLabel.getForeground() == greenButton.getForeground()){
-                            System.out.println("Colors match"); 
-                            setGameLabel(); 
-                            setButton(); 
-                        }       
-                        else{
-                            setGameLabel(); 
-                            setButton(); 
-                            System.out.println("Wrong"); 
-                        }
-                        rounds++; 
-                        System.out.println(rounds);
-                    }
-            }); 
-            
-            blueButton.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        if(gameLabel.getForeground() == blueButton.getForeground()){
-                            System.out.println("Colors match"); 
-                            setGameLabel(); 
-                            setButton(); 
-                        }       
-                        else{
-                            setGameLabel(); 
-                            setButton();  
-                            System.out.println("Wrong"); 
-                        }
-                        rounds++; 
-                        System.out.println(rounds);
-                    }
-            }); 
-            
-            yellowButton.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        if(gameLabel.getForeground() == yellowButton.getForeground()){
-                            System.out.println("Colors match"); 
-                            setGameLabel(); 
-                            setButton(); 
-                        }       
-                        else{
-                            setGameLabel(); 
-                            setButton(); 
-                            System.out.println("Wrong"); 
-                        }
-                        rounds++; 
-                        System.out.println(rounds);
-                    }
-            }); 
-            
-            orangeButton.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        if(gameLabel.getForeground() == orangeButton.getForeground()){
-                            System.out.println("Colors match"); 
-                            setGameLabel(); 
-                            setButton(); 
-                        }       
-                        else{
-                            setGameLabel(); 
-                            setButton();  
-                            System.out.println("Wrong"); 
-                        }
-                        rounds++; 
-                        System.out.println(rounds);
-                    }
-            }); 
-            } 
-                
-                
-            
-            
-            
-            
-            /*
-            if(gameLabel.getForeground() == redButton.getForeground() ){
-                System.out.println("Colors match"); 
-                rounds++; 
-            }
-            else if(gameLabel.getForeground() == greenButton.getForeground() ){
-                System.out.println("Colors match"); 
-                rounds++; 
-            }
-            else if(gameLabel.getForeground() == blueButton.getForeground() ){
-                System.out.println("Colors match"); 
-                rounds++; 
-            }
-            else if(gameLabel.getForeground() == yellowButton.getForeground() ){
-                System.out.println("Colors match"); 
-                rounds++; 
-            }
-            else if(gameLabel.getForeground() == orangeButton.getForeground() ){
-                System.out.println("Colors match"); 
-                rounds++; 
-            }
-            */ 
-            
-        
+    
+    public void checkRounds() {
+        rounds -= 1;
+        if (rounds == 0) {
+            setVisible(false); 
+            EndScreen end = new EndScreen(); 
+            end.setVisible(true);
+            this.dispose(); 
+        }
     }
-   
+        
+    public void startGame(){    
+        redButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if(gameLabel.getForeground() == redButton.getForeground()){
+                    score +=100;
+                    System.out.println("Colors match"); 
+                    setGameLabel();  
+                    setButton(); 
+                }       
+                else{
+                    setGameLabel(); 
+                    setButton();
+                    System.out.println("Wrong"); 
+                }
+                checkRounds();
+                System.out.println(rounds);
+            }
+        }); 
+            
+        greenButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if(gameLabel.getForeground() == greenButton.getForeground()){
+                    score +=100;
+                    System.out.println("Colors match " + score); 
+                    setGameLabel(); 
+                    setButton(); 
+                }       
+                else{
+                    setGameLabel(); 
+                    setButton(); 
+                    System.out.println("Wrong " + score); 
+                }
+                checkRounds(); 
+                System.out.println(rounds);
+            }
+        }); 
+            
+        blueButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if(gameLabel.getForeground() == blueButton.getForeground()){
+                    score +=100;
+                    System.out.println("Colors match " + score); 
+                    setGameLabel(); 
+                    setButton(); 
+                }       
+                else{
+                    setGameLabel(); 
+                    setButton();  
+                    System.out.println("Wrong " + score); 
+                }
+                checkRounds();
+                System.out.println(rounds);
+            }
+        }); 
+            
+        yellowButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if(gameLabel.getForeground() == yellowButton.getForeground()){
+                    score +=100;
+                    System.out.println("Colors match " + score); 
+                    setGameLabel(); 
+                    setButton(); 
+                }       
+                else{
+                    setGameLabel(); 
+                    setButton(); 
+                    System.out.println("Wrong " + score); 
+                }
+                checkRounds();
+                System.out.println(rounds);
+                }
+            }); 
+            
+        orangeButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if(gameLabel.getForeground() == orangeButton.getForeground()){
+                    score +=100;
+                    System.out.println("Colors match " + score); 
+                    setGameLabel(); 
+                    setButton(); 
+                }       
+                else{
+                    setGameLabel(); 
+                    setButton();  
+                    System.out.println("Wrong " + score); 
+                }
+                    checkRounds(); 
+                    System.out.println(rounds);
+            }
+        });               
+    }
     
     public void setButton(){
-         Random random = new Random(); 
-         int setPosition = random.nextInt(2);
-         redButton.setForeground(Color.RED); 
-         blueButton.setForeground(Color.BLUE); 
-         yellowButton.setForeground(Color.YELLOW); 
-         greenButton.setForeground(Color.GREEN); 
-         orangeButton.setForeground(Color.ORANGE); 
-         switch(setPosition) {
-             case 0:
+         
+        Random random = new Random(); 
+        int setPosition = random.nextInt(2);
+         
+        redButton.setForeground(Color.RED); 
+        blueButton.setForeground(Color.BLUE); 
+        yellowButton.setForeground(Color.YELLOW); 
+        greenButton.setForeground(Color.GREEN); 
+        orangeButton.setForeground(Color.ORANGE); 
+         
+        switch(setPosition) {
+            case 0:
                 redButton.setBounds(150, 150, 75, 75); 
                 this.add(redButton);
                 blueButton.setBounds(410, 225, 75, 75); 
@@ -274,7 +245,7 @@ public class ColorGame extends javax.swing.JFrame {
                 orangeButton.setBounds(70, 280, 75, 75); 
                 this.add(orangeButton);
                 break;
-             case 1:
+            case 1:
                 redButton.setBounds(250, 150, 75, 75); 
                 this.add(redButton);
                 blueButton.setBounds(310, 225, 75, 75); 
@@ -286,168 +257,8 @@ public class ColorGame extends javax.swing.JFrame {
                 orangeButton.setBounds(170, 280, 75, 75); 
                 this.add(orangeButton);
                 break;
-         }
+        }
     }
-    public void setGame() {
-            switch(correctColor){
-            case 0:
-                greenButton.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        System.out.println("Im in the green case!");
-                        score += 100;
-                        if(gameRound < 4){
-                            gameRound++;
-                            setGameLabel();
-                            setButton();
-                            System.out.println("score: " + score);
-                            System.out.println(gameRound);
-                        }else {
-                            System.out.println("The End");
-                            System.out.println(score);
-                        }
-                    }
-                });
-                
-                redButton.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        System.out.println("Im in the green case!");
-                        if(gameRound < 4){
-                            gameRound++;
-                            setGameLabel();
-                            setButton();
-                            System.out.println("score: " + score);
-                            System.out.println(gameRound);
-                        }else {
-                            System.out.println("The End");
-                            System.out.println(score);
-                        }
-                    }
-                });
-                
-                blueButton.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        if(gameRound < 4){
-                            gameRound++;
-                            setGameLabel();
-                            setButton();
-                            System.out.println("score: " + score);
-                            System.out.println(gameRound);
-                        }else {
-                            System.out.println("The End");
-                            System.out.println(score);
-                        }
-                    }
-                });
-                
-                orangeButton.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        if(gameRound < 4){
-                            gameRound++;
-                            setGameLabel();
-                            setButton();
-                            System.out.println("score: " + score);
-                            System.out.println(gameRound);
-                        }else {
-                            System.out.println("The End");
-                            System.out.println(score);
-                        }
-                    }
-                });
-                
-                yellowButton.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        if(gameRound < 4){
-                            gameRound++;
-                            setGameLabel();
-                            setButton();
-                            System.out.println("score: " + score);
-                            System.out.println(gameRound);
-                        }else {
-                            System.out.println("The End");
-                            System.out.println(score);
-                        }
-                    }
-                });
-                break;
-            case 1:
-                redButton.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        System.out.println("Im in the red case!");
-                        score += 100;
-                        if(gameRound < 4){
-                            gameRound++;
-                            setGameLabel();
-                            setButton();
-                            System.out.println("score: " + score);
-                            System.out.println(gameRound);
-                        }else {
-                            System.out.println("The End");
-                            System.out.println(score);
-                        }
-                    }
-                });
-                yellowButton.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        if(gameRound < 4){
-                            gameRound++;
-                            setGameLabel();
-                            setButton();
-                            System.out.println("score: " + score);
-                            System.out.println(gameRound);
-                        }else {
-                            System.out.println("The End");
-                            System.out.println(score);
-                        }
-                    }
-                });
-                greenButton.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        System.out.println("Im in the red case!");
-                        if(gameRound < 4){
-                            gameRound++;
-                            setGameLabel();
-                            setButton();
-                            System.out.println("score: " + score);
-                            System.out.println(gameRound);
-                        }else {
-                            System.out.println("The End");
-                            System.out.println(score);
-                        }
-                    }
-                });
-                orangeButton.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        if(gameRound < 4){
-                            gameRound++;
-                            setGameLabel();
-                            setButton();
-                            System.out.println("score: " + score);
-                            System.out.println(gameRound);
-                        }else {
-                            System.out.println("The End");
-                            System.out.println(score);
-                        }
-                    }
-                });
-                blueButton.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        if(gameRound < 4){
-                            gameRound++;
-                            setGameLabel();
-                            setButton();
-                            System.out.println("score: " + score);
-                            System.out.println(gameRound);
-                        }else {
-                            System.out.println("The End");
-                            System.out.println(score);
-                        }
-                    }
-                });
-                break;
-            }
-    }
-    
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -479,11 +290,6 @@ public class ColorGame extends javax.swing.JFrame {
         redButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/redButton.png"))); // NOI18N
         redButton.setBorderPainted(false);
         redButton.setContentAreaFilled(false);
-        redButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                redButtonActionPerformed(evt);
-            }
-        });
 
         blueButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/blueButton.png"))); // NOI18N
         blueButton.setContentAreaFilled(false);
@@ -496,19 +302,9 @@ public class ColorGame extends javax.swing.JFrame {
 
         greenButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/greenButton.png"))); // NOI18N
         greenButton.setContentAreaFilled(false);
-        greenButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                greenButtonMouseReleased(evt);
-            }
-        });
 
         orangeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/orangeButton.png"))); // NOI18N
         orangeButton.setContentAreaFilled(false);
-        orangeButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                orangeButtonActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -517,21 +313,21 @@ public class ColorGame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addComponent(redButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(172, 172, 172)
+                .addGap(120, 120, 120)
                 .addComponent(blueButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 162, Short.MAX_VALUE)
                 .addComponent(yellowButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(62, 62, 62))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(120, 120, 120)
-                        .addComponent(greenButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 196, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(gameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32)))
+                        .addGap(32, 32, 32))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(123, 123, 123)
+                        .addComponent(greenButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(time_dateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(orangeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -542,41 +338,36 @@ public class ColorGame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(time_dateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(time_dateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(35, 35, 35)
+                                .addComponent(gameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(71, 71, 71)
+                                .addComponent(yellowButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(63, 63, 63)
+                                .addComponent(redButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addComponent(gameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(134, 134, 134)
+                        .addComponent(blueButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(71, 71, 71)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(blueButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(yellowButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addComponent(redButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(84, 84, 84)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(greenButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(orangeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(84, 84, 84)
+                        .addComponent(orangeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(greenButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(22, 22, 22))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void redButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_redButtonActionPerformed
- 
-    }//GEN-LAST:event_redButtonActionPerformed
-
-    private void orangeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orangeButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_orangeButtonActionPerformed
-
-    private void greenButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_greenButtonMouseReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_greenButtonMouseReleased
 
     /**
      * @param args the command line arguments
