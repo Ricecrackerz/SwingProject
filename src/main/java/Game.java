@@ -115,8 +115,7 @@ public class Game extends javax.swing.JFrame {
                         nButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 5) {
-                            String n = String.valueOf(SCORE);
-                            new EndScreen().setVisible(true);
+                            new ColorGame(SCORE).setVisible(true);
                             setVisible(false);
                         }
                     }
@@ -128,8 +127,7 @@ public class Game extends javax.swing.JFrame {
                         uButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 5) {
-                            String n = String.valueOf(SCORE); 
-                            new EndScreen(n).setVisible(true);
+                            new ColorGame(SCORE).setVisible(true);
                             setVisible(false);
                         }
                     }
@@ -141,8 +139,7 @@ public class Game extends javax.swing.JFrame {
                         rButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 5) {
-                            String n = String.valueOf(SCORE); 
-                            new EndScreen(n).setVisible(true);
+                            new ColorGame(SCORE).setVisible(true);
                             setVisible(false);
                         }
                     }
@@ -154,8 +151,7 @@ public class Game extends javax.swing.JFrame {
                         sButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 5) {
-                            String n = String.valueOf(SCORE); 
-                            new EndScreen(n).setVisible(true);
+                            new ColorGame(SCORE).setVisible(true);
                             setVisible(false);
                         }
                     }
@@ -167,8 +163,7 @@ public class Game extends javax.swing.JFrame {
                         eButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 5) {
-                            String n = String.valueOf(SCORE); 
-                            new EndScreen(n).setVisible(true);
+                            new ColorGame(SCORE).setVisible(true);
                             setVisible(false);
                         }
                     }
@@ -311,8 +306,7 @@ public class Game extends javax.swing.JFrame {
                         cButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            String n = String.valueOf(SCORE); 
-                            new EndScreen(n).setVisible(true);
+                            new ColorGame(SCORE).setVisible(true);
                             setVisible(false);
                         }
                     }
@@ -328,8 +322,7 @@ public class Game extends javax.swing.JFrame {
                         eButton.setEnabled(false);
                         COUNTER+= 3;
                         if(COUNTER == 8) {
-                            String n = String.valueOf(SCORE); 
-                            new EndScreen(n).setVisible(true);
+                            new ColorGame(SCORE).setVisible(true);
                             setVisible(false);
                         }
                     }
@@ -341,8 +334,7 @@ public class Game extends javax.swing.JFrame {
                         mButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            String n = String.valueOf(SCORE); 
-                            new EndScreen(n).setVisible(true);
+                            new ColorGame(SCORE).setVisible(true);
                             setVisible(false);
                         }
                     }
@@ -354,8 +346,7 @@ public class Game extends javax.swing.JFrame {
                         tButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            String n = String.valueOf(SCORE); 
-                            new EndScreen(n).setVisible(true);
+                            new ColorGame(SCORE).setVisible(true);
                             setVisible(false);
                         }
                     }
@@ -367,8 +358,7 @@ public class Game extends javax.swing.JFrame {
                         rButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            String n = String.valueOf(SCORE); 
-                            new EndScreen(n).setVisible(true);
+                            new ColorGame(SCORE).setVisible(true);
                             setVisible(false);
                         }
                     }
@@ -380,8 +370,7 @@ public class Game extends javax.swing.JFrame {
                         yButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            String n = String.valueOf(SCORE); 
-                            new EndScreen(n).setVisible(true);
+                            new ColorGame(SCORE).setVisible(true);
                             setVisible(false);
                         }
                     }
@@ -520,8 +509,7 @@ public class Game extends javax.swing.JFrame {
                         aButton.setEnabled(false);
                         COUNTER += 2;
                         if(COUNTER == 8) {
-                            String n = String.valueOf(SCORE); 
-                            new EndScreen(n).setVisible(true);
+                            new ColorGame(SCORE).setVisible(true);
                             setVisible(false);
                         }
                     }
@@ -533,8 +521,7 @@ public class Game extends javax.swing.JFrame {
                         bButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            String n = String.valueOf(SCORE); 
-                            new EndScreen(n).setVisible(true);
+                            new ColorGame(SCORE).setVisible(true);
                             setVisible(false);
                         }
                     }
@@ -546,8 +533,7 @@ public class Game extends javax.swing.JFrame {
                         bButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            String n = String.valueOf(SCORE); 
-                            new EndScreen(n).setVisible(true);
+                            new ColorGame(SCORE).setVisible(true);
                             setVisible(false);
                         }
                     }
@@ -561,8 +547,7 @@ public class Game extends javax.swing.JFrame {
                         tButton.setEnabled(false);
                         COUNTER+= 2;
                         if(COUNTER == 8) {
-                            String n = String.valueOf(SCORE); 
-                            new EndScreen(n).setVisible(true);
+                            new ColorGame(SCORE).setVisible(true);
                             setVisible(false);
                         }
                     }
@@ -574,8 +559,7 @@ public class Game extends javax.swing.JFrame {
                         sButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            String n = String.valueOf(SCORE); 
-                            new EndScreen(n).setVisible(true);
+                            new ColorGame(SCORE).setVisible(true);
                             setVisible(false);
                         }
                     }
@@ -587,8 +571,7 @@ public class Game extends javax.swing.JFrame {
                         rButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            String n = String.valueOf(SCORE); 
-                            new EndScreen(n).setVisible(true);
+                            new ColorGame(SCORE).setVisible(true);
                             setVisible(false);
                         }
                     }
@@ -600,8 +583,7 @@ public class Game extends javax.swing.JFrame {
                         cButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            String n = String.valueOf(SCORE); 
-                            new EndScreen(n).setVisible(true);
+                            new ColorGame(SCORE).setVisible(true);
                             setVisible(false);
                         }
                     }
@@ -738,8 +720,7 @@ public class Game extends javax.swing.JFrame {
                         pButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            String n = String.valueOf(SCORE); 
-                            new EndScreen(n).setVisible(true);
+                            new ColorGame(SCORE).setVisible(true);
                             setVisible(false);
                         }
                     }
@@ -751,8 +732,7 @@ public class Game extends javax.swing.JFrame {
                         hButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            String n = String.valueOf(SCORE); 
-                            new EndScreen(n).setVisible(true);
+                            new ColorGame(SCORE).setVisible(true);
                             setVisible(false);
                         }
                     }
@@ -766,8 +746,7 @@ public class Game extends javax.swing.JFrame {
                         aButton.setEnabled(false);
                         COUNTER+= 2;
                         if(COUNTER == 8) {
-                            String n = String.valueOf(SCORE); 
-                            new EndScreen(n).setVisible(true);
+                            new ColorGame(SCORE).setVisible(true);
                             setVisible(false);
                         }
                     }
@@ -779,8 +758,7 @@ public class Game extends javax.swing.JFrame {
                         mButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            String n = String.valueOf(SCORE); 
-                            new EndScreen(n).setVisible(true);
+                            new ColorGame(SCORE).setVisible(true);
                             setVisible(false);
                         }
                     }
@@ -791,8 +769,7 @@ public class Game extends javax.swing.JFrame {
                         Letter4.setVisible(true);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            String n = String.valueOf(SCORE); 
-                            new EndScreen(n).setVisible(true);
+                            new ColorGame(SCORE).setVisible(true);
                             setVisible(false);
                         }
                     }
@@ -803,8 +780,7 @@ public class Game extends javax.swing.JFrame {
                         Letter7.setVisible(true);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            String n = String.valueOf(SCORE); 
-                            new EndScreen(n).setVisible(true);
+                            new ColorGame(SCORE).setVisible(true);
                             setVisible(false);
                         }
                     }
@@ -815,8 +791,7 @@ public class Game extends javax.swing.JFrame {
                         Letter8.setVisible(true);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            String n = String.valueOf(SCORE); 
-                            new EndScreen(n).setVisible(true);
+                            new ColorGame(SCORE).setVisible(true);
                             setVisible(false);
                         }
                     }
@@ -948,8 +923,7 @@ public class Game extends javax.swing.JFrame {
                         cButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            String n = String.valueOf(SCORE); 
-                            new EndScreen(n).setVisible(true);
+                            new ColorGame(SCORE).setVisible(true);
                             setVisible(false);
                         }
                     }
@@ -961,8 +935,7 @@ public class Game extends javax.swing.JFrame {
                         lButton.setEnabled(false);
                         COUNTER++; 
                         if(COUNTER == 8){
-                            String n = String.valueOf(SCORE); 
-                            new EndScreen(n).setVisible(true);
+                            new ColorGame(SCORE).setVisible(true);
                             setVisible(false);
                         }
                     }
@@ -976,8 +949,7 @@ public class Game extends javax.swing.JFrame {
                         iButton.setEnabled(false);
                         COUNTER+= 2; 
                         if(COUNTER == 8){
-                            String n = String.valueOf(SCORE); 
-                            new EndScreen(n).setVisible(true);
+                            new ColorGame(SCORE).setVisible(true);
                             setVisible(false);
                         }
                     }
@@ -989,8 +961,7 @@ public class Game extends javax.swing.JFrame {
                         mButton.setEnabled(false);
                         COUNTER++; 
                         if(COUNTER == 8){
-                            String n = String.valueOf(SCORE); 
-                            new EndScreen(n).setVisible(true);
+                            new ColorGame(SCORE).setVisible(true);
                             setVisible(false);
                         }
                     }
@@ -1002,8 +973,7 @@ public class Game extends javax.swing.JFrame {
                         bButton.setEnabled(false);
                         COUNTER++; 
                         if(COUNTER == 8){
-                            String n = String.valueOf(SCORE); 
-                            new EndScreen(n).setVisible(true);
+                            new ColorGame(SCORE).setVisible(true);
                             setVisible(false);
                         }
                     }
@@ -1015,8 +985,7 @@ public class Game extends javax.swing.JFrame {
                         nButton.setEnabled(false);
                         COUNTER++; 
                         if(COUNTER == 8){
-                            String n = String.valueOf(SCORE); 
-                            new EndScreen(n).setVisible(true);
+                            new ColorGame(SCORE).setVisible(true);
                             setVisible(false);
                         }
                     }
@@ -1028,8 +997,7 @@ public class Game extends javax.swing.JFrame {
                         gButton.setEnabled(false);
                         COUNTER++; 
                         if(COUNTER == 8){
-                            String n = String.valueOf(SCORE); 
-                            new EndScreen(n).setVisible(true);
+                            new ColorGame(SCORE).setVisible(true);
                             setVisible(false);
                         }
                     }
@@ -1171,8 +1139,8 @@ public class Game extends javax.swing.JFrame {
             
             //go to EndScreen
             setVisible(false);
-            ColorGame start = new ColorGame();
-            start.setVisible(true);
+            new ColorGame(SCORE).setVisible(true);
+            setVisible(false);
             this.dispose();
         }
         
@@ -1766,8 +1734,7 @@ public class Game extends javax.swing.JFrame {
     // The skipButton is clicked to generate the EndScreen with SCORE = 0
     private void skipButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_skipButtonMouseReleased
         SCORE = 0;
-        String n = String.valueOf(SCORE) ;
-        new EndScreen(n).setVisible(true);
+        new ColorGame(SCORE).setVisible(true);
         setVisible(false);
         this.dispose();
     }//GEN-LAST:event_skipButtonMouseReleased

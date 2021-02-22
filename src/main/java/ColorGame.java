@@ -32,6 +32,19 @@ public class ColorGame extends javax.swing.JFrame {
         startGame();
     }
     
+    public ColorGame(int s){
+        score = s;
+        initComponents();
+        getContentPane().setBackground(new java.awt.Color(250, 250, 250));
+        setSize(600,400);
+        setLocationRelativeTo(null);
+        
+        startTimer(); 
+        setGameLabel(); 
+        setButton();
+        startGame();
+    }
+    
     // To display current Date & Time
     public void startTimer() {
         ActionListener actionListener = new ActionListener() {
@@ -190,7 +203,7 @@ public class ColorGame extends javax.swing.JFrame {
     public void setButton(){
          
         Random random = new Random(); 
-        int setPosition = random.nextInt(2);
+        int setPosition = random.nextInt(7);
          
         redButton.setForeground(Color.RED); 
         blueButton.setForeground(Color.BLUE); 
@@ -211,16 +224,64 @@ public class ColorGame extends javax.swing.JFrame {
                 orangeButton.setBounds(70, 280, 50, 50); 
                 this.add(orangeButton);
                 break;
-            case 1:
+             case 1:
                 redButton.setBounds(250, 150, 50, 50); 
                 this.add(redButton);
-                blueButton.setBounds(310, 225, 50, 50); 
+                blueButton.setBounds(150, 100, 50, 50); 
                 this.add(blueButton);
                 yellowButton.setBounds(400, 100, 50, 50); 
                 this.add(yellowButton);
                 greenButton.setBounds(350, 250, 50, 50); 
                 this.add(greenButton);
                 orangeButton.setBounds(170, 280, 50, 50); 
+                this.add(orangeButton);
+                break;
+            case 2:
+                redButton.setBounds(75, 100, 50, 50); 
+                this.add(redButton);
+                blueButton.setBounds(400, 150, 50, 50); 
+                this.add(blueButton);
+                yellowButton.setBounds(100, 260, 50, 50); 
+                this.add(yellowButton);
+                greenButton.setBounds(250, 150, 50, 50); 
+                this.add(greenButton);
+                orangeButton.setBounds(350, 235, 50, 50); 
+                this.add(orangeButton);
+                break;
+            case 3:
+                redButton.setBounds(450, 150, 50, 50); 
+                this.add(redButton);
+                blueButton.setBounds(300, 100, 50, 50); 
+                this.add(blueButton);
+                yellowButton.setBounds(125, 100, 50, 50); 
+                this.add(yellowButton);
+                greenButton.setBounds(100, 260, 50, 50); 
+                this.add(greenButton);
+                orangeButton.setBounds(350, 235, 50, 50); 
+                this.add(orangeButton);
+                break;
+            case 4: 
+                redButton.setBounds(230, 280, 50, 50); 
+                this.add(redButton);
+                blueButton.setBounds(300, 200, 50, 50); 
+                this.add(blueButton);
+                yellowButton.setBounds(400, 100, 50, 50); 
+                this.add(yellowButton);
+                greenButton.setBounds(100, 250, 50, 50); 
+                this.add(greenButton);
+                orangeButton.setBounds(100, 100, 50, 50); 
+                this.add(orangeButton);
+                break;
+            case 5:
+                redButton.setBounds(230, 100, 50, 50); 
+                this.add(redButton);
+                blueButton.setBounds(230, 260, 50, 50); 
+                this.add(blueButton);
+                yellowButton.setBounds(100, 150, 50, 50); 
+                this.add(yellowButton);
+                greenButton.setBounds(400, 150, 50, 50); 
+                this.add(greenButton);
+                orangeButton.setBounds(300, 250, 50, 50); 
                 this.add(orangeButton);
                 break;
          }
