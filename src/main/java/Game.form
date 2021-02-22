@@ -225,9 +225,6 @@
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nButtonActionPerformed"/>
-      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="220" y="300" width="-1" height="-1"/>
@@ -461,7 +458,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="pointsLabel" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jButton27" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="skipButton" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -549,7 +546,7 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jButton27" min="-2" max="-2" attributes="0"/>
+                          <Component id="skipButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="pointsLabel" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -720,7 +717,7 @@
             <Property name="text" type="java.lang.String" value="Date and Time"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton27">
+        <Component class="javax.swing.JButton" name="skipButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="d4" green="e2" red="d4" type="rgb"/>
@@ -733,7 +730,7 @@
             <Property name="focusPainted" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton27MouseReleased"/>
+            <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="skipButtonMouseReleased"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel13">

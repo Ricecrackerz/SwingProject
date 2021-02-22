@@ -1,42 +1,19 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * @author TonyDiaz Stans
  */
 
-/**
- *
- * @author Bryant
- */
-// please make this work
-import java.awt.event.ActionListener;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.Timer;
-import java.awt.Graphics; 
-import java.awt.image.BufferedImage; 
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import java.awt.*;  
-import javax.swing.JFrame;  
-import javax.swing.SwingUtilities;
-import javax.swing.JLabel;
-import javax.swing.*;
-import java.awt.Dimension;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Game extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Game
-     */
+    // Establishing variables
     Timer timer; 
     public static final String[] wordBank = {"nurse", "cemetery", "abstract", "pharmacy", "climbing"}; 
     public static final int MAX_ERRORS = 5; 
@@ -44,16 +21,34 @@ public class Game extends javax.swing.JFrame {
     private char[] wordFound; 
     private int nbErrors;
     private ArrayList < String > letters = new ArrayList <>(); 
+    public int SCORE = 100;
+    private int COUNTER = 0; 
     
+    // Main method to run the game
+    public static void main(String args[]) {
+        java.awt.EventQueue.invokeLater(new Runnable() { 
+            public void run() {
+                new Game().setVisible(true);
+            }
+        });
+    }
+    
+    // To run a brand new hangman game once Play button is clicked
     public Game() {
+       
+        // Get main game screen size
         initComponents();
         getContentPane().setBackground(new java.awt.Color(252, 248, 232));
         setSize(600, 400);
         setLocationRelativeTo(null);
         
-        startGame();
-       
-        // this is for the clock (dont ask)
+        timer();
+        startGame(); 
+        hangMan();
+    }
+    
+    // To display current Date & Time
+    public void timer() {
         ActionListener actionListener = new ActionListener()
         {
             @Override
@@ -71,12 +66,12 @@ public class Game extends javax.swing.JFrame {
         }; 
         timer = new Timer(1000, actionListener); 
         timer.setInitialDelay(0); 
-        timer.start(); 
-        
-        hangMan();
-        //idk if this works
+        timer.start();
     }
+    
+    // To set up interface of the Bronco hangman and lettering setups
     public void startGame(){
+        
         //Make Billy Bronco Invisible
         bbHead.setVisible(false);
         bbBody.setVisible(false);
@@ -95,27 +90,24 @@ public class Game extends javax.swing.JFrame {
         Letter7.setText("   ");
         Letter8.setText("   ");
     }
-    public int SCORE = 100;
-    private int COUNTER = 0; 
+    
+    // To run the logic of hangman game while registering each button to record points
     public void hangMan(){
+        
+        // To randomly generate a word for the player to guess
         Random random = new Random(); 
         int wordNumber = random.nextInt(wordBank.length);
+        
+        // Setting the alphabetical buttons to generate scores correctly depending on each case 
+        // while each case represents one of the guess word from the wordBank List
         switch (wordNumber) { 
-            case 0: //word "nurse"
+            
+            // Word "nurse"
+            case 0: 
                 line6.setVisible(false);
                 line7.setVisible(false);
                 line8.setVisible(false);
-                // loop (COUNTER < 5) {
-                //     if each needed letter: n, u, r, s, e
-                       // COUNTER++;
-                       // repeat loop;
-                    // else if enter letter not needed (rest of the alphabet) --> paste
-                //exit loop when COUNTER == 5 to do this:
-                    // String n = String.valueOf(SCORE) ; where n us just the string form of the score
-                    // new EndScreen(n).setVisible(true);
-                    // setVisible(false);
-                    // this.dispose();
-                //break; 
+ 
                 nButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         Letter1.setText("N");
@@ -124,7 +116,7 @@ public class Game extends javax.swing.JFrame {
                         COUNTER++;
                         if(COUNTER == 5) {
                             String n = String.valueOf(SCORE);
-                            new EndScreen(n).setVisible(true);
+                            new EndScreen().setVisible(true);
                             setVisible(false);
                         }
                     }
@@ -181,6 +173,7 @@ public class Game extends javax.swing.JFrame {
                         }
                     }
                 });
+                // setting the rest of the alphabet as point deduction and disable the button
                 aButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
@@ -308,7 +301,9 @@ public class Game extends javax.swing.JFrame {
                     }
                 });
                 break; 
-            case 1: // Cemetery
+                
+            // Word "cemetery"   
+            case 1: 
                 cButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         Letter1.setText("C");
@@ -391,6 +386,7 @@ public class Game extends javax.swing.JFrame {
                         }
                     }
                 });
+                
                 aButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
@@ -512,7 +508,9 @@ public class Game extends javax.swing.JFrame {
                     }
                 });
                 break;
-            case 2: // word abstract
+                
+             // Word "abstract"
+            case 2:
                 aButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         Letter1.setText("A");
@@ -608,6 +606,7 @@ public class Game extends javax.swing.JFrame {
                         }
                     }
                 });
+                
                 dButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
@@ -620,126 +619,108 @@ public class Game extends javax.swing.JFrame {
                         eButton.setEnabled(false);
                     }
                 });
-                
                 fButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
                         fButton.setEnabled(false);
                     }
                 });
-                
                 gButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
                         gButton.setEnabled(false);
                     }
                 });
-                
                 hButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
                         hButton.setEnabled(false);
                     }
                 });
-                
                 iButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
                         iButton.setEnabled(false);
                     }
                 });
-                
                 jButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
                         jButton.setEnabled(false);
                     }
                 });
-                
                 kButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
                         kButton.setEnabled(false);
                     }
                 });
-                
                 lButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
                         lButton.setEnabled(false);
                     }
                 });
-                
                 mButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
                         mButton.setEnabled(false);
                     }
                 });
-                
                 nButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
                         nButton.setEnabled(false);
                     }
                 });
-                
                 oButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
                         oButton.setEnabled(false);
                     }
                 });
-                
                 pButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
                         pButton.setEnabled(false);
                     }
                 });
-                
                 qButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
                         qButton.setEnabled(false);
                     }
                 });
-                
                 uButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
                         uButton.setEnabled(false);
                     }
                 });
-                
                 vButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
                         vButton.setEnabled(false);
                     }
                 });
-                
                 wButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
                         wButton.setEnabled(false);
                     }
                 });
-                
                 xButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
                         xButton.setEnabled(false);
                     }
                 });
-                
                 yButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
                         yButton.setEnabled(false);
                     }
                 });
-                
                 zButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
@@ -747,7 +728,9 @@ public class Game extends javax.swing.JFrame {
                     }
                 });
                 break;
-            case 3: //word "pharmacy"
+                
+            // Word "pharmacy"
+            case 3: 
                 pButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         Letter1.setText("P");
@@ -838,6 +821,7 @@ public class Game extends javax.swing.JFrame {
                         }
                     }
                 });
+                
                 bButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
@@ -953,7 +937,10 @@ public class Game extends javax.swing.JFrame {
                     }
                 });
                 break;
-            case 4: // word "climbing"
+                
+            // Word "climbing"
+            case 4: 
+                // these are the correct letters hence increasing scores and are disabled after being pressed
                 cButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         Letter1.setText("C");
@@ -967,7 +954,6 @@ public class Game extends javax.swing.JFrame {
                         }
                     }
                 });
-                
                 lButton.addActionListener(new ActionListener(){
                     public void actionPerformed(ActionEvent e){
                         Letter2.setText("L"); 
@@ -981,7 +967,6 @@ public class Game extends javax.swing.JFrame {
                         }
                     }
                 }); 
-                
                 iButton.addActionListener(new ActionListener(){
                     public void actionPerformed(ActionEvent e){
                         Letter3.setText("I"); 
@@ -996,8 +981,7 @@ public class Game extends javax.swing.JFrame {
                             setVisible(false);
                         }
                     }
-                }); 
-                
+                });
                 mButton.addActionListener(new ActionListener(){
                     public void actionPerformed(ActionEvent e){
                         Letter4.setText("M"); 
@@ -1010,8 +994,7 @@ public class Game extends javax.swing.JFrame {
                             setVisible(false);
                         }
                     }
-                }); 
-                
+                });
                 bButton.addActionListener(new ActionListener(){
                     public void actionPerformed(ActionEvent e){
                         Letter5.setText("B"); 
@@ -1025,7 +1008,6 @@ public class Game extends javax.swing.JFrame {
                         }
                     }
                 });
-                
                 nButton.addActionListener(new ActionListener(){
                     public void actionPerformed(ActionEvent e){
                         Letter7.setText("N"); 
@@ -1039,7 +1021,6 @@ public class Game extends javax.swing.JFrame {
                         }
                     }
                 });
-                
                 gButton.addActionListener(new ActionListener(){
                     public void actionPerformed(ActionEvent e){
                         Letter8.setText("G"); 
@@ -1053,133 +1034,115 @@ public class Game extends javax.swing.JFrame {
                         }
                     }
                 });
-                
+ 
                 aButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
                         aButton.setEnabled(false);
                     }
                 });
-                
                 dButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
                         dButton.setEnabled(false);
                     }
                 });
-                
                 eButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
                         eButton.setEnabled(false);
                     }
                 });
-                
                 fButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
                         fButton.setEnabled(false);
                     }
                 });
-                
                 hButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
                         hButton.setEnabled(false);
                     }
                 });
-                
                 jButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
                         jButton.setEnabled(false);
                     }
                 });
-                
                 kButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
                         kButton.setEnabled(false);
                     }
                 });
-                
                 oButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
                         oButton.setEnabled(false);
                     }
                 });
-                
                 pButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
                         pButton.setEnabled(false);
                     }
                 });
-                
                 qButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
                         qButton.setEnabled(false);
                     }
                 });
-                
                 rButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
                         rButton.setEnabled(false);
                     }
                 });
-                
                 sButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
                         sButton.setEnabled(false);
                     }
                 });
-                
                 tButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
                         tButton.setEnabled(false);
                     }
                 });
-                
                 uButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
                         uButton.setEnabled(false);
                     }
                 });
-                
                 vButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
                         vButton.setEnabled(false);
                     }
                 });
-                
                 wButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
                         wButton.setEnabled(false);
                     }
                 });
-                
                 xButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
                         xButton.setEnabled(false);
                     }
                 });
-                
                 yButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
                         yButton.setEnabled(false);
                     }
                 });
-                
                 zButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         wrongLetter();
@@ -1189,40 +1152,35 @@ public class Game extends javax.swing.JFrame {
                 break;   
         }
     }
+    
+    // To calculate the score until EndScreen appear once the game is over
     public void wrongLetter(){
         SCORE-=10;
         if(SCORE == 90) {
             bbHead.setVisible(true);
-        }
-        else if(SCORE == 80) {
+        } else if(SCORE == 80) {
             bbLeftA.setVisible(true);
-        }
-        else if(SCORE == 70) {
+        } else if(SCORE == 70) {
             bbBody.setVisible(true);
-        }
-        else if(SCORE == 60) {
+        } else if(SCORE == 60) {
             bbLeftL.setVisible(true);
-        }
-        else if(SCORE == 50) {
+        } else if(SCORE == 50) {
             bbRightA.setVisible(true);
-        }
-        else if(SCORE == 40) {
+        } else if(SCORE == 40) {
             bbRightL.setVisible(true);
+            
             //go to EndScreen
-            String n = String.valueOf(SCORE) ;
-            new EndScreen(n).setVisible(true);
             setVisible(false);
+            ColorGame start = new ColorGame();
+            start.setVisible(true);
             this.dispose();
         }
+        
+        // Converts SCORE to String value since pointsLabel only accpets integer format
         String score = String.valueOf(SCORE);
         pointsLabel.setText(score);
     }
-    /**
-     * This method is called from within the constructor to initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is always
-     * regenerated by the Form Editor.
-     */
-    @SuppressWarnings("unchecked")
+    
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -1253,7 +1211,7 @@ public class Game extends javax.swing.JFrame {
         hmTop = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jButton27 = new javax.swing.JButton();
+        skipButton = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         hmPole = new javax.swing.JLabel();
         hmBottom = new javax.swing.JLabel();
@@ -1385,11 +1343,6 @@ public class Game extends javax.swing.JFrame {
         nButton.setText("N");
         nButton.setBorderPainted(false);
         nButton.setFocusPainted(false);
-        nButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nButtonActionPerformed(evt);
-            }
-        });
         getContentPane().add(nButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, -1, -1));
 
         mButton.setBackground(new java.awt.Color(212, 226, 212));
@@ -1460,14 +1413,14 @@ public class Game extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         jLabel1.setText("Date and Time");
 
-        jButton27.setBackground(new java.awt.Color(212, 226, 212));
-        jButton27.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
-        jButton27.setText("Skip");
-        jButton27.setBorderPainted(false);
-        jButton27.setFocusPainted(false);
-        jButton27.addMouseListener(new java.awt.event.MouseAdapter() {
+        skipButton.setBackground(new java.awt.Color(212, 226, 212));
+        skipButton.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+        skipButton.setText("Skip");
+        skipButton.setBorderPainted(false);
+        skipButton.setFocusPainted(false);
+        skipButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jButton27MouseReleased(evt);
+                skipButtonMouseReleased(evt);
             }
         });
 
@@ -1573,7 +1526,7 @@ public class Game extends javax.swing.JFrame {
                                 .addComponent(scLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(pointsLabel))
-                            .addComponent(jButton27)
+                            .addComponent(skipButton)
                             .addComponent(jLabel1)))
                     .addGroup(hmTopLayout.createSequentialGroup()
                         .addGap(41, 41, 41)
@@ -1644,7 +1597,7 @@ public class Game extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(hmTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(hmTopLayout.createSequentialGroup()
-                        .addComponent(jButton27)
+                        .addComponent(skipButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(hmTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(pointsLabel)
@@ -1810,27 +1763,14 @@ public class Game extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void nButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nButtonActionPerformed
-
-    }//GEN-LAST:event_nButtonActionPerformed
-
-    private void jButton27MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton27MouseReleased
+    // The skipButton is clicked to generate the EndScreen with SCORE = 0
+    private void skipButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_skipButtonMouseReleased
         SCORE = 0;
         String n = String.valueOf(SCORE) ;
         new EndScreen(n).setVisible(true);
         setVisible(false);
         this.dispose();
-    }//GEN-LAST:event_jButton27MouseReleased
-
-    public static void main(String args[]) {
-        
-        java.awt.EventQueue.invokeLater(new Runnable() { 
-            public void run() {
-                new Game().setVisible(true);
-            }
-        });
-
-    }
+    }//GEN-LAST:event_skipButtonMouseReleased
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Letter1;
@@ -1882,7 +1822,6 @@ public class Game extends javax.swing.JFrame {
     private javax.swing.JPanel hmTop;
     private javax.swing.JButton iButton;
     private javax.swing.JButton jButton;
-    private javax.swing.JButton jButton27;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel19;
@@ -1906,6 +1845,7 @@ public class Game extends javax.swing.JFrame {
     private javax.swing.JButton rButton;
     private javax.swing.JButton sButton;
     private javax.swing.JLabel scLabel;
+    private javax.swing.JButton skipButton;
     private javax.swing.JButton tButton;
     private javax.swing.JButton uButton;
     private javax.swing.JButton vButton;
