@@ -1,41 +1,19 @@
-
-import java.awt.Button;
-import java.awt.Color;
-import java.awt.Container;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseListener;
-import java.awt.image.ColorModel;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Random;
-import javax.swing.JFrame;
-import javax.swing.Timer;
-
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
  * @author TonyDiaz Stans
  */
 
-/* 
-* To Do List: 
-        Score System/Displaying on screen
-        Persist
-        Button is highlighted when moused over
-*/
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Random;
+import javax.swing.Timer;
+
 public class ColorGame extends javax.swing.JFrame {
     
-    /**
-     * Creates new form ColorGame
-     */
+    // Creates new ColorGame
     Timer timer;
     String[] colorsList = {"Green", "Red", "Yellow", "Orange", "Blue"};
     int score = 0;
@@ -47,19 +25,18 @@ public class ColorGame extends javax.swing.JFrame {
         getContentPane().setBackground(new java.awt.Color(250, 250, 250));
         setSize(600,400);
         setLocationRelativeTo(null);
+        
         startTimer(); 
         setGameLabel(); 
         setButton();
         startGame(); 
     }
     
-    public void startTimer(){
-        // Date and Time 
-        ActionListener actionListener = new ActionListener()
-        {
+    // To display current Date & Time
+    public void startTimer() {
+        ActionListener actionListener = new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e)
-            {
+            public void actionPerformed(ActionEvent e) {
                 Date date = new Date();
                 DateFormat timeFormat = new SimpleDateFormat("HH:mm:ss"); 
                 String time = timeFormat.format(date); 
@@ -75,27 +52,22 @@ public class ColorGame extends javax.swing.JFrame {
         timer.start();
     }
     
-    /**
-     * This chooses the color name and the color of the text
-     */
+     // To randomly choose the color name and the color of the text
     public void setGameLabel(){
         
         Random random = new Random();
-        // Randomize the text  
+        
+        // Randomize the text
         int text = random.nextInt(colorsList.length);
         if(text == 0){
             gameLabel.setText("Green");
-        }
-        else if (text == 1){
+        } else if (text == 1){
             gameLabel.setText("Red");
-        }
-        else if (text == 2){
+        } else if (text == 2){
             gameLabel.setText("Blue");
-        }
-        else if (text == 3){
+        } else if (text == 3){
             gameLabel.setText("Orange");
-        }
-        else if (text == 4){
+        } else if (text == 4){
             gameLabel.setText("Yellow");
         }
         
@@ -103,22 +75,18 @@ public class ColorGame extends javax.swing.JFrame {
         int textColor = random.nextInt(colorsList.length);         
         if(textColor == 0){
             gameLabel.setForeground(Color.GREEN);
-        }
-        else if (textColor == 1){
+        } else if (textColor == 1){
             gameLabel.setForeground(Color.RED);
-        }
-        else if (textColor == 2){
+        } else if (textColor == 2){
             gameLabel.setForeground(Color.BLUE);
-        }
-        else if (textColor == 3){
+        } else if (textColor == 3){
             gameLabel.setForeground(Color.ORANGE);
-        }
-        else if (textColor == 4){
+        } else if (textColor == 4){
             gameLabel.setForeground(Color.YELLOW);
         }
-        
     }
     
+    // To check if the game is still running or jump to EndScreen
     public void checkRounds() {
         rounds -= 1;
         if (rounds == 0) {
@@ -128,7 +96,8 @@ public class ColorGame extends javax.swing.JFrame {
             this.dispose(); 
         }
     }
-        
+    
+    // The logic of the ColorGame here to choose correct color for points
     public void startGame(){    
         redButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -147,7 +116,6 @@ public class ColorGame extends javax.swing.JFrame {
                 System.out.println(rounds);
             }
         }); 
-            
         greenButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if(gameLabel.getForeground() == greenButton.getForeground()){
@@ -164,8 +132,7 @@ public class ColorGame extends javax.swing.JFrame {
                 checkRounds(); 
                 System.out.println(rounds);
             }
-        }); 
-            
+        });    
         blueButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if(gameLabel.getForeground() == blueButton.getForeground()){
@@ -183,7 +150,6 @@ public class ColorGame extends javax.swing.JFrame {
                 System.out.println(rounds);
             }
         }); 
-            
         yellowButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if(gameLabel.getForeground() == yellowButton.getForeground()){
@@ -201,7 +167,6 @@ public class ColorGame extends javax.swing.JFrame {
                 System.out.println(rounds);
                 }
             }); 
-            
         orangeButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if(gameLabel.getForeground() == orangeButton.getForeground()){
@@ -221,6 +186,7 @@ public class ColorGame extends javax.swing.JFrame {
         });               
     }
     
+    // To randomize the positions of the buttons each time the game starts
     public void setButton(){
          
         Random random = new Random(); 
@@ -259,12 +225,7 @@ public class ColorGame extends javax.swing.JFrame {
                 break;
         }
     }
-    /**
-     * This method is called from within the constructor to initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is always
-     * regenerated by the Form Editor.
-     */
-    @SuppressWarnings("unchecked")
+    
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -369,34 +330,8 @@ public class ColorGame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
+    // Main method to run the game
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ColorGame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ColorGame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ColorGame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ColorGame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ColorGame().setVisible(true);
