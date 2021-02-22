@@ -29,7 +29,8 @@ public class ColorGame extends javax.swing.JFrame {
         startTimer(); 
         setGameLabel(); 
         setButton();
-        startGame(); 
+        setGame();
+        
     }
     
     // To display current Date & Time
@@ -84,6 +85,7 @@ public class ColorGame extends javax.swing.JFrame {
         } else if (textColor == 4){
             gameLabel.setForeground(Color.YELLOW);
         }
+        System.out.println("Im in game label!");
     }
     
     // To check if the game is still running or jump to EndScreen
@@ -223,7 +225,8 @@ public class ColorGame extends javax.swing.JFrame {
                 orangeButton.setBounds(170, 280, 75, 75); 
                 this.add(orangeButton);
                 break;
-        }
+         }
+         setGame();
     }
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
