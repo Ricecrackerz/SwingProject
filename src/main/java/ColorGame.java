@@ -116,11 +116,7 @@ public class ColorGame extends javax.swing.JFrame {
         }
     }
     
-    public void checkScore() throws FileNotFoundException {
-        //File file = new File("/HighScores.txt"); 
-    
-        //Scanner scanner = new Scanner(file); 
-        
+    public void checkScore() throws FileNotFoundException { 
         InputStream in = getClass().getResourceAsStream("HighScores.txt");
         Scanner scanner = new Scanner(in); 
         
