@@ -5,10 +5,14 @@
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
+import java.util.Scanner;
 import javax.swing.Timer;
 
 public class ColorGame extends javax.swing.JFrame {
@@ -32,7 +36,7 @@ public class ColorGame extends javax.swing.JFrame {
         startGame();
     }
     
-    public ColorGame(int s){
+    public ColorGame(int s) throws FileNotFoundException{
         score = s;
         initComponents();
         getContentPane().setBackground(new java.awt.Color(250, 250, 250));
@@ -43,6 +47,7 @@ public class ColorGame extends javax.swing.JFrame {
         setGameLabel(); 
         setButton();
         startGame();
+        checkScore(); 
     }
     
     // To display current Date & Time
@@ -100,14 +105,28 @@ public class ColorGame extends javax.swing.JFrame {
     }
     
     // To check if the game is still running or jump to EndScreen
-    public void checkRounds() {
+    public void checkRounds() throws FileNotFoundException {
         rounds -= 1;
         if (rounds == 0) {
             setVisible(false); 
             EndScreen end = new EndScreen(); 
             end.setVisible(true);
             this.dispose(); 
+            checkScore(); 
         }
+    }
+    
+    public void checkScore() throws FileNotFoundException {
+        //File file = new File("/HighScores.txt"); 
+    
+        //Scanner scanner = new Scanner(file); 
+        
+        InputStream in = getClass().getResourceAsStream("HighScores.txt");
+        Scanner scanner = new Scanner(in); 
+        
+        int x = scanner.nextInt();
+        System.out.println(x);
+        
     }
     
     // The logic of the ColorGame here to choose correct color for points
