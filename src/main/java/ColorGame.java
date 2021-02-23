@@ -13,6 +13,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Timer;
 
 public class ColorGame extends javax.swing.JFrame {
@@ -140,7 +142,11 @@ public class ColorGame extends javax.swing.JFrame {
                     setButton();
                     System.out.println("Wrong"); 
                 }
-                checkRounds();
+                try {
+                    checkRounds();
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(ColorGame.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 System.out.println(rounds);
             }
         }); 
@@ -157,7 +163,11 @@ public class ColorGame extends javax.swing.JFrame {
                     setButton(); 
                     System.out.println("Wrong " + score); 
                 }
-                checkRounds(); 
+                try { 
+                    checkRounds();
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(ColorGame.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 System.out.println(rounds);
             }
         });    
@@ -174,7 +184,11 @@ public class ColorGame extends javax.swing.JFrame {
                     setButton();  
                     System.out.println("Wrong " + score); 
                 }
-                checkRounds();
+                try {
+                    checkRounds();
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(ColorGame.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 System.out.println(rounds);
             }
         }); 
@@ -191,7 +205,11 @@ public class ColorGame extends javax.swing.JFrame {
                     setButton(); 
                     System.out.println("Wrong " + score); 
                 }
-                checkRounds();
+                try {
+                    checkRounds();
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(ColorGame.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 System.out.println(rounds);
                 }
             }); 
@@ -208,7 +226,11 @@ public class ColorGame extends javax.swing.JFrame {
                     setButton();  
                     System.out.println("Wrong " + score); 
                 }
-                    checkRounds(); 
+                try { 
+                    checkRounds();
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(ColorGame.class.getName()).log(Level.SEVERE, null, ex);
+                }
                     System.out.println(rounds);
             }
         });               
