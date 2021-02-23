@@ -2,10 +2,11 @@
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
-    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="defaultCloseOperation" type="int" value="0"/>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
       <Color blue="d4" green="e2" red="d4" type="rgb"/>
     </Property>
+    <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -30,26 +31,30 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="backButton" min="-2" pref="140" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="135" max="32767" attributes="0"/>
                       <Component id="titleHighScores" min="-2" pref="286" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="backButton" min="-2" pref="140" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="filler4" min="-2" max="-2" attributes="0"/>
-                  <Component id="filler2" min="-2" max="-2" attributes="0"/>
-                  <Component id="filler5" min="-2" max="-2" attributes="0"/>
-                  <Component id="filler3" min="-2" max="-2" attributes="0"/>
-                  <Component id="filler1" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Component id="initialLabel2" alignment="0" max="32767" attributes="0"/>
+                  <Component id="initialLabel3" max="32767" attributes="0"/>
+                  <Component id="initialLabel1" alignment="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="252" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="hsScore3" min="-2" pref="68" max="-2" attributes="0"/>
+                  <Component id="hsScore1" min="-2" pref="68" max="-2" attributes="0"/>
+                  <Component id="hsScore2" min="-2" pref="68" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="235" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -58,17 +63,22 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
               <Component id="titleHighScores" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="initialLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="hsScore1" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="filler3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="initialLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="hsScore2" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="filler5" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="filler2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="filler1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="filler4" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="74" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="initialLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="hsScore3" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="111" max="32767" attributes="0"/>
               <Component id="backButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -99,44 +109,52 @@
         <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="backButtonMouseReleased"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="filler1">
+    <Component class="javax.swing.JLabel" name="initialLabel3">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="ABC.....00000"/>
+        <Property name="text" type="java.lang.String" value="No User"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="filler2">
+    <Component class="javax.swing.JLabel" name="initialLabel1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="ABC.....00000"/>
+        <Property name="text" type="java.lang.String" value="No User"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="filler3">
+    <Component class="javax.swing.JLabel" name="initialLabel2">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="ABC.....00000"/>
+        <Property name="text" type="java.lang.String" value="No User"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="filler4">
+    <Component class="javax.swing.JLabel" name="hsScore1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="ABC.....00000"/>
+        <Property name="text" type="java.lang.String" value="Score1"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="filler5">
+    <Component class="javax.swing.JLabel" name="hsScore3">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="ABC.....00000"/>
+        <Property name="text" type="java.lang.String" value="Score3"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="hsScore2">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comic Sans MS" size="18" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Score2"/>
       </Properties>
     </Component>
   </SubComponents>
