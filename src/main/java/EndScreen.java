@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -171,6 +172,7 @@ public class EndScreen extends javax.swing.JFrame {
         for(int i = 0; i < 3; i++){
             scoreArray.add(scanner.nextInt());
         }
+        scanner.close();
         System.out.println(scoreArray);
         for(int i = 0; i < 3; i++){
             if(score > scoreArray.get(i)){
@@ -185,20 +187,25 @@ public class EndScreen extends javax.swing.JFrame {
                 break;
             }
         }
+        
         hsButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 scoreArray.add(INDEX,NEW_SCORE);
                 System.out.println("Button Clicked");
                 System.out.println(scoreArray);
                 try {
+                    Scanner scanner = new Scanner(new File("HighScores.txt"));
                     FileWriter myWriter = new FileWriter("HighScores.txt");
+                    PrintWriter writer = new PrintWriter(myWriter);
                     for(int i = 0; i < 3; i++){
-                    myWriter.write(scoreArray.get(i));
+                    writer.println(scoreArray.get(i));
                     }
-                myWriter.close();
-                while(scanner.hasNextInt()){
+                    myWriter.close();
+                    writer.close();
+                    System.out.println("Im in the try statement");
+                    while(scanner.hasNextInt()){
                     System.out.println(scanner.nextInt());
-                }
+                    }
                 } catch (IOException ex) {
                     Logger.getLogger(EndScreen.class.getName()).log(Level.SEVERE, null, ex);
                 }
