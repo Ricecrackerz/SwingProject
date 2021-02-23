@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -49,7 +50,6 @@ public class ColorGame extends javax.swing.JFrame {
         setGameLabel(); 
         setButton();
         startGame();
-        checkScore(); 
     }
     
     // To display current Date & Time
@@ -107,24 +107,14 @@ public class ColorGame extends javax.swing.JFrame {
     }
     
     // To check if the game is still running or jump to EndScreen
-    public void checkRounds() throws FileNotFoundException {
+    public void checkRounds() throws FileNotFoundException, IOException {
         rounds -= 1;
         if (rounds == 0) {
             setVisible(false); 
-            EndScreen end = new EndScreen(); 
+            EndScreen end = new EndScreen(score); 
             end.setVisible(true);
             this.dispose(); 
-            checkScore(); 
         }
-    }
-    
-    public void checkScore() throws FileNotFoundException { 
-        InputStream in = getClass().getResourceAsStream("HighScores.txt");
-        Scanner scanner = new Scanner(in); 
-        
-        int x = scanner.nextInt();
-        System.out.println(x);
-        
     }
     
     // The logic of the ColorGame here to choose correct color for points
@@ -145,6 +135,8 @@ public class ColorGame extends javax.swing.JFrame {
                 try {
                     checkRounds();
                 } catch (FileNotFoundException ex) {
+                    Logger.getLogger(ColorGame.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IOException ex) {
                     Logger.getLogger(ColorGame.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 System.out.println(rounds);
@@ -167,6 +159,8 @@ public class ColorGame extends javax.swing.JFrame {
                     checkRounds();
                 } catch (FileNotFoundException ex) {
                     Logger.getLogger(ColorGame.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IOException ex) {
+                    Logger.getLogger(ColorGame.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 System.out.println(rounds);
             }
@@ -187,6 +181,8 @@ public class ColorGame extends javax.swing.JFrame {
                 try {
                     checkRounds();
                 } catch (FileNotFoundException ex) {
+                    Logger.getLogger(ColorGame.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IOException ex) {
                     Logger.getLogger(ColorGame.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 System.out.println(rounds);
@@ -209,6 +205,8 @@ public class ColorGame extends javax.swing.JFrame {
                     checkRounds();
                 } catch (FileNotFoundException ex) {
                     Logger.getLogger(ColorGame.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IOException ex) {
+                    Logger.getLogger(ColorGame.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 System.out.println(rounds);
                 }
@@ -229,6 +227,8 @@ public class ColorGame extends javax.swing.JFrame {
                 try { 
                     checkRounds();
                 } catch (FileNotFoundException ex) {
+                    Logger.getLogger(ColorGame.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IOException ex) {
                     Logger.getLogger(ColorGame.class.getName()).log(Level.SEVERE, null, ex);
                 }
                     System.out.println(rounds);

@@ -1,9 +1,24 @@
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /*
  * @author TonyDiaz stans
  */
 
 public class EndScreen extends javax.swing.JFrame {
 
+    public static int INDEX = 0;
+    public static int NEW_SCORE = 0;
     // To generate the screen
     public EndScreen() {
         initComponents();
@@ -15,8 +30,27 @@ public class EndScreen extends javax.swing.JFrame {
     // To display SCORE on screen
     public EndScreen(String para) {
         initComponents();
+        getContentPane().setBackground(new java.awt.Color(252, 248, 232));
+        setSize(600,400);
+        setLocationRelativeTo(null);
         
         ScoreLabel.setText(para);
+    }
+    
+    public EndScreen(int s) throws FileNotFoundException, IOException {
+        initComponents();
+        getContentPane().setBackground(new java.awt.Color(252, 248, 232));
+        setSize(600,400);
+        setLocationRelativeTo(null);
+        hsLabel.setVisible(false);
+        hsLabel1.setVisible(false);
+        hsButton.setVisible(false);
+        
+        String score = String.valueOf(s);
+        
+        ScoreLabel.setText(score);
+        
+        checkScore(s);
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -27,12 +61,14 @@ public class EndScreen extends javax.swing.JFrame {
         End = new javax.swing.JButton();
         ScoreLabel = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        hsLabel = new javax.swing.JLabel();
+        hsButton = new javax.swing.JButton();
+        hsLabel1 = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(252, 248, 232));
-        setMaximumSize(new java.awt.Dimension(600, 400));
         setResizable(false);
 
         Title.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
@@ -54,41 +90,121 @@ public class EndScreen extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jLabel2.setText("Score: ");
 
+        hsLabel.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        hsLabel.setText("HIGHSCORE!!! Would you like to save it?");
+        hsLabel.setEnabled(false);
+
+        hsButton.setBackground(new java.awt.Color(212, 226, 212));
+        hsButton.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        hsButton.setText("YES");
+        hsButton.setEnabled(false);
+
+        hsLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        hsLabel1.setText("If no, click the End button");
+        hsLabel1.setEnabled(false);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 190, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ScoreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(232, 232, 232))
             .addGroup(layout.createSequentialGroup()
-                .addGap(243, 243, 243)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(End, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Title))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(251, 251, 251)
+                        .addComponent(Title))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(End, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(97, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(177, 177, 177)
+                                .addComponent(hsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(139, 139, 139)
+                                .addComponent(hsLabel1)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(hsLabel)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(123, 123, 123)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ScoreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(89, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(85, 85, 85)
+                .addGap(32, 32, 32)
                 .addComponent(Title)
-                .addGap(63, 63, 63)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(ScoreLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addGap(55, 55, 55)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ScoreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addComponent(hsLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(hsButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(hsLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addComponent(End)
-                .addGap(92, 92, 92))
+                .addContainerGap())
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+        public void checkScore(int score) throws FileNotFoundException, IOException {
+        InputStream in = getClass().getResourceAsStream("HighScores.txt");
+        Scanner scanner = new Scanner(new File("HighScores.txt"));
+        
+        ArrayList<Integer> scoreArray = new ArrayList<Integer>(3);
+        
+        for(int i = 0; i < 3; i++){
+            scoreArray.add(scanner.nextInt());
+        }
+        System.out.println(scoreArray);
+        for(int i = 0; i < 3; i++){
+            if(score > scoreArray.get(i)){
+                hsLabel.setEnabled(true);
+                hsLabel1.setEnabled(true);
+                hsButton.setEnabled(true);
+                hsLabel.setVisible(true);
+                hsLabel1.setVisible(true);
+                hsButton.setVisible(true);
+                INDEX = i;
+                NEW_SCORE = score;
+                break;
+            }
+        }
+        hsButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                scoreArray.add(INDEX,NEW_SCORE);
+                System.out.println("Button Clicked");
+                System.out.println(scoreArray);
+                try {
+                    FileWriter myWriter = new FileWriter("HighScores.txt");
+                    for(int i = 0; i < 3; i++){
+                    myWriter.write(scoreArray.get(i));
+                    }
+                myWriter.close();
+                while(scanner.hasNextInt()){
+                    System.out.println(scanner.nextInt());
+                }
+                } catch (IOException ex) {
+                    Logger.getLogger(EndScreen.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                }
+                });
+    }
     // To go to the next screen
     private void EndMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EndMouseReleased
         setVisible(false);
@@ -110,6 +226,9 @@ public class EndScreen extends javax.swing.JFrame {
     private javax.swing.JButton End;
     private javax.swing.JLabel ScoreLabel;
     private javax.swing.JLabel Title;
+    private javax.swing.JButton hsButton;
+    private javax.swing.JLabel hsLabel;
+    private javax.swing.JLabel hsLabel1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
