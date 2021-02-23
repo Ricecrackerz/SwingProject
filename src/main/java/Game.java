@@ -8,8 +8,11 @@ import java.util.Date;
 import javax.swing.Timer;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Game extends javax.swing.JFrame {
 
@@ -115,7 +118,11 @@ public class Game extends javax.swing.JFrame {
                         nButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 5) {
-                            new ColorGame(SCORE).setVisible(true);
+                            try {
+                                new ColorGame(SCORE).setVisible(true);
+                            } catch (FileNotFoundException ex) {
+                                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                             setVisible(false);
                         }
                     }
@@ -127,7 +134,11 @@ public class Game extends javax.swing.JFrame {
                         uButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 5) {
-                            new ColorGame(SCORE).setVisible(true);
+                            try {
+                                new ColorGame(SCORE).setVisible(true);
+                            } catch (FileNotFoundException ex) {
+                                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                             setVisible(false);
                         }
                     }
@@ -139,7 +150,11 @@ public class Game extends javax.swing.JFrame {
                         rButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 5) {
-                            new ColorGame(SCORE).setVisible(true);
+                            try {
+                                new ColorGame(SCORE).setVisible(true);
+                            } catch (FileNotFoundException ex) {
+                                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                             setVisible(false);
                         }
                     }
@@ -151,7 +166,11 @@ public class Game extends javax.swing.JFrame {
                         sButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 5) {
-                            new ColorGame(SCORE).setVisible(true);
+                            try {
+                                new ColorGame(SCORE).setVisible(true);
+                            } catch (FileNotFoundException ex) {
+                                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                             setVisible(false);
                         }
                     }
@@ -163,7 +182,11 @@ public class Game extends javax.swing.JFrame {
                         eButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 5) {
-                            new ColorGame(SCORE).setVisible(true);
+                            try {
+                                new ColorGame(SCORE).setVisible(true);
+                            } catch (FileNotFoundException ex) {
+                                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                             setVisible(false);
                         }
                     }
@@ -306,7 +329,11 @@ public class Game extends javax.swing.JFrame {
                         cButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            new ColorGame(SCORE).setVisible(true);
+                            try {
+                                new ColorGame(SCORE).setVisible(true);
+                            } catch (FileNotFoundException ex) {
+                                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                             setVisible(false);
                         }
                     }
@@ -322,7 +349,11 @@ public class Game extends javax.swing.JFrame {
                         eButton.setEnabled(false);
                         COUNTER+= 3;
                         if(COUNTER == 8) {
-                            new ColorGame(SCORE).setVisible(true);
+                           try {
+                                new ColorGame(SCORE).setVisible(true);
+                            } catch (FileNotFoundException ex) {
+                                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                             setVisible(false);
                         }
                     }
@@ -334,7 +365,11 @@ public class Game extends javax.swing.JFrame {
                         mButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            new ColorGame(SCORE).setVisible(true);
+                            try {
+                                new ColorGame(SCORE).setVisible(true);
+                            } catch (FileNotFoundException ex) {
+                                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                             setVisible(false);
                         }
                     }
@@ -346,7 +381,11 @@ public class Game extends javax.swing.JFrame {
                         tButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            new ColorGame(SCORE).setVisible(true);
+                           try {
+                                new ColorGame(SCORE).setVisible(true);
+                            } catch (FileNotFoundException ex) {
+                                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                             setVisible(false);
                         }
                     }
@@ -358,7 +397,11 @@ public class Game extends javax.swing.JFrame {
                         rButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            new ColorGame(SCORE).setVisible(true);
+                            try {
+                                new ColorGame(SCORE).setVisible(true);
+                            } catch (FileNotFoundException ex) {
+                                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                             setVisible(false);
                         }
                     }
@@ -370,7 +413,11 @@ public class Game extends javax.swing.JFrame {
                         yButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            new ColorGame(SCORE).setVisible(true);
+                            try {
+                                new ColorGame(SCORE).setVisible(true);
+                            } catch (FileNotFoundException ex) {
+                                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                             setVisible(false);
                         }
                     }
@@ -509,7 +556,11 @@ public class Game extends javax.swing.JFrame {
                         aButton.setEnabled(false);
                         COUNTER += 2;
                         if(COUNTER == 8) {
-                            new ColorGame(SCORE).setVisible(true);
+                            try {
+                                new ColorGame(SCORE).setVisible(true);
+                            } catch (FileNotFoundException ex) {
+                                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                             setVisible(false);
                         }
                     }
@@ -521,7 +572,11 @@ public class Game extends javax.swing.JFrame {
                         bButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            new ColorGame(SCORE).setVisible(true);
+                            try {
+                                new ColorGame(SCORE).setVisible(true);
+                            } catch (FileNotFoundException ex) {
+                                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                             setVisible(false);
                         }
                     }
@@ -533,7 +588,11 @@ public class Game extends javax.swing.JFrame {
                         bButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            new ColorGame(SCORE).setVisible(true);
+                            try {
+                                new ColorGame(SCORE).setVisible(true);
+                            } catch (FileNotFoundException ex) {
+                                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                             setVisible(false);
                         }
                     }
@@ -547,7 +606,11 @@ public class Game extends javax.swing.JFrame {
                         tButton.setEnabled(false);
                         COUNTER+= 2;
                         if(COUNTER == 8) {
-                            new ColorGame(SCORE).setVisible(true);
+                            try {
+                                new ColorGame(SCORE).setVisible(true);
+                            } catch (FileNotFoundException ex) {
+                                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                             setVisible(false);
                         }
                     }
@@ -559,7 +622,11 @@ public class Game extends javax.swing.JFrame {
                         sButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            new ColorGame(SCORE).setVisible(true);
+                            try {
+                                new ColorGame(SCORE).setVisible(true);
+                            } catch (FileNotFoundException ex) {
+                                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                             setVisible(false);
                         }
                     }
@@ -571,7 +638,11 @@ public class Game extends javax.swing.JFrame {
                         rButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            new ColorGame(SCORE).setVisible(true);
+                            try {
+                                new ColorGame(SCORE).setVisible(true);
+                            } catch (FileNotFoundException ex) {
+                                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                             setVisible(false);
                         }
                     }
@@ -583,7 +654,11 @@ public class Game extends javax.swing.JFrame {
                         cButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            new ColorGame(SCORE).setVisible(true);
+                            try {
+                                new ColorGame(SCORE).setVisible(true);
+                            } catch (FileNotFoundException ex) {
+                                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                             setVisible(false);
                         }
                     }
@@ -720,7 +795,11 @@ public class Game extends javax.swing.JFrame {
                         pButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            new ColorGame(SCORE).setVisible(true);
+                            try {
+                                new ColorGame(SCORE).setVisible(true);
+                            } catch (FileNotFoundException ex) {
+                                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                             setVisible(false);
                         }
                     }
@@ -732,7 +811,11 @@ public class Game extends javax.swing.JFrame {
                         hButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            new ColorGame(SCORE).setVisible(true);
+                            try {
+                                new ColorGame(SCORE).setVisible(true);
+                            } catch (FileNotFoundException ex) {
+                                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                             setVisible(false);
                         }
                     }
@@ -746,7 +829,11 @@ public class Game extends javax.swing.JFrame {
                         aButton.setEnabled(false);
                         COUNTER+= 2;
                         if(COUNTER == 8) {
-                            new ColorGame(SCORE).setVisible(true);
+                            try {
+                                new ColorGame(SCORE).setVisible(true);
+                            } catch (FileNotFoundException ex) {
+                                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                             setVisible(false);
                         }
                     }
@@ -758,7 +845,11 @@ public class Game extends javax.swing.JFrame {
                         mButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            new ColorGame(SCORE).setVisible(true);
+                            try {
+                                new ColorGame(SCORE).setVisible(true);
+                            } catch (FileNotFoundException ex) {
+                                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                             setVisible(false);
                         }
                     }
@@ -769,7 +860,11 @@ public class Game extends javax.swing.JFrame {
                         Letter4.setVisible(true);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            new ColorGame(SCORE).setVisible(true);
+                            try {
+                                new ColorGame(SCORE).setVisible(true);
+                            } catch (FileNotFoundException ex) {
+                                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                             setVisible(false);
                         }
                     }
@@ -780,7 +875,11 @@ public class Game extends javax.swing.JFrame {
                         Letter7.setVisible(true);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            new ColorGame(SCORE).setVisible(true);
+                            try {
+                                new ColorGame(SCORE).setVisible(true);
+                            } catch (FileNotFoundException ex) {
+                                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                             setVisible(false);
                         }
                     }
@@ -791,7 +890,11 @@ public class Game extends javax.swing.JFrame {
                         Letter8.setVisible(true);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            new ColorGame(SCORE).setVisible(true);
+                            try {
+                                new ColorGame(SCORE).setVisible(true);
+                            } catch (FileNotFoundException ex) {
+                                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                             setVisible(false);
                         }
                     }
@@ -923,7 +1026,11 @@ public class Game extends javax.swing.JFrame {
                         cButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
-                            new ColorGame(SCORE).setVisible(true);
+                            try {
+                                new ColorGame(SCORE).setVisible(true);
+                            } catch (FileNotFoundException ex) {
+                                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                             setVisible(false);
                         }
                     }
@@ -935,7 +1042,11 @@ public class Game extends javax.swing.JFrame {
                         lButton.setEnabled(false);
                         COUNTER++; 
                         if(COUNTER == 8){
-                            new ColorGame(SCORE).setVisible(true);
+                            try {
+                                new ColorGame(SCORE).setVisible(true);
+                            } catch (FileNotFoundException ex) {
+                                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                             setVisible(false);
                         }
                     }
@@ -949,7 +1060,11 @@ public class Game extends javax.swing.JFrame {
                         iButton.setEnabled(false);
                         COUNTER+= 2; 
                         if(COUNTER == 8){
-                            new ColorGame(SCORE).setVisible(true);
+                           try {
+                                new ColorGame(SCORE).setVisible(true);
+                            } catch (FileNotFoundException ex) {
+                                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                             setVisible(false);
                         }
                     }
@@ -961,7 +1076,11 @@ public class Game extends javax.swing.JFrame {
                         mButton.setEnabled(false);
                         COUNTER++; 
                         if(COUNTER == 8){
-                            new ColorGame(SCORE).setVisible(true);
+                            try {
+                                new ColorGame(SCORE).setVisible(true);
+                            } catch (FileNotFoundException ex) {
+                                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                             setVisible(false);
                         }
                     }
@@ -973,7 +1092,11 @@ public class Game extends javax.swing.JFrame {
                         bButton.setEnabled(false);
                         COUNTER++; 
                         if(COUNTER == 8){
-                            new ColorGame(SCORE).setVisible(true);
+                            try {
+                                new ColorGame(SCORE).setVisible(true);
+                            } catch (FileNotFoundException ex) {
+                                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                             setVisible(false);
                         }
                     }
@@ -985,7 +1108,11 @@ public class Game extends javax.swing.JFrame {
                         nButton.setEnabled(false);
                         COUNTER++; 
                         if(COUNTER == 8){
-                            new ColorGame(SCORE).setVisible(true);
+                            try {
+                                new ColorGame(SCORE).setVisible(true);
+                            } catch (FileNotFoundException ex) {
+                                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                             setVisible(false);
                         }
                     }
@@ -997,7 +1124,11 @@ public class Game extends javax.swing.JFrame {
                         gButton.setEnabled(false);
                         COUNTER++; 
                         if(COUNTER == 8){
-                            new ColorGame(SCORE).setVisible(true);
+                            try {
+                                new ColorGame(SCORE).setVisible(true);
+                            } catch (FileNotFoundException ex) {
+                                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                             setVisible(false);
                         }
                     }
@@ -1139,7 +1270,12 @@ public class Game extends javax.swing.JFrame {
             
             //go to EndScreen
             setVisible(false);
-            new ColorGame(SCORE).setVisible(true);
+            //new ColorGame(SCORE).setVisible(true);
+            try {
+                                new ColorGame(SCORE).setVisible(true);
+                            } catch (FileNotFoundException ex) {
+                                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                            }
             setVisible(false);
             this.dispose();
         }
@@ -1734,7 +1870,12 @@ public class Game extends javax.swing.JFrame {
     // The skipButton is clicked to generate the EndScreen with SCORE = 0
     private void skipButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_skipButtonMouseReleased
         SCORE = 0;
-        new ColorGame(SCORE).setVisible(true);
+        //new ColorGame(SCORE).setVisible(true);
+        try {
+                                new ColorGame(SCORE).setVisible(true);
+                            } catch (FileNotFoundException ex) {
+                                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                            }
         setVisible(false);
         this.dispose();
     }//GEN-LAST:event_skipButtonMouseReleased
