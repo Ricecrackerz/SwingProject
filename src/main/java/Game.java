@@ -615,22 +615,7 @@ public class Game extends javax.swing.JFrame {
                         }
                     }
                 });
-                sButton.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        Letter3.setText("S");
-                        Letter3.setVisible(true);
-                        sButton.setEnabled(false);
-                        COUNTER++;
-                        if(COUNTER == 8) {
-                            try {
-                                new ColorGame(SCORE).setVisible(true);
-                            } catch (FileNotFoundException ex) {
-                                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
-                            }
-                            setVisible(false);
-                        }
-                    }
-                });
+               
                 rButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         Letter5.setText("R");
@@ -858,6 +843,7 @@ public class Game extends javax.swing.JFrame {
                     public void actionPerformed(ActionEvent e) {
                         Letter4.setText("R");
                         Letter4.setVisible(true);
+                        rButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
                             try {
@@ -873,6 +859,7 @@ public class Game extends javax.swing.JFrame {
                     public void actionPerformed(ActionEvent e) {
                         Letter7.setText("C");
                         Letter7.setVisible(true);
+                        cButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
                             try {
@@ -888,6 +875,7 @@ public class Game extends javax.swing.JFrame {
                     public void actionPerformed(ActionEvent e) {
                         Letter8.setText("Y");
                         Letter8.setVisible(true);
+                        yButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
                             try {

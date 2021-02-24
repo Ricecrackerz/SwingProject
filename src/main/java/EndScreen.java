@@ -46,6 +46,7 @@ public class EndScreen extends javax.swing.JFrame {
         hsLabel.setVisible(false);
         hsLabel1.setVisible(false);
         hsButton.setVisible(false);
+        initialsTextField.setVisible(false); 
         highScorePromptLabel.setVisible(false); 
         
         String score = String.valueOf(s);
@@ -94,7 +95,7 @@ public class EndScreen extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jLabel2.setText("Score: ");
 
-        hsLabel.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        hsLabel.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         hsLabel.setText("HIGHSCORE!!! Would you like to save it?");
         hsLabel.setEnabled(false);
 
@@ -102,6 +103,11 @@ public class EndScreen extends javax.swing.JFrame {
         hsButton.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         hsButton.setText("YES");
         hsButton.setEnabled(false);
+        hsButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                hsButtonMouseReleased(evt);
+            }
+        });
 
         hsLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         hsLabel1.setText("If no, click the End button");
@@ -122,37 +128,39 @@ public class EndScreen extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(103, Short.MAX_VALUE)
+                .addContainerGap(163, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(hsLabel)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(150, 150, 150)
-                                .addComponent(initialsTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ScoreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(83, 83, 83))
+                        .addComponent(highScorePromptLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(initialsTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(129, 129, 129))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Title))
+                        .addComponent(Title)
                         .addGap(265, 265, 265))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(199, 199, 199)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ScoreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(hsLabel1)
-                .addGap(232, 232, 232))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(hsLabel1)
+                        .addGap(232, 232, 232))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(hsLabel)
+                        .addGap(147, 147, 147))))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(272, 272, 272)
+                        .addGap(269, 269, 269)
                         .addComponent(hsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(End, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(213, 213, 213)
-                        .addComponent(highScorePromptLabel)))
+                        .addGap(29, 29, 29)
+                        .addComponent(End, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -161,25 +169,22 @@ public class EndScreen extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(Title)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(ScoreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(initialsTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ScoreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(initialsTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(highScorePromptLabel))
+                .addGap(18, 18, 18)
                 .addComponent(hsLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(highScorePromptLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(hsButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(hsLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(End)
-                .addContainerGap())
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         pack();
@@ -200,23 +205,23 @@ public class EndScreen extends javax.swing.JFrame {
             hsInitialsArray.add(scanner1.nextLine()); 
         }
         scanner1.close(); 
-        System.out.println(hsInitialsArray);
         
         for(int i = 0; i < 3; i++){
             scoreArray.add(scanner.nextInt());
         }
         scanner.close();
-        System.out.println(scoreArray);
         
         for(int i = 0; i < 3; i++){
             if(score > scoreArray.get(i)){
                 hsLabel.setEnabled(true);
                 hsLabel1.setEnabled(true);
                 hsButton.setEnabled(true);
+                initialsTextField.setEnabled(true); 
                 hsLabel.setVisible(true);
                 hsLabel1.setVisible(true);
                 hsButton.setVisible(true);
                 highScorePromptLabel.setVisible(true); 
+                initialsTextField.setVisible(true); 
                 INDEX = i;
                 NEW_SCORE = score;
                 break;
@@ -226,8 +231,6 @@ public class EndScreen extends javax.swing.JFrame {
         hsButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 scoreArray.add(INDEX,NEW_SCORE);
-                System.out.println("Button Clicked");
-                System.out.println(scoreArray);
                 try {
                     Scanner scanner = new Scanner(new File("HighScores.txt"));
                     FileWriter myWriter = new FileWriter("HighScores.txt");
@@ -237,11 +240,10 @@ public class EndScreen extends javax.swing.JFrame {
                     }
                     myWriter.close();
                     writer.close();
-                    System.out.println("Im in the try statement");
-                    while(scanner.hasNextInt()){
-                        System.out.println(scanner.nextInt());
-                    }
+
                     //For initials text file
+                    String initials = initialsTextField.getText(); 
+                    hsInitialsArray.add(INDEX,initials);
                     Scanner scanner1 = new Scanner(new File("hsText.txt")); 
                     FileWriter myWriter1 = new FileWriter("hsText.txt"); 
                     PrintWriter writer1 = new PrintWriter(myWriter1);
@@ -251,15 +253,15 @@ public class EndScreen extends javax.swing.JFrame {
                     }
                     myWriter1.close(); 
                     writer1.close(); 
-                    while(scanner1.hasNextLine()){
-                    System.out.println(scanner1.nextLine());     
-                    }
+                    
                 } catch (IOException ex) {
                     Logger.getLogger(EndScreen.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 }
                 });
     }
+        
+    
     // To go to the next screen
     private void EndMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EndMouseReleased
         setVisible(false);
@@ -271,6 +273,14 @@ public class EndScreen extends javax.swing.JFrame {
     private void initialsTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_initialsTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_initialsTextFieldActionPerformed
+
+    private void hsButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hsButtonMouseReleased
+
+        setVisible(false);
+        Home end = new Home();
+        end.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_hsButtonMouseReleased
 
     // Main method
     public static void main(String args[]) {

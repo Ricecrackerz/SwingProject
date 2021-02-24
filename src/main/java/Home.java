@@ -1,3 +1,8 @@
+
+import java.io.FileNotFoundException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /*
  * @author TonyDiaz stans
  */
@@ -103,8 +108,13 @@ public class Home extends javax.swing.JFrame {
     // To enter Highscore screen
     private void highButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_highButtonMouseReleased
         setVisible(false);
-        Highscore hs = new Highscore();
-        hs.setVisible(true);
+        Highscore hs;
+        try {
+            hs = new Highscore();
+            hs.setVisible(true);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.dispose();
     }//GEN-LAST:event_highButtonMouseReleased
 

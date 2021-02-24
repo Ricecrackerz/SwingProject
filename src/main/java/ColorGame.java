@@ -5,15 +5,12 @@
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
-import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.Timer;
@@ -123,14 +120,12 @@ public class ColorGame extends javax.swing.JFrame {
             public void actionPerformed(ActionEvent e) {
                 if(gameLabel.getForeground() == redButton.getForeground()){
                     score +=100;
-                    System.out.println("Colors match"); 
                     setGameLabel();  
                     setButton(); 
                 }       
                 else{
                     setGameLabel(); 
                     setButton();
-                    System.out.println("Wrong"); 
                 }
                 try {
                     checkRounds();
@@ -138,22 +133,19 @@ public class ColorGame extends javax.swing.JFrame {
                     Logger.getLogger(ColorGame.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (IOException ex) {
                     Logger.getLogger(ColorGame.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                System.out.println(rounds);
+                }                
             }
         }); 
         greenButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if(gameLabel.getForeground() == greenButton.getForeground()){
                     score +=100;
-                    System.out.println("Colors match " + score); 
                     setGameLabel(); 
                     setButton(); 
                 }       
                 else{
                     setGameLabel(); 
                     setButton(); 
-                    System.out.println("Wrong " + score); 
                 }
                 try { 
                     checkRounds();
@@ -162,21 +154,18 @@ public class ColorGame extends javax.swing.JFrame {
                 } catch (IOException ex) {
                     Logger.getLogger(ColorGame.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                System.out.println(rounds);
             }
         });    
         blueButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if(gameLabel.getForeground() == blueButton.getForeground()){
                     score +=100;
-                    System.out.println("Colors match " + score); 
                     setGameLabel(); 
                     setButton(); 
                 }       
                 else{
                     setGameLabel(); 
                     setButton();  
-                    System.out.println("Wrong " + score); 
                 }
                 try {
                     checkRounds();
@@ -185,21 +174,18 @@ public class ColorGame extends javax.swing.JFrame {
                 } catch (IOException ex) {
                     Logger.getLogger(ColorGame.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                System.out.println(rounds);
             }
         }); 
         yellowButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if(gameLabel.getForeground() == yellowButton.getForeground()){
                     score +=100;
-                    System.out.println("Colors match " + score); 
                     setGameLabel(); 
                     setButton(); 
                 }       
                 else{
                     setGameLabel(); 
                     setButton(); 
-                    System.out.println("Wrong " + score); 
                 }
                 try {
                     checkRounds();
@@ -208,21 +194,18 @@ public class ColorGame extends javax.swing.JFrame {
                 } catch (IOException ex) {
                     Logger.getLogger(ColorGame.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                System.out.println(rounds);
                 }
             }); 
         orangeButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if(gameLabel.getForeground() == orangeButton.getForeground()){
                     score +=100;
-                    System.out.println("Colors match " + score); 
                     setGameLabel(); 
                     setButton(); 
                 }       
                 else{
                     setGameLabel(); 
                     setButton();  
-                    System.out.println("Wrong " + score); 
                 }
                 try { 
                     checkRounds();
@@ -231,7 +214,6 @@ public class ColorGame extends javax.swing.JFrame {
                 } catch (IOException ex) {
                     Logger.getLogger(ColorGame.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                    System.out.println(rounds);
             }
         });               
     }
