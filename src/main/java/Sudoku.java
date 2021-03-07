@@ -1,10 +1,15 @@
+import java.awt.Color;
+import static java.awt.PageAttributes.ColorType.COLOR;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.JComponent;
@@ -25,7 +30,9 @@ import javax.swing.Timer;
  */
 public class Sudoku extends javax.swing.JFrame implements KeyListener {
     
-    int score = 540; 
+    int sudokuScore = 540; 
+    int finalScore; 
+    int correctBoxes = 54; 
     /**
      * Creates new form Sudoku
      */
@@ -44,6 +51,19 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
         //JOptionPane.showMessageDialog(this, "hello", "A plain message", JOptionPane.PLAIN_MESSAGE); 
     }
     
+    public Sudoku(int score){
+        initComponents();
+        getContentPane().setBackground(new java.awt.Color(250, 250, 250));
+        setLocationRelativeTo(null);
+        startTimer(); 
+        checkGame(); 
+        addKeyListener(this); 
+        setFocusable(true);
+        setFocusTraversalKeysEnabled(false);
+        
+        int finalScore = score; 
+    }
+    
     
     @Override
     public void keyTyped(KeyEvent e) {
@@ -54,7 +74,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
         }
         if(e.getKeyCode() == KeyEvent.VK_F1){
             JOptionPane.showMessageDialog(this, "Vicnent Hoang #013410449 \n" + "Bryant Hong #014176552 \n" + "Lan Nguyen #013327561 \n" + 
-                    "Nhi Nguyen #013925392 \n" + "Term: Spring 2021", "Credits", JOptionPane.PLAIN_MESSAGE);
+                    "Nhi Nguyen #013925392 \n" + "Term: Spring 2021", "Swing Project", JOptionPane.PLAIN_MESSAGE);
         }
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -67,7 +87,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
         }
         if(e.getKeyCode() == KeyEvent.VK_F1){
             JOptionPane.showMessageDialog(this, "Vicnent Hoang #013410449 \n" + "Bryant Hong #014176552 \n" + "Lan Nguyen #013327561 \n" + 
-                    "Nhi Nguyen #013925392 \n" + "Term: Spring 2021", "Credits", JOptionPane.PLAIN_MESSAGE);
+                    "Nhi Nguyen #013925392 \n" + "Term: Spring 2021", "Swing Project", JOptionPane.PLAIN_MESSAGE);
         }
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -81,7 +101,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
         
         if(e.getKeyCode() == KeyEvent.VK_F1){
             JOptionPane.showMessageDialog(this, "Vicnent Hoang #013410449 \n" + "Bryant Hong #014176552 \n" + "Lan Nguyen #013327561 \n" + 
-                    "Nhi Nguyen #013925392 \n" + "Term: Spring 2021", "Credits", JOptionPane.PLAIN_MESSAGE);
+                    "Nhi Nguyen #013925392 \n" + "Term: Spring 2021", "Swing Project", JOptionPane.PLAIN_MESSAGE);
         }
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         
@@ -119,9 +139,21 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
     }
 
     public void wrongScore(){
-        score -= 10;
-        System.out.println(score); 
-        
+        sudokuScore -= 10;
+    }
+    
+    public void rightScore(){
+        correctBoxes--; 
+        if(correctBoxes == 0){
+            finalScore += sudokuScore;  
+            EndScreen end; 
+            try {
+                end = new EndScreen(finalScore);
+                end.setVisible(true); 
+            } catch (IOException ex) {
+                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
     
     public void checkGame(){
@@ -133,17 +165,18 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
                 int a2value = Integer.parseInt(A2.getText());
                 if(!(a2value == 3)){
                    wrongScore(); 
-                   System.out.println("first box is wrong");
+                   A2.setForeground(Color.RED); 
+                }
+                else{
+                    
                 }
                 int a3value = Integer.parseInt(A3.getText());
                 if (!(a3value == 5)){
                    wrongScore(); 
-                   System.out.println("second box is wrong");
                 }
                 int a4value = Integer.parseInt(A4.getText());
                 if(!(a4value == 2)){
                     wrongScore(); 
-                    System.out.println("third box is wrong");
                 }
                 int a5value = Integer.parseInt(A5.getText());
                 if(!(a5value == 9)){
@@ -362,11 +395,22 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
                 if(!(h8value == 6)){
                    wrongScore(); 
                 }
-
-                System.out.println(score); 
-
+                
+                /*
+                finalScore += sudokuScore;  
+                EndScreen end; 
+                try {
+                    end = new EndScreen(finalScore);
+                    end.setVisible(true); 
+                } catch (IOException ex) {
+                    Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                */
+                
                     }
                 }); 
+        
+        
     }
     /**
      * This method is called from within the constructor to initialize the form.
