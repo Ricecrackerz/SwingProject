@@ -1,9 +1,16 @@
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+import javax.swing.JComponent;
+import javax.swing.JOptionPane;
+import javax.swing.JRootPane;
+import javax.swing.KeyStroke;
 import javax.swing.Timer;
 
 /*
@@ -16,7 +23,7 @@ import javax.swing.Timer;
  *
  * @author Bryant
  */
-public class Sudoku extends javax.swing.JFrame {
+public class Sudoku extends javax.swing.JFrame implements KeyListener {
     
     int score = 540; 
     /**
@@ -25,8 +32,61 @@ public class Sudoku extends javax.swing.JFrame {
     Timer timer; 
     public Sudoku() {
         initComponents();
+        getContentPane().setBackground(new java.awt.Color(250, 250, 250));
+        setLocationRelativeTo(null);
         startTimer(); 
+        checkGame(); 
+        addKeyListener(this); 
+        setFocusable(true);
+        setFocusTraversalKeysEnabled(false);
+        
+        //component.getInputMap().put(KeyStroke.getKeyStroke("ESC"), "esc");
+        //JOptionPane.showMessageDialog(this, "hello", "A plain message", JOptionPane.PLAIN_MESSAGE); 
     }
+    
+    
+    @Override
+    public void keyTyped(KeyEvent e) {
+        System.out.println("key typed"); 
+        if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
+           // System.out.println("hello"); 
+            System.exit(0);
+        }
+        if(e.getKeyCode() == KeyEvent.VK_F1){
+            JOptionPane.showMessageDialog(this, "Vicnent Hoang #013410449 \n" + "Bryant Hong #014176552 \n" + "Lan Nguyen #013327561 \n" + 
+                    "Nhi Nguyen #013925392 \n" + "Term: Spring 2021", "Credits", JOptionPane.PLAIN_MESSAGE);
+        }
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) { 
+        if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
+           // System.out.println("hello"); 
+            System.exit(0);
+        }
+        if(e.getKeyCode() == KeyEvent.VK_F1){
+            JOptionPane.showMessageDialog(this, "Vicnent Hoang #013410449 \n" + "Bryant Hong #014176552 \n" + "Lan Nguyen #013327561 \n" + 
+                    "Nhi Nguyen #013925392 \n" + "Term: Spring 2021", "Credits", JOptionPane.PLAIN_MESSAGE);
+        }
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    @Override
+    public void keyReleased(KeyEvent e) {
+        if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
+           // System.out.println("hello"); 
+            System.exit(0);
+        }
+        
+        if(e.getKeyCode() == KeyEvent.VK_F1){
+            JOptionPane.showMessageDialog(this, "Vicnent Hoang #013410449 \n" + "Bryant Hong #014176552 \n" + "Lan Nguyen #013327561 \n" + 
+                    "Nhi Nguyen #013925392 \n" + "Term: Spring 2021", "Credits", JOptionPane.PLAIN_MESSAGE);
+        }
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+    }
+    
     
     public void startTimer() {
         ActionListener actionListener = new ActionListener() {
@@ -47,8 +107,266 @@ public class Sudoku extends javax.swing.JFrame {
         timer.start();
     }
     
-    public void wrongScore(){
+    public void checkCharacter(char input_char){
         
+       if(!(input_char >= 49 && input_char <= 57 )){
+           //errorLabel.setVisible(true);
+
+       } 
+       else{
+           System.out.println("we good");
+       }
+    }
+
+    public void wrongScore(){
+        score -= 10;
+        System.out.println(score); 
+        
+    }
+    
+    public void checkGame(){
+
+        submitButton.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                
+                // A Panel 
+                int a2value = Integer.parseInt(A2.getText());
+                if(!(a2value == 3)){
+                   wrongScore(); 
+                   System.out.println("first box is wrong");
+                }
+                int a3value = Integer.parseInt(A3.getText());
+                if (!(a3value == 5)){
+                   wrongScore(); 
+                   System.out.println("second box is wrong");
+                }
+                int a4value = Integer.parseInt(A4.getText());
+                if(!(a4value == 2)){
+                    wrongScore(); 
+                    System.out.println("third box is wrong");
+                }
+                int a5value = Integer.parseInt(A5.getText());
+                if(!(a5value == 9)){
+                    wrongScore(); 
+                }
+                int a6value = Integer.parseInt(A6.getText());
+                if(!(a6value == 6)){
+                    wrongScore(); 
+                }
+                int a7value = Integer.parseInt(A7.getText());
+                if(!(a7value == 4)){
+                    wrongScore(); 
+                }
+                int a9value = Integer.parseInt(A9.getText());
+                if(!(a9value == 7)){
+                    wrongScore(); 
+                }
+                
+                // B Panel
+                int b2value = Integer.parseInt(B2.getText());
+                if(!(b2value == 1)){
+                    wrongScore(); 
+                }
+                int b4value = Integer.parseInt(B4.getText());
+                if(!(b4value == 8)){
+                    wrongScore(); 
+                }
+                int b5value = Integer.parseInt(B5.getText());
+                if(!(b5value == 5)){
+                    wrongScore(); 
+                }
+                int b6value = Integer.parseInt(B6.getText());
+                if(!(b6value == 7)){
+                    wrongScore(); 
+                }
+                int b7value = Integer.parseInt(B7.getText());
+                if(!(b7value == 2)){
+                    wrongScore(); 
+                }
+                int b8value = Integer.parseInt(B8.getText());
+                if(!(b8value == 9)){
+                    wrongScore(); 
+                }
+                int b9value = Integer.parseInt(B9.getText());
+                if(!(b9value == 3)){
+                    wrongScore(); 
+                }
+                
+                // C Panel
+                int c1value = Integer.parseInt(C1.getText());
+                if(!(c1value == 9)){
+                    wrongScore(); 
+                }
+                int c2value = Integer.parseInt(C2.getText());
+                if(!(c2value == 2)){
+                    wrongScore(); 
+                }
+                int c5value = Integer.parseInt(C5.getText());
+                if(!(c5value == 3)){
+                    wrongScore(); 
+                }
+                int c6value = Integer.parseInt(C6.getText());
+                if(!(c6value == 1)){
+                    wrongScore(); 
+                }
+                int c9value = Integer.parseInt(C9.getText());
+                if(!(c9value == 8)){
+                    wrongScore(); 
+                }
+                
+                // D Panel
+                int d2value = Integer.parseInt(D2.getText());
+                if(!(d2value == 6)){
+                    wrongScore(); 
+                }
+                int d4value = Integer.parseInt(D4.getText());
+                if(!(d4value == 1)){
+                    wrongScore(); 
+                }
+                int d5value = Integer.parseInt(D5.getText());
+                if(!(d5value == 2)){
+                    wrongScore(); 
+                }
+                int d6value = Integer.parseInt(D6.getText());
+                if(!(d6value == 3)){
+                    wrongScore(); 
+                }
+                int d7value = Integer.parseInt(D7.getText());
+                if(!(d7value == 7)){
+                    wrongScore(); 
+                }
+                
+                // I Panel 
+                int i1value = Integer.parseInt(I1.getText());
+                if(!(i1value == 3)){
+                    wrongScore(); 
+                }
+                int i3value = Integer.parseInt(I3.getText());
+                if(!(i3value == 4)){
+                    wrongScore(); 
+                }
+                int i4value = Integer.parseInt(I4.getText());
+                if(!(i4value == 2)){
+                    wrongScore(); 
+                }
+                int i5value = Integer.parseInt(I5.getText());
+                if(!(i5value == 7)){
+                    wrongScore(); 
+                }
+                int i6value = Integer.parseInt(I6.getText());
+                if(!(i6value == 6)){
+                    wrongScore(); 
+                }
+                int i7value = Integer.parseInt(I7.getText());
+                if(!(i7value == 8)){
+                    wrongScore(); 
+                }
+                int i8value = Integer.parseInt(I8.getText());
+                if(!(i8value == 1)){
+                    wrongScore(); 
+                }
+                
+                 // PANEL E
+                int e1value = Integer.parseInt(E1.getText());
+                if(!(e1value == 1)){
+                    wrongScore();
+                }
+                int e3value = Integer.parseInt(E3.getText());
+                if(!(e3value == 4)){
+                    wrongScore();
+                }
+                int e4value = Integer.parseInt(E4.getText());
+                if(!(e4value == 6)){
+                   wrongScore(); 
+                }
+                int e6value = Integer.parseInt(E6.getText());
+                if(!(e6value == 8)){
+                   wrongScore(); 
+                }
+                int e7value = Integer.parseInt(E7.getText());
+                if(!(e7value == 5)){
+                   wrongScore(); 
+                }
+                int e9value = Integer.parseInt(E9.getText());
+                if(!(e9value == 9)){
+                   wrongScore(); 
+                }
+                // PANEL F
+                int f3value = Integer.parseInt(F3.getText());
+                if(!(f3value == 2)){
+                   wrongScore(); 
+                }
+                int f4value = Integer.parseInt(F4.getText());
+                if(!(f4value == 5)){
+                   wrongScore(); 
+                }
+                int f5value = Integer.parseInt(F5.getText());
+                if(!(f5value == 4)){
+                   wrongScore(); 
+                }
+                int f6value = Integer.parseInt(F6.getText());
+                if(!(f6value == 9)){
+                   wrongScore(); 
+                }
+                int f8value = Integer.parseInt(F8.getText());
+                if(!(f8value == 6)){
+                   wrongScore(); 
+                }
+                // PANEL G
+                int g1value = Integer.parseInt(G1.getText());
+                if(!(g1value == 6)){
+                   wrongScore(); 
+                }
+                int g4value = Integer.parseInt(G4.getText());
+                if(!(g4value == 9)){
+                   wrongScore(); 
+                }
+                int g5value = Integer.parseInt(G5.getText());
+                if(!(g5value == 8)){
+                   wrongScore(); 
+                }
+                int g8value = Integer.parseInt(G8.getText());
+                if(!(g8value == 7)){
+                   wrongScore(); 
+                }
+                int g9value = Integer.parseInt(G9.getText());
+                if(!(g9value == 4)){
+                   wrongScore(); 
+                }
+                // PANEL H
+                int h1value = Integer.parseInt(H1.getText());
+                if(!(h1value == 7)){
+                   wrongScore(); 
+                }
+                int h2value = Integer.parseInt(H2.getText());
+                if(!(h2value == 8)){
+                   wrongScore(); 
+                }
+                int h3value = Integer.parseInt(H3.getText());
+                if(!(h3value == 1)){
+                   wrongScore(); 
+                }
+                int h4value = Integer.parseInt(H4.getText());
+                if(!(h4value == 3)){
+                   wrongScore(); 
+                }
+                int h5value = Integer.parseInt(H5.getText());
+                if(!(h5value == 4)){
+                   wrongScore(); 
+                }
+                int h6value = Integer.parseInt(H6.getText());
+                if(!(h6value == 5)){
+                   wrongScore(); 
+                }
+                int h8value = Integer.parseInt(H8.getText());
+                if(!(h8value == 6)){
+                   wrongScore(); 
+                }
+
+                System.out.println(score); 
+
+                    }
+                }); 
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -150,8 +468,11 @@ public class Sudoku extends javax.swing.JFrame {
         H1 = new javax.swing.JTextField();
         H9 = new javax.swing.JLabel();
         H7 = new javax.swing.JLabel();
+        submitButton = new javax.swing.JButton();
+        quitButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         time_dateLabel.setFont(new java.awt.Font("Comic Sans MS", 0, 8)); // NOI18N
         time_dateLabel.setText("Time and Date");
@@ -1112,6 +1433,15 @@ public class Sudoku extends javax.swing.JFrame {
                     .addComponent(H7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
+        submitButton.setText("Submit");
+        submitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitButtonActionPerformed(evt);
+            }
+        });
+
+        quitButton.setText("Quit");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1131,13 +1461,19 @@ public class Sudoku extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(time_dateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(33, 33, 33)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(quitButton)
+                            .addComponent(submitButton))))
                 .addContainerGap(28, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -1151,17 +1487,22 @@ public class Sudoku extends javax.swing.JFrame {
                         .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(time_dateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(submitButton)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(28, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(quitButton))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         pack();
@@ -1371,6 +1712,10 @@ public class Sudoku extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_H1ActionPerformed
 
+    private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_submitButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1497,6 +1842,8 @@ public class Sudoku extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JButton quitButton;
+    private javax.swing.JButton submitButton;
     private javax.swing.JLabel time_dateLabel;
     // End of variables declaration//GEN-END:variables
 }
