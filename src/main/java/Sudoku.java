@@ -1,22 +1,18 @@
 import java.awt.Color;
-import static java.awt.PageAttributes.ColorType.COLOR;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.AbstractAction;
-import javax.swing.Action;
-import javax.swing.JComponent;
 import javax.swing.JOptionPane;
-import javax.swing.JRootPane;
-import javax.swing.KeyStroke;
 import javax.swing.Timer;
+import java.awt.Toolkit;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -42,25 +38,29 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
         getContentPane().setBackground(new java.awt.Color(250, 250, 250));
         setLocationRelativeTo(null);
         startTimer(); 
-        checkGame(); 
         addKeyListener(this); 
         setFocusable(true);
-        setFocusTraversalKeysEnabled(false);
-        
+        setFocusTraversalKeysEnabled(false);       
+              
         //component.getInputMap().put(KeyStroke.getKeyStroke("ESC"), "esc");
         //JOptionPane.showMessageDialog(this, "hello", "A plain message", JOptionPane.PLAIN_MESSAGE); 
     }
+    
+    /*
+    method (char input) 
+        if input (<=48
+    
+    */
     
     public Sudoku(int score){
         initComponents();
         getContentPane().setBackground(new java.awt.Color(250, 250, 250));
         setLocationRelativeTo(null);
         startTimer(); 
-        checkGame(); 
         addKeyListener(this); 
         setFocusable(true);
         setFocusTraversalKeysEnabled(false);
-        
+        checkGame(); 
         int finalScore = score; 
     }
     
@@ -127,11 +127,12 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
         timer.start();
     }
     
-    public void checkCharacter(char input_char){
-        
+    public void checkCharacter(){
+        String input = A2.getText();
+        char input_char = input.charAt(1);
        if(!(input_char >= 49 && input_char <= 57 )){
            //errorLabel.setVisible(true);
-
+           System.out.println("awkward");
        } 
        else{
            System.out.println("we good");
@@ -142,57 +143,132 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
         sudokuScore -= 10;
     }
     
-    public void rightScore(){
+    public void rightScore() throws IOException {
         correctBoxes--; 
         if(correctBoxes == 0){
             finalScore += sudokuScore;  
-            EndScreen end; 
-            try {
-                end = new EndScreen(finalScore);
-                end.setVisible(true); 
-            } catch (IOException ex) {
-                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            setVisible(false);
+            //new ColorGame(SCORE).setVisible(true);
+            new EndScreen(finalScore).setVisible(true);
+            setVisible(false);
+            this.dispose();
         }
     }
     
     public void checkGame(){
-
         submitButton.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 
                 // A Panel 
                 int a2value = Integer.parseInt(A2.getText());
-                if(!(a2value == 3)){
-                   wrongScore(); 
+                int i = 0;
+                if(!(a2value == 3) ){
+                   
+                   if (i < 0) {
+                    wrongScore(); 
+                    i++;
+                   }
                    A2.setForeground(Color.RED); 
+                   System.out.println(sudokuScore);
                 }
                 else{
-                    
+                    try {
+                        rightScore();
+                        A2.setForeground(Color.BLACK);
+                        A2.setEnabled(false);
+                    } catch (IOException ex) {
+                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
+                
                 int a3value = Integer.parseInt(A3.getText());
                 if (!(a3value == 5)){
                    wrongScore(); 
+                   A3.setForeground(Color.RED);
                 }
+                else{
+                    try {
+                        rightScore();
+                        A3.setForeground(Color.BLACK);
+                        A3.setEnabled(false);
+                    } catch (IOException ex) {
+                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+                
                 int a4value = Integer.parseInt(A4.getText());
                 if(!(a4value == 2)){
                     wrongScore(); 
+                    A4.setForeground(Color.RED);
                 }
+                else{
+                    try {
+                        rightScore();
+                        A4.setForeground(Color.BLACK);
+                        A4.setEnabled(false);
+                    } catch (IOException ex) {
+                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+                
                 int a5value = Integer.parseInt(A5.getText());
                 if(!(a5value == 9)){
                     wrongScore(); 
+                    A5.setForeground(Color.RED);
                 }
+                else{
+                    try {
+                        rightScore();
+                        A5.setForeground(Color.BLACK);
+                        A5.setEnabled(false);
+                    } catch (IOException ex) {
+                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+                
                 int a6value = Integer.parseInt(A6.getText());
                 if(!(a6value == 6)){
                     wrongScore(); 
+                    A6.setForeground(Color.RED);
                 }
+                else{
+                    try {
+                        rightScore();
+                        A6.setForeground(Color.BLACK);
+                        A6.setEnabled(false);
+                    } catch (IOException ex) {
+                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+                
                 int a7value = Integer.parseInt(A7.getText());
                 if(!(a7value == 4)){
                     wrongScore(); 
+                    A7.setForeground(Color.RED);
                 }
+                else{
+                    try {
+                        rightScore();
+                        A7.setForeground(Color.BLACK);
+                        A7.setEnabled(false);
+                    } catch (IOException ex) {
+                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+                
                 int a9value = Integer.parseInt(A9.getText());
                 if(!(a9value == 7)){
                     wrongScore(); 
+                    A9.setForeground(Color.RED);
+                }
+                else{
+                    try {
+                        rightScore();
+                        A9.setForeground(Color.BLACK);
+                        A9.setEnabled(false);
+                    } catch (IOException ex) {
+                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
                 
                 // B Panel
@@ -520,6 +596,13 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         time_dateLabel.setFont(new java.awt.Font("Comic Sans MS", 0, 8)); // NOI18N
         time_dateLabel.setText("Time and Date");
+        time_dateLabel.setMaximumSize(null);
+        time_dateLabel.setMinimumSize(null);
+        time_dateLabel.setPreferredSize(new java.awt.Dimension(131, 121));
+
+        jPanel1.setMaximumSize(null);
+        jPanel1.setMinimumSize(null);
+        jPanel1.setPreferredSize(new java.awt.Dimension(151, 121));
 
         A1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         A1.setText("8");
@@ -530,6 +613,11 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
         A2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 A2ActionPerformed(evt);
+            }
+        });
+        A2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                A2KeyTyped(evt);
             }
         });
 
@@ -592,6 +680,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(A4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -599,14 +688,14 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
                                 .addComponent(A5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(A1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(A2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(A3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(A6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(A6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
                         .addComponent(A7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(A8, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -632,6 +721,10 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
                     .addComponent(A9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(A8, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
+
+        jPanel2.setMaximumSize(null);
+        jPanel2.setMinimumSize(null);
+        jPanel2.setPreferredSize(new java.awt.Dimension(151, 121));
 
         I3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         I3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -738,6 +831,10 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
                     .addComponent(I8, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(I9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
+
+        jPanel3.setMaximumSize(null);
+        jPanel3.setMinimumSize(null);
+        jPanel3.setPreferredSize(new java.awt.Dimension(151, 121));
 
         B1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         B1.setText("4");
@@ -848,8 +945,12 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
                     .addComponent(B7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(B8, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(B9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 8, Short.MAX_VALUE))
+                .addGap(0, 10, Short.MAX_VALUE))
         );
+
+        jPanel4.setMaximumSize(null);
+        jPanel4.setMinimumSize(null);
+        jPanel4.setPreferredSize(new java.awt.Dimension(151, 121));
 
         C2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         C2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -948,6 +1049,10 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
                     .addComponent(C9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
+
+        jPanel5.setMaximumSize(null);
+        jPanel5.setMinimumSize(null);
+        jPanel5.setPreferredSize(new java.awt.Dimension(151, 121));
 
         E3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         E3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -1059,6 +1164,10 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
                 .addGap(1, 1, 1))
         );
 
+        jPanel6.setMaximumSize(null);
+        jPanel6.setMinimumSize(null);
+        jPanel6.setPreferredSize(new java.awt.Dimension(151, 121));
+
         F1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         F1.setText("7");
         F1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -1166,6 +1275,10 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
                 .addContainerGap())
         );
 
+        jPanel7.setMaximumSize(null);
+        jPanel7.setMinimumSize(null);
+        jPanel7.setPreferredSize(new java.awt.Dimension(151, 121));
+
         D1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         D1.setText("5");
         D1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -1269,6 +1382,10 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
                     .addComponent(D9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
+        jPanel8.setMaximumSize(null);
+        jPanel8.setMinimumSize(null);
+        jPanel8.setPreferredSize(new java.awt.Dimension(151, 121));
+
         G5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         G5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         G5.addActionListener(new java.awt.event.ActionListener() {
@@ -1363,6 +1480,10 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
                     .addComponent(G9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(G7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
+
+        jPanel9.setMaximumSize(null);
+        jPanel9.setMinimumSize(null);
+        jPanel9.setPreferredSize(new java.awt.Dimension(151, 121));
 
         H2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         H2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -1491,34 +1612,35 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(97, 97, 97)
+                .addGap(76, 76, 76)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                    .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(time_dateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(33, 33, 33)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(44, 44, 44)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(quitButton)
-                            .addComponent(submitButton))))
-                .addContainerGap(28, Short.MAX_VALUE))
+                            .addComponent(submitButton))
+                        .addGap(0, 22, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(time_dateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1529,7 +1651,9 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(time_dateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(time_dateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(89, 89, 89)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -1546,7 +1670,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
                         .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(quitButton))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         pack();
@@ -1760,8 +1884,18 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
         // TODO add your handling code here:
     }//GEN-LAST:event_submitButtonActionPerformed
 
-    /**
-     * @param args the command line arguments
+    private void A2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A2KeyTyped
+        int c = evt.getKeyChar(); 
+        if(A2.getText().length() > 0 || c == KeyEvent.VK_0 || !(Character.isDigit(c))) { 
+           System.out.println("awkward");
+           Toolkit.getDefaultToolkit().beep(); 
+           evt.consume();
+       } else {
+           System.out.println("we good");
+       }
+    }//GEN-LAST:event_A2KeyTyped
+ 
+    /* * @param args the command line arguments
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
