@@ -218,6 +218,7 @@
               </Border>
             </Property>
             <Property name="name" type="java.lang.String" value="A2" noResource="true"/>
+            <Property name="selectionEnd" type="int" value="1"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="A2KeyTyped"/>

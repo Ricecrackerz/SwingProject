@@ -63,7 +63,7 @@ public class ColorGame extends javax.swing.JFrame implements KeyListener {
             System.exit(0);
         }
         if(e.getKeyCode() == KeyEvent.VK_F1){
-            JOptionPane.showMessageDialog(this, "Vicnent Hoang #013410449 \n" + "Bryant Hong #014176552 \n" + "Lan Nguyen #013327561 \n" + 
+            JOptionPane.showMessageDialog(this, "Vincent Hoang #013410449 \n" + "Bryant Hong #014176552 \n" + "Lan Nguyen #013327561 \n" + 
                     "Nhi Nguyen #013925392 \n" + "Term: Spring 2021", "Swing Project", JOptionPane.PLAIN_MESSAGE);
         }
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -76,7 +76,7 @@ public class ColorGame extends javax.swing.JFrame implements KeyListener {
             System.exit(0);
         }
         if(e.getKeyCode() == KeyEvent.VK_F1){
-            JOptionPane.showMessageDialog(this, "Vicnent Hoang #013410449 \n" + "Bryant Hong #014176552 \n" + "Lan Nguyen #013327561 \n" + 
+            JOptionPane.showMessageDialog(this, "Vincent Hoang #013410449 \n" + "Bryant Hong #014176552 \n" + "Lan Nguyen #013327561 \n" + 
                     "Nhi Nguyen #013925392 \n" + "Term: Spring 2021", "Swing Project", JOptionPane.PLAIN_MESSAGE);
         }
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -90,7 +90,7 @@ public class ColorGame extends javax.swing.JFrame implements KeyListener {
         }
         
         if(e.getKeyCode() == KeyEvent.VK_F1){
-            JOptionPane.showMessageDialog(this, "Vicnent Hoang #013410449 \n" + "Bryant Hong #014176552 \n" + "Lan Nguyen #013327561 \n" + 
+            JOptionPane.showMessageDialog(this, "Vincent Hoang #013410449 \n" + "Bryant Hong #014176552 \n" + "Lan Nguyen #013327561 \n" + 
                     "Nhi Nguyen #013925392 \n" + "Term: Spring 2021", "Swing Project", JOptionPane.PLAIN_MESSAGE);
         }
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

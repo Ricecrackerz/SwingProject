@@ -12,9 +12,6 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import java.awt.Toolkit;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-
 /**
  * @author TonyDiaz stans
  */
@@ -24,29 +21,6 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
     int finalScore;
     int score;
     int correctBoxes = 54;
-    
-    // 2d array = [[name of the textfield][input of the textfield]];
-    /*["A5"][], ["A6"][], ["A7"][], ["A9"][],
-                             ["B2"][], ["B3"][], ["B4"[], ["B5"][], ["B6"][], ["B7"][], ["B8"][], ["B9"][],
-                             ["C1"][], ["C2"][], ["C5"][], ["C6"][], ["C9"][],
-                             ["D2"][], ["D4"][], ["D5"][], ["D6"][], ["D7"][],
-                             ["E1"][], ["E3"][], ["E4"][], ["E6"][], ["E7"][], ["E9"][],
-                             ["F3"][], ["F4"][], ["F5"][], ["F6"][], ["F8"[],
-                             ["G1"][], ["G4"][], ["G5"][], ["G8"][], ["G9"][],
-                             ["H1"][], ["H2"][], ["H3"[], ["H4"][], ["H5"][],["H6"][], ["H8"][],
-                             ["I1"][], ["I3"][], ["I4"][], ["I5"][], ["I6"][], ["I7"][], ["I8"][] */
-    
-    public String[][] tdArray = {{"A2","3"},{"A3","5"},{"A4","2"}};
-    
-    public String[] array = {"A2",  "A3" , "A4", "A5", "A6", "A7", "A9",
-                             "B2", "B3", "B4", "B5", "B6", "B7", "B8", "B9",
-                             "C1", "C2", "C5", "C6", "C9",
-                             "D2", "D4", "D5", "D6", "D7",
-                             "E1", "E3", "E4", "E6", "E7", "E9",
-                             "F3", "F4", "F5", "F6", "F8",
-                             "G1", "G4", "G5", "G8", "G9",
-                             "H1", "H2", "H3", "H4", "H5","H6", "H8",
-                             "I1", "I3", "I4", "I5", "I6", "I7", "I8"};
         
     public int[] error = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
     
@@ -60,6 +34,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
         setFocusable(true);
         setFocusTraversalKeysEnabled(false);  
         checkGame();
+        System.out.println("hi");
     }
     
     public Sudoku(int s){
@@ -81,7 +56,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
             System.exit(0);
         }
         if(e.getKeyCode() == KeyEvent.VK_F1){
-            JOptionPane.showMessageDialog(this, "Vicnent Hoang #013410449 \n" + "Bryant Hong #014176552 \n" + "Lan Nguyen #013327561 \n" + 
+            JOptionPane.showMessageDialog(this, "Vincent Hoang #013410449 \n" + "Bryant Hong #014176552 \n" + "Lan Nguyen #013327561 \n" + 
                     "Nhi Nguyen #013925392 \n" + "Term: Spring 2021", "Swing Project", JOptionPane.PLAIN_MESSAGE);
         }
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -93,7 +68,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
             System.exit(0);
         }
         if(e.getKeyCode() == KeyEvent.VK_F1){
-            JOptionPane.showMessageDialog(this, "Vicnent Hoang #013410449 \n" + "Bryant Hong #014176552 \n" + "Lan Nguyen #013327561 \n" + 
+            JOptionPane.showMessageDialog(this, "Vincent Hoang #013410449 \n" + "Bryant Hong #014176552 \n" + "Lan Nguyen #013327561 \n" + 
                     "Nhi Nguyen #013925392 \n" + "Term: Spring 2021", "Swing Project", JOptionPane.PLAIN_MESSAGE);
         }
         throw new UnsupportedOperationException("Not supported yet.");
@@ -106,7 +81,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
         }
         
         if(e.getKeyCode() == KeyEvent.VK_F1){
-            JOptionPane.showMessageDialog(this, "Vicnent Hoang #013410449 \n" + "Bryant Hong #014176552 \n" + "Lan Nguyen #013327561 \n" + 
+            JOptionPane.showMessageDialog(this, "Vincent Hoang #013410449 \n" + "Bryant Hong #014176552 \n" + "Lan Nguyen #013327561 \n" + 
                     "Nhi Nguyen #013925392 \n" + "Term: Spring 2021", "Swing Project", JOptionPane.PLAIN_MESSAGE);
         }
         throw new UnsupportedOperationException("Not supported yet.");
@@ -151,88 +126,48 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
     public void checkGame(){
         submitButton.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                // A Panel 
-                int a2value = Integer.parseInt(A2.getText());
-                /*int i = 0;
-                int j = 0;
-
-                if ( (tdArray[i][j].equals(A2.getName())) && !(A2.getText().equals(tdArray[i][j+1]))) {
-                    if (error[i] != 1) {
-                        wrongScore();
-                        A2.setForeground(Color.RED);
-                        error[i] = 1;
-                        System.out.println(A2.getText());
-                                
-                        System.out.println(tdArray[i][j]);
-                    } else {
-                        System.out.println("no more subtracting points");
-                    } 
+                // A Panel   
+                if (!(A2.getText().isEmpty())) {
+                    if (A2.getName().equals("A2")) {
+                        if (!(Integer.parseInt(A2.getText()) == 3)){
+                            A2.setForeground(Color.RED);
+                            if (error[0] != 1) {
+                                wrongScore();
+                                error[0] = 1;
+                            } 
+                        } else {   
+                            try {
+                                rightScore();
+                                A2.setForeground(Color.BLACK);
+                                A2.setEnabled(false);  
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                    }
                 }
-                else {
-                    System.out.println("correct!");    
+                if (!(A3.getText().isEmpty())) {
+                    if (A3.getName().equals("A3")) {
+                        if (!(Integer.parseInt(A3.getText()) == 5)){
+                            A3.setForeground(Color.RED);
+                            if (error[1] != 1) {
+                                wrongScore();
+                                error[1] = 1;
+                            } 
+                        } else {   
+                            try {
+                                rightScore();
+                                A3.setForeground(Color.BLACK);
+                                A3.setEnabled(false);  
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                    }
                 }
-                if ( (tdArray[i+1][j+1].equals(A3.getName())) && !(A3.getText().equals(tdArray[i+1][j+2]))) {
-                    if (error[i+1] != 1) {
-                        wrongScore();
-                        A3.setForeground(Color.RED);
-                        error[i+1] = 1;
-                        System.out.println(A3.getText());
-                                
-                        System.out.println(tdArray[i+1][j+1]);
-                    } else {
-                        System.out.println("no more subtracting points");
-                    } 
-                }
-                else {
-                    System.out.println("correct!");    
-                }
-                */    
                 
-                if(!(a2value == 3)){
-                for (int i = 0; i < array.length; i++) {
-                        if (A2.getName().equals(array[i])) {
-                                if (error[i] != 1) {
-                                    wrongScore();
-                                    A2.setForeground(Color.RED);
-                                    error[i] = 1;
-                                } else {
-                                    System.out.println("no more subtracting points");
-                                } 
-                        }                      
-                } }
-                else{
-                    try {
-                        rightScore();
-                        A2.setForeground(Color.BLACK);
-                        A2.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }
-                int a3value = Integer.parseInt(A3.getText());
-                if (!(a3value == 5)){
-                   for (int i = 0; i < array.length; i++) {
-                        if (A3.getName().equals(array[i])) {
-                                if (error[i] != 1) {
-                                    wrongScore();
-                                    A3.setForeground(Color.RED);
-                                    error[i] = 1;
-                                } else {
-                                    System.out.println("no more subtracting points");
-                                } 
-                        }                      
-                }
-                }
-                else{
-                    try {
-                        rightScore();
-                        A3.setForeground(Color.BLACK);
-                        A3.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }
-                int a4value = Integer.parseInt(A4.getText());
+                
+                /*int a4value = Integer.parseInt(A4.getText());
                 if(!(a4value == 2)){
                     for (int i = 0; i < array.length; i++) {
                         if (A4.getName().equals(array[i])) {
@@ -1019,7 +954,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
                     } catch (IOException ex) {
                         Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                } 
+                } */
             }
         }); 
         
@@ -1145,6 +1080,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
         A2.setActionCommand("<Not Set>");
         A2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         A2.setName("A2"); // NOI18N
+        A2.setSelectionEnd(1);
         A2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 A2KeyTyped(evt);
