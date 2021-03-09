@@ -1152,6 +1152,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
         });
 
         A3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        A3.setToolTipText("hi");
         A3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         A3.setName("A3"); // NOI18N
         A3.addKeyListener(new java.awt.event.KeyAdapter() {

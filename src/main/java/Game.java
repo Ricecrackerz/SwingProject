@@ -585,7 +585,7 @@ public class Game extends javax.swing.JFrame {
                     public void actionPerformed(ActionEvent e) {
                         Letter3.setText("S");
                         Letter3.setVisible(true);
-                        bButton.setEnabled(false);
+                        sButton.setEnabled(false);
                         COUNTER++;
                         if(COUNTER == 8) {
                             try {
