@@ -1,8 +1,13 @@
+
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import javax.swing.JOptionPane;
+
 /*
  * @author TonyDiaz stans
  */
 
-public class Credits extends javax.swing.JFrame {
+public class Credits extends javax.swing.JFrame implements KeyListener{
 
     // To generate the Credits screen
     public Credits() {
@@ -10,6 +15,9 @@ public class Credits extends javax.swing.JFrame {
         getContentPane().setBackground(new java.awt.Color(212, 226, 212));
         setSize(600,400);
         setLocationRelativeTo(null);
+        addKeyListener(this); 
+        setFocusable(true);
+        setFocusTraversalKeysEnabled(false);
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -103,6 +111,44 @@ public class Credits extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_backButtonMouseReleased
 
+    @Override
+    public void keyTyped(KeyEvent e) {
+        System.out.println("key typed"); 
+        if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
+            System.exit(0);
+        }
+        if(e.getKeyCode() == KeyEvent.VK_F1){
+            JOptionPane.showMessageDialog(this, "Vincent Hoang #013410449 \n" + "Bryant Hong #014176552 \n" + "Lan Nguyen #013327561 \n" + 
+                    "Nhi Nguyen #013925392 \n" + "Term: Spring 2021", "Swing Project", JOptionPane.PLAIN_MESSAGE);
+        }
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) { 
+        if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
+            System.exit(0);
+        }
+        if(e.getKeyCode() == KeyEvent.VK_F1){
+            JOptionPane.showMessageDialog(this, "Vincent Hoang #013410449 \n" + "Bryant Hong #014176552 \n" + "Lan Nguyen #013327561 \n" + 
+                    "Nhi Nguyen #013925392 \n" + "Term: Spring 2021", "Swing Project", JOptionPane.PLAIN_MESSAGE);
+        }
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+    
+    @Override
+    public void keyReleased(KeyEvent e) {
+        if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
+            System.exit(0);
+        }
+        
+        if(e.getKeyCode() == KeyEvent.VK_F1){
+            JOptionPane.showMessageDialog(this, "Vincent Hoang #013410449 \n" + "Bryant Hong #014176552 \n" + "Lan Nguyen #013327561 \n" + 
+                    "Nhi Nguyen #013925392 \n" + "Term: Spring 2021", "Swing Project", JOptionPane.PLAIN_MESSAGE);
+        }
+        throw new UnsupportedOperationException("Not supported yet.");
+        
+    } 
     // Main method
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {

@@ -23,6 +23,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
     int correctBoxes = 54;
         
     public int[] error = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+    public int[] error1 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
     
     Timer timer; 
     public Sudoku() {
@@ -109,7 +110,6 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
     public void wrongScore(){
         sudokuScore -= 10;
-        System.out.println(sudokuScore);
     }
     
     public void rightScore() throws IOException {
@@ -137,9 +137,12 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
                             } 
                         } else {   
                             try {
-                                rightScore();
                                 A2.setForeground(Color.BLACK);
-                                A2.setEnabled(false);  
+                                A2.setEnabled(false);
+                                if (error1[0] != 1) {
+                                rightScore();                               
+                                error1[0] = 1;
+                                }                                
                             } catch (IOException ex) {
                                 Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
                             }
@@ -156,9 +159,127 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
                             } 
                         } else {   
                             try {
-                                rightScore();
                                 A3.setForeground(Color.BLACK);
-                                A3.setEnabled(false);  
+                                A3.setEnabled(false);
+                                if (error1[1] != 1) {
+                                rightScore();                               
+                                error1[1] = 1;
+                                }   
+                                else{
+                                    A2.setForeground(Color.BLACK);
+                                    A2.setEnabled(false);
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                        
+                    }
+                }
+                if (!(A4.getText().isEmpty())) {
+                    if (A4.getName().equals("A4")) {
+                        if (!(Integer.parseInt(A4.getText()) == 2)){
+                            A4.setForeground(Color.RED);
+                            if (error[2] != 1) {
+                                wrongScore();
+                                error[2] = 1;
+                            } 
+                        } else {   
+                            try {
+                                A4.setForeground(Color.BLACK);
+                                A4.setEnabled(false); 
+                                if (error1[2] != 1) {
+                                rightScore();                               
+                                error1[2] = 1;
+                                } 
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                    }
+                }
+                if (!(A5.getText().isEmpty())) {
+                    if (A5.getName().equals("A5")) {
+                        if (!(Integer.parseInt(A5.getText()) == 9)){
+                            A5.setForeground(Color.RED);
+                            if (error[3] != 1) {
+                                wrongScore();
+                                error[3] = 1;
+                            } 
+                        } else {   
+                            try {
+                                A5.setForeground(Color.BLACK);
+                                A5.setEnabled(false); 
+                                if (error1[3] != 1) {
+                                rightScore();                               
+                                error1[3] = 1;
+                                } 
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                    }
+                }
+                if (!(A6.getText().isEmpty())) {
+                    if (A6.getName().equals("A6")) {
+                        if (!(Integer.parseInt(A6.getText()) == 6)){
+                            A6.setForeground(Color.RED);
+                            if (error[4] != 1) {
+                                wrongScore();
+                                error[4] = 1;
+                            } 
+                        } else {   
+                            try {
+                                A6.setForeground(Color.BLACK);
+                                A6.setEnabled(false);
+                                if (error1[4] != 1) {
+                                rightScore();                               
+                                error1[4] = 1;
+                                } 
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                    }
+                }
+                if (!(A7.getText().isEmpty())) {
+                    if (A7.getName().equals("A7")) {
+                        if (!(Integer.parseInt(A7.getText()) == 4)){
+                            A7.setForeground(Color.RED);
+                            if (error[5] != 1) {
+                                wrongScore();
+                                error[5] = 1;
+                            } 
+                        } else {   
+                            try {
+                                A7.setForeground(Color.BLACK);
+                                A7.setEnabled(false);  
+                                if (error1[5] != 1) {
+                                rightScore();                               
+                                error1[5] = 1;
+                                } 
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                    }
+                }
+                if (!(A9.getText().isEmpty())) {
+                    if (A9.getName().equals("A9")) {
+                        if (!(Integer.parseInt(A9.getText()) == 7)){
+                            A9.setForeground(Color.RED);
+                            if (error[6] != 1) {
+                                wrongScore();
+                                error[6] = 1;
+                            } 
+                        } else {   
+                            try {
+                                A9.setForeground(Color.BLACK);
+                                A9.setEnabled(false);  
+                                if (error1[6] != 1) {
+                                rightScore();                               
+                                error1[6] = 1;
+                                } 
                             } catch (IOException ex) {
                                 Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
                             }
@@ -166,795 +287,1058 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
                     }
                 }
                 
+                // PANEL B
                 
-                /*int a4value = Integer.parseInt(A4.getText());
-                if(!(a4value == 2)){
-                    for (int i = 0; i < array.length; i++) {
-                        if (A4.getName().equals(array[i])) {
-                                if (error[i] != 1) {
-                                    wrongScore();
-                                    A4.setForeground(Color.RED);
-                                    error[i] = 1;
-                                } else {
-                                    System.out.println("no more subtracting points");
+                if (!(B2.getText().isEmpty())) {
+                    if (B2.getName().equals("B2")) {
+                        if (!(Integer.parseInt(B2.getText()) == 1)){
+                            B2.setForeground(Color.RED);
+                            if (error[7] != 1) {
+                                wrongScore();
+                                error[7] = 1;
+                            } 
+                        } else {   
+                            try {
+                                B2.setForeground(Color.BLACK);
+                                B2.setEnabled(false);  
+                                if (error1[7] != 1) {
+                                rightScore();                               
+                                error1[7] = 1;
                                 } 
-                        }                      
-                }
-                }
-                else{
-                    try {
-                        rightScore();
-                        A4.setForeground(Color.BLACK);
-                        A4.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }
-                int a5value = Integer.parseInt(A5.getText());
-                if(!(a5value == 9)){
-                    for (int i = 0; i < array.length; i++) {
-                        if (A5.getName().equals(array[i])) {
-                                if (error[i] != 1) {
-                                    wrongScore();
-                                    A5.setForeground(Color.RED);
-                                    error[i] = 1;
-                                } else {
-                                    System.out.println("no more subtracting points");
-                                } 
-                        }                      
-                }
-                }
-                else{
-                    try {
-                        rightScore();
-                        A5.setForeground(Color.BLACK);
-                        A5.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }
-                int a6value = Integer.parseInt(A6.getText());
-                if(!(a6value == 6)){
-                    for (int i = 0; i < array.length; i++) {
-                        if (A6.getName().equals(array[i])) {
-                                if (error[i] != 1) {
-                                    wrongScore();
-                                    A6.setForeground(Color.RED);
-                                    error[i] = 1;
-                                } else {
-                                    System.out.println("no more subtracting points");
-                                } 
-                        }                      
-                }
-                }
-                else{
-                    try {
-                        rightScore();
-                        A6.setForeground(Color.BLACK);
-                        A6.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }
-                int a7value = Integer.parseInt(A7.getText());
-                if(!(a7value == 4)){
-                    for (int i = 0; i < array.length; i++) {
-                        if (A7.getName().equals(array[i])) {
-                                if (error[i] != 1) {
-                                    wrongScore();
-                                    A7.setForeground(Color.RED);
-                                    error[i] = 1;
-                                } else {
-                                    System.out.println("no more subtracting points");
-                                } 
-                        }                      
-                }
-                }
-                else{
-                    try {
-                        rightScore();
-                        A7.setForeground(Color.BLACK);
-                        A7.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }
-                int a9value = Integer.parseInt(A9.getText());
-                if(!(a9value == 7)){
-                    for (int i = 0; i < array.length; i++) {
-                        if (A9.getName().equals(array[i])) {
-                                if (error[i] != 1) {
-                                    wrongScore();
-                                    A9.setForeground(Color.RED);
-                                    error[i] = 1;
-                                } else {
-                                    System.out.println("no more subtracting points");
-                                } 
-                        }                      
-                }
-                }
-                else{
-                    try {
-                        rightScore();
-                        A9.setForeground(Color.BLACK);
-                        A9.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
                 }
                 
-                // B Panel
-                int b2value = Integer.parseInt(B2.getText());
-                if(!(b2value == 1)){
-                    wrongScore(); 
-                    B2.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        B2.setForeground(Color.BLACK);
-                        B2.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }
-                int b4value = Integer.parseInt(B4.getText());
-                if(!(b4value == 8)){
-                    wrongScore();
-                    B4.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        B4.setForeground(Color.BLACK);
-                        B4.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }
-                int b5value = Integer.parseInt(B5.getText());
-                if(!(b5value == 5)){
-                    wrongScore();
-                    B5.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        B5.setForeground(Color.BLACK);
-                        B5.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }
-                int b6value = Integer.parseInt(B6.getText());
-                if(!(b6value == 7)){
-                    wrongScore();
-                    B6.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        B6.setForeground(Color.BLACK);
-                        B6.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }
-                int b7value = Integer.parseInt(B7.getText());
-                if(!(b7value == 2)){
-                    wrongScore(); 
-                    B7.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        B7.setForeground(Color.BLACK);
-                        B7.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }
-                int b8value = Integer.parseInt(B8.getText());
-                if(!(b8value == 9)){
-                    wrongScore();
-                    B8.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        B8.setForeground(Color.BLACK);
-                        B8.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }
-                int b9value = Integer.parseInt(B9.getText());
-                if(!(b9value == 3)){
-                    wrongScore(); 
-                    B9.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        B9.setForeground(Color.BLACK);
-                        B9.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                if (!(B4.getText().isEmpty())) {
+                    if (B4.getName().equals("B4")) {
+                        if (!(Integer.parseInt(B4.getText()) == 8)){
+                            B4.setForeground(Color.RED);
+                            if (error[8] != 1) {
+                                wrongScore();
+                                error[8] = 1;
+                            } 
+                        } else {   
+                            try {
+                                B4.setForeground(Color.BLACK);
+                                B4.setEnabled(false);  
+                                if (error1[8] != 1) {
+                                rightScore();                               
+                                error1[8] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
                 }
                 
-                // C Panel
-                int c1value = Integer.parseInt(C1.getText());
-                if(!(c1value == 9)){
-                    wrongScore(); 
-                    C1.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        C1.setForeground(Color.BLACK);
-                        C1.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                if (!(B5.getText().isEmpty())) {
+                    if (B5.getName().equals("B5")) {
+                        if (!(Integer.parseInt(B5.getText()) == 5)){
+                            B5.setForeground(Color.RED);
+                            if (error[9] != 1) {
+                                wrongScore();
+                                error[9] = 1;
+                            } 
+                        } else {   
+                            try {
+                                B5.setForeground(Color.BLACK);
+                                B5.setEnabled(false);
+                                if (error1[9] != 1) {
+                                rightScore();                               
+                                error1[9] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
                 }
-                int c2value = Integer.parseInt(C2.getText());
-                if(!(c2value == 2)){
-                    wrongScore(); 
-                    C2.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        C2.setForeground(Color.BLACK);
-                        C2.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                if (!(B6.getText().isEmpty())) {
+                    if (B6.getName().equals("B6")) {
+                        if (!(Integer.parseInt(B6.getText()) == 7)){
+                            B6.setForeground(Color.RED);
+                            if (error[10] != 1) {
+                                wrongScore();
+                                error[10] = 1;
+                            } 
+                        } else {   
+                            try {
+                                B6.setForeground(Color.BLACK);
+                                B6.setEnabled(false);
+                                if (error1[10] != 1) {
+                                rightScore();                               
+                                error1[10] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
                 }
-                int c5value = Integer.parseInt(C5.getText());
-                if(!(c5value == 3)){
-                    wrongScore(); 
-                    C5.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        C5.setForeground(Color.BLACK);
-                        C5.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                if (!(B7.getText().isEmpty())) {
+                    if (B7.getName().equals("B7")) {
+                        if (!(Integer.parseInt(B7.getText()) == 2)){
+                            B7.setForeground(Color.RED);
+                            if (error[11] != 1) {
+                                wrongScore();
+                                error[11] = 1;
+                            } 
+                        } else {   
+                            try {
+                                B7.setForeground(Color.BLACK);
+                                B7.setEnabled(false); 
+                                if (error1[11] != 1) {
+                                rightScore();                               
+                                error1[11] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
                 }
-                int c6value = Integer.parseInt(C6.getText());
-                if(!(c6value == 1)){
-                    wrongScore(); 
-                    C6.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        C6.setForeground(Color.BLACK);
-                        C6.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                if (!(B8.getText().isEmpty())) {
+                    if (B8.getName().equals("B8")) {
+                        if (!(Integer.parseInt(B8.getText()) == 9)){
+                            B8.setForeground(Color.RED);
+                            if (error[12] != 1) {
+                                wrongScore();
+                                error[12] = 1;
+                            } 
+                        } else {   
+                            try {
+                                B8.setForeground(Color.BLACK);
+                                B8.setEnabled(false);
+                                if (error1[12] != 1) {
+                                rightScore();                               
+                                error1[12] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
                 }
-                int c9value = Integer.parseInt(C9.getText());
-                if(!(c9value == 8)){
-                    wrongScore();
-                    C9.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        C9.setForeground(Color.BLACK);
-                        C9.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }
-                
-                // D Panel
-                int d2value = Integer.parseInt(D2.getText());
-                if(!(d2value == 6)){
-                    wrongScore(); 
-                    D2.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        D2.setForeground(Color.BLACK);
-                        D2.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }
-                int d4value = Integer.parseInt(D4.getText());
-                if(!(d4value == 1)){
-                    wrongScore();
-                    D4.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        D4.setForeground(Color.BLACK);
-                        D4.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }
-                int d5value = Integer.parseInt(D5.getText());
-                if(!(d5value == 2)){
-                    wrongScore(); 
-                    D5.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        D5.setForeground(Color.BLACK);
-                        D5.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }
-                int d6value = Integer.parseInt(D6.getText());
-                if(!(d6value == 3)){
-                    wrongScore();
-                    D6.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        D6.setForeground(Color.BLACK);
-                        D6.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }
-                int d7value = Integer.parseInt(D7.getText());
-                if(!(d7value == 7)){
-                    wrongScore(); 
-                    D7.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        D7.setForeground(Color.BLACK);
-                        D7.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                if (!(B9.getText().isEmpty())) {
+                    if (B9.getName().equals("B9")) {
+                        if (!(Integer.parseInt(B9.getText()) == 3)){
+                            B9.setForeground(Color.RED);
+                            if (error[13] != 1) {
+                                wrongScore();
+                                error[13] = 1;
+                            } 
+                        } else {   
+                            try {
+                                B9.setForeground(Color.BLACK);
+                                B9.setEnabled(false);
+                                if (error1[13] != 1) {
+                                rightScore();                               
+                                error1[13] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
                 }
                 
-                 // PANEL E
-                int e1value = Integer.parseInt(E1.getText());
-                if(!(e1value == 1)){
-                    wrongScore();
-                    E1.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        E1.setForeground(Color.BLACK);
-                        E1.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                //PANEL C
+                if (!(C1.getText().isEmpty())) {
+                    if (C1.getName().equals("C1")) {
+                        if (!(Integer.parseInt(C1.getText()) == 9)){
+                            C1.setForeground(Color.RED);
+                            if (error[14] != 1) {
+                                wrongScore();
+                                error[14] = 1;
+                            } 
+                        } else {   
+                            try {
+                                C1.setForeground(Color.BLACK);
+                                C1.setEnabled(false);
+                                if (error1[14] != 1) {
+                                rightScore();                               
+                                error1[14] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
                 }
-                int e3value = Integer.parseInt(E3.getText());
-                if(!(e3value == 4)){
-                    wrongScore();
-                    E3.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        E3.setForeground(Color.BLACK);
-                        E3.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                if (!(C2.getText().isEmpty())) {
+                    if (C2.getName().equals("C2")) {
+                        if (!(Integer.parseInt(C2.getText()) == 2)){
+                            C2.setForeground(Color.RED);
+                            if (error[15] != 1) {
+                                wrongScore();
+                                error[15] = 1;
+                            } 
+                        } else {   
+                            try {
+                                C2.setForeground(Color.BLACK);
+                                C2.setEnabled(false);
+                                if (error1[15] != 1) {
+                                rightScore();                               
+                                error1[15] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
                 }
-                int e4value = Integer.parseInt(E4.getText());
-                if(!(e4value == 6)){
-                   wrongScore();
-                   E4.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        E4.setForeground(Color.BLACK);
-                        E4.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                if (!(C5.getText().isEmpty())) {
+                    if (C5.getName().equals("C5")) {
+                        if (!(Integer.parseInt(C5.getText()) == 3)){
+                            C5.setForeground(Color.RED);
+                            if (error[16] != 1) {
+                                wrongScore();
+                                error[16] = 1;
+                            } 
+                        } else {   
+                            try {
+                                C5.setForeground(Color.BLACK);
+                                C5.setEnabled(false);
+                                if (error1[16] != 1) {
+                                rightScore();                               
+                                error1[16] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
                 }
-                int e6value = Integer.parseInt(E6.getText());
-                if(!(e6value == 8)){
-                   wrongScore();
-                   E6.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        E6.setForeground(Color.BLACK);
-                        E6.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                if (!(C6.getText().isEmpty())) {
+                    if (C6.getName().equals("C6")) {
+                        if (!(Integer.parseInt(C6.getText()) == 1)){
+                            C6.setForeground(Color.RED);
+                            if (error[17] != 1) {
+                                wrongScore();
+                                error[17] = 1;
+                            } 
+                        } else {   
+                            try {
+                                C6.setForeground(Color.BLACK);
+                                C6.setEnabled(false);
+                                if (error1[17] != 1) {
+                                rightScore();                               
+                                error1[17] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
                 }
-                int e7value = Integer.parseInt(E7.getText());
-                if(!(e7value == 5)){
-                   wrongScore();
-                   E7.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        E7.setForeground(Color.BLACK);
-                        E7.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }
-                int e9value = Integer.parseInt(E9.getText());
-                if(!(e9value == 9)){
-                   wrongScore();
-                   E9.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        E9.setForeground(Color.BLACK);
-                        E9.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                if (!(C9.getText().isEmpty())) {
+                    if (C9.getName().equals("C9")) {
+                        if (!(Integer.parseInt(C9.getText()) == 8)){
+                            C9.setForeground(Color.RED);
+                            if (error[18] != 1) {
+                                wrongScore();
+                                error[18] = 1;
+                            } 
+                        } else {   
+                            try {
+                                C9.setForeground(Color.BLACK);
+                                C9.setEnabled(false);
+                                if (error1[18] != 1) {
+                                rightScore();                               
+                                error1[18] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
                 }
                 
-                // PANEL F
-                int f3value = Integer.parseInt(F3.getText());
-                if(!(f3value == 2)){
-                   wrongScore();
-                   F3.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        F3.setForeground(Color.BLACK);
-                        F3.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                //PANEL D
+                if (!(D2.getText().isEmpty())) {
+                    if (D2.getName().equals("D2")) {
+                        if (!(Integer.parseInt(D2.getText()) == 6)){
+                            D2.setForeground(Color.RED);
+                            if (error[19] != 1) {
+                                wrongScore();
+                                error[19] = 1;
+                            } 
+                        } else {   
+                            try {
+                                D2.setForeground(Color.BLACK);
+                                D2.setEnabled(false);
+                                if (error1[19] != 1) {
+                                rightScore();                               
+                                error1[19] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
                 }
-                int f4value = Integer.parseInt(F4.getText());
-                if(!(f4value == 5)){
-                   wrongScore();
-                   F4.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        F4.setForeground(Color.BLACK);
-                        F4.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                if (!(D4.getText().isEmpty())) {
+                    if (D4.getName().equals("D4")) {
+                        if (!(Integer.parseInt(D4.getText()) == 1)){
+                            D4.setForeground(Color.RED);
+                            if (error[20] != 1) {
+                                wrongScore();
+                                error[20] = 1;
+                            } 
+                        } else {   
+                            try {
+                                D4.setForeground(Color.BLACK);
+                                D4.setEnabled(false);
+                                if (error1[20] != 1) {
+                                rightScore();                               
+                                error1[20] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
                 }
-                int f5value = Integer.parseInt(F5.getText());
-                if(!(f5value == 4)){
-                   wrongScore();
-                   F5.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        F5.setForeground(Color.BLACK);
-                        F5.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                if (!(D5.getText().isEmpty())) {
+                    if (D5.getName().equals("D5")) {
+                        if (!(Integer.parseInt(D5.getText()) == 2)){
+                            D5.setForeground(Color.RED);
+                            if (error[21] != 1) {
+                                wrongScore();
+                                error[21] = 1;
+                            } 
+                        } else {   
+                            try {
+                                D5.setForeground(Color.BLACK);
+                                D5.setEnabled(false);
+                                if (error1[21] != 1) {
+                                rightScore();                               
+                                error1[21] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
                 }
-                int f6value = Integer.parseInt(F6.getText());
-                if(!(f6value == 9)){
-                   wrongScore();
-                   F6.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        F6.setForeground(Color.BLACK);
-                        F6.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                if (!(D6.getText().isEmpty())) {
+                    if (D6.getName().equals("D6")) {
+                        if (!(Integer.parseInt(D6.getText()) == 3)){
+                            D6.setForeground(Color.RED);
+                            if (error[22] != 1) {
+                                wrongScore();
+                                error[22] = 1;
+                            } 
+                        } else {   
+                            try {
+                                D6.setForeground(Color.BLACK);
+                                D6.setEnabled(false);
+                                if (error1[22] != 1) {
+                                rightScore();                               
+                                error1[22] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
                 }
-                int f8value = Integer.parseInt(F8.getText());
-                if(!(f8value == 6)){
-                   wrongScore(); 
-                   F8.setForeground(Color.RED);
+                if (!(D7.getText().isEmpty())) {
+                    if (D7.getName().equals("D7")) {
+                        if (!(Integer.parseInt(D7.getText()) == 7)){
+                            D7.setForeground(Color.RED);
+                            if (error[23] != 1) {
+                                wrongScore();
+                                error[23] = 1;
+                            } 
+                        } else {   
+                            try {
+                                D7.setForeground(Color.BLACK);
+                                D7.setEnabled(false);
+                                if (error1[23] != 1) {
+                                rightScore();                               
+                                error1[23] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                    }
                 }
-                else{
-                    try {
-                        rightScore();
-                        F8.setForeground(Color.BLACK);
-                        F8.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                
+                // PANEL E
+                if (!(E1.getText().isEmpty())) {
+                    if (E1.getName().equals("E1")) {
+                        if (!(Integer.parseInt(E1.getText()) == 1)){
+                            E1.setForeground(Color.RED);
+                            if (error[24] != 1) {
+                                wrongScore();
+                                error[24] = 1;
+                            } 
+                        } else {   
+                            try {
+                                E1.setForeground(Color.BLACK);
+                                E1.setEnabled(false);
+                                if (error1[24] != 1) {
+                                rightScore();                               
+                                error1[24] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                    }
+                }
+                if (!(E3.getText().isEmpty())) {
+                    if (E3.getName().equals("E3")) {
+                        if (!(Integer.parseInt(E3.getText()) == 4)){
+                            E3.setForeground(Color.RED);
+                            if (error[25] != 1) {
+                                wrongScore();
+                                error[25] = 1;
+                            } 
+                        } else {   
+                            try {
+                                E3.setForeground(Color.BLACK);
+                                E3.setEnabled(false);
+                                if (error1[25] != 1) {
+                                rightScore();                               
+                                error1[25] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                    }
+                }
+                if (!(E4.getText().isEmpty())) {
+                    if (E4.getName().equals("E4")) {
+                        if (!(Integer.parseInt(E4.getText()) == 6)){
+                            E4.setForeground(Color.RED);
+                            if (error[26] != 1) {
+                                wrongScore();
+                                error[26] = 1;
+                            } 
+                        } else {   
+                            try {
+                                E4.setForeground(Color.BLACK);
+                                E4.setEnabled(false);
+                                if (error1[26] != 1) {
+                                rightScore();                               
+                                error1[26] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                    }
+                }
+                if (!(E6.getText().isEmpty())) {
+                    if (E6.getName().equals("E6")) {
+                        if (!(Integer.parseInt(E6.getText()) == 8)){
+                            E6.setForeground(Color.RED);
+                            if (error[27] != 1) {
+                                wrongScore();
+                                error[27] = 1;
+                            } 
+                        } else {   
+                            try {
+                                E6.setForeground(Color.BLACK);
+                                E6.setEnabled(false);
+                                if (error1[27] != 1) {
+                                rightScore();                               
+                                error1[27] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                    }
+                }
+                if (!(E7.getText().isEmpty())) {
+                    if (E7.getName().equals("E7")) {
+                        if (!(Integer.parseInt(E7.getText()) == 5)){
+                            E7.setForeground(Color.RED);
+                            if (error[28] != 1) {
+                                wrongScore();
+                                error[28] = 1;
+                            } 
+                        } else {   
+                            try {
+                                E7.setForeground(Color.BLACK);
+                                E7.setEnabled(false);
+                                if (error1[28] != 1) {
+                                rightScore();                               
+                                error1[28] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                    }
+                }
+                if (!(E9.getText().isEmpty())) {
+                    if (E9.getName().equals("E9")) {
+                        if (!(Integer.parseInt(E9.getText()) == 9)){
+                            E9.setForeground(Color.RED);
+                            if (error[29] != 1) {
+                                wrongScore();
+                                error[29] = 1;
+                            } 
+                        } else {   
+                            try {
+                                E9.setForeground(Color.BLACK);
+                                E9.setEnabled(false);
+                                if (error1[29] != 1) {
+                                rightScore();                               
+                                error1[29] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                    }
+                }
+                
+                //PANEL F
+                if (!(F3.getText().isEmpty())) {
+                    if (F3.getName().equals("F3")) {
+                        if (!(Integer.parseInt(F3.getText()) == 2)){
+                            F3.setForeground(Color.RED);
+                            if (error[30] != 1) {
+                                wrongScore();
+                                error[30] = 1;
+                            } 
+                        } else {   
+                            try {
+                                F3.setForeground(Color.BLACK);
+                                F3.setEnabled(false);
+                                if (error1[30] != 1) {
+                                rightScore();                               
+                                error1[30] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                    }
+                }
+                if (!(F4.getText().isEmpty())) {
+                    if (F4.getName().equals("F4")) {
+                        if (!(Integer.parseInt(F4.getText()) == 5)){
+                            F4.setForeground(Color.RED);
+                            if (error[31] != 1) {
+                                wrongScore();
+                                error[31] = 1;
+                            } 
+                        } else {   
+                            try {
+                                F4.setForeground(Color.BLACK);
+                                F4.setEnabled(false);
+                                if (error1[31] != 1) {
+                                rightScore();                               
+                                error1[31] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                    }
+                }
+                if (!(F5.getText().isEmpty())) {
+                    if (F5.getName().equals("F5")) {
+                        if (!(Integer.parseInt(F5.getText()) == 4)){
+                            F5.setForeground(Color.RED);
+                            if (error[32] != 1) {
+                                wrongScore();
+                                error[32] = 1;
+                            } 
+                        } else {   
+                            try {
+                                F5.setForeground(Color.BLACK);
+                                F5.setEnabled(false);
+                                if (error1[32] != 1) {
+                                rightScore();                               
+                                error1[32] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                    }
+                }
+                if (!(F6.getText().isEmpty())) {
+                    if (F6.getName().equals("F6")) {
+                        if (!(Integer.parseInt(F6.getText()) == 9)){
+                            F6.setForeground(Color.RED);
+                            if (error[33] != 1) {
+                                wrongScore();
+                                error[33] = 1;
+                            } 
+                        } else {   
+                            try {
+                                F6.setForeground(Color.BLACK);
+                                F6.setEnabled(false);
+                                if (error1[33] != 1) {
+                                rightScore();                               
+                                error1[33] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                    }
+                }
+                if (!(F8.getText().isEmpty())) {
+                    if (F8.getName().equals("F8")) {
+                        if (!(Integer.parseInt(F8.getText()) == 6)){
+                            F8.setForeground(Color.RED);
+                            if (error[34] != 1) {
+                                wrongScore();
+                                error[34] = 1;
+                            } 
+                        } else {   
+                            try {
+                                F8.setForeground(Color.BLACK);
+                                F8.setEnabled(false);
+                                if (error1[34] != 1) {
+                                rightScore();                               
+                                error1[34] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
                 }
                 
                 // PANEL G
-                int g1value = Integer.parseInt(G1.getText());
-                if(!(g1value == 6)){
-                   wrongScore();
-                   G1.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        G1.setForeground(Color.BLACK);
-                        G1.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                if (!(G1.getText().isEmpty())) {
+                    if (G1.getName().equals("G1")) {
+                        if (!(Integer.parseInt(G1.getText()) == 6)){
+                            G1.setForeground(Color.RED);
+                            if (error[35] != 1) {
+                                wrongScore();
+                                error[35] = 1;
+                            } 
+                        } else {   
+                            try {
+                                G1.setForeground(Color.BLACK);
+                                G1.setEnabled(false);
+                                if (error1[35] != 1) {
+                                rightScore();                               
+                                error1[35] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
                 }
-                int g4value = Integer.parseInt(G4.getText());
-                if(!(g4value == 9)){
-                   wrongScore();
-                   G4.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        G4.setForeground(Color.BLACK);
-                        G4.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                if (!(G4.getText().isEmpty())) {
+                    if (G4.getName().equals("G4")) {
+                        if (!(Integer.parseInt(G4.getText()) == 9)){
+                            G4.setForeground(Color.RED);
+                            if (error[36] != 1) {
+                                wrongScore();
+                                error[36] = 1;
+                            } 
+                        } else {   
+                            try {
+                                G4.setForeground(Color.BLACK);
+                                G4.setEnabled(false);
+                                if (error1[36] != 1) {
+                                rightScore();                               
+                                error1[36] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
                 }
-                int g5value = Integer.parseInt(G5.getText());
-                if(!(g5value == 8)){
-                   wrongScore();
-                   G5.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        G5.setForeground(Color.BLACK);
-                        G5.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                if (!(G5.getText().isEmpty())) {
+                    if (G5.getName().equals("G5")) {
+                        if (!(Integer.parseInt(G5.getText()) == 8)){
+                            G5.setForeground(Color.RED);
+                            if (error[37] != 1) {
+                                wrongScore();
+                                error[37] = 1;
+                            } 
+                        } else {   
+                            try {
+                                G5.setForeground(Color.BLACK);
+                                G5.setEnabled(false);
+                                if (error1[37] != 1) {
+                                rightScore();                               
+                                error1[37] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
                 }
-                int g8value = Integer.parseInt(G8.getText());
-                if(!(g8value == 7)){
-                   wrongScore();
-                   G8.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        G8.setForeground(Color.BLACK);
-                        G8.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                if (!(G8.getText().isEmpty())) {
+                    if (G8.getName().equals("G8")) {
+                        if (!(Integer.parseInt(G8.getText()) == 7)){
+                            G8.setForeground(Color.RED);
+                            if (error[38] != 1) {
+                                wrongScore();
+                                error[38] = 1;
+                            } 
+                        } else {   
+                            try {
+                                G8.setForeground(Color.BLACK);
+                                G8.setEnabled(false);
+                                if (error1[38] != 1) {
+                                rightScore();                               
+                                error1[38] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
                 }
-                int g9value = Integer.parseInt(G9.getText());
-                if(!(g9value == 4)){
-                   wrongScore();
-                   G9.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        G9.setForeground(Color.BLACK);
-                        G9.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                if (!(G9.getText().isEmpty())) {
+                    if (G9.getName().equals("G9")) {
+                        if (!(Integer.parseInt(G9.getText()) == 4)){
+                            G9.setForeground(Color.RED);
+                            if (error[39] != 1) {
+                                wrongScore();
+                                error[39] = 1;
+                            } 
+                        } else {   
+                            try {
+                                G9.setForeground(Color.BLACK);
+                                G9.setEnabled(false);
+                                if (error1[39] != 1) {
+                                rightScore();                               
+                                error1[39] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
                 }
                 
                 // PANEL H
-                int h1value = Integer.parseInt(H1.getText());
-                if(!(h1value == 7)){
-                   wrongScore();
-                   H1.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        H1.setForeground(Color.BLACK);
-                        H1.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                if (!(H1.getText().isEmpty())) {
+                    if (H1.getName().equals("H1")) {
+                        if (!(Integer.parseInt(H1.getText()) == 7)){
+                            H1.setForeground(Color.RED);
+                            if (error[40] != 1) {
+                                wrongScore();
+                                error[40] = 1;
+                            } 
+                        } else {   
+                            try {
+                                H1.setForeground(Color.BLACK);
+                                H1.setEnabled(false);
+                                if (error1[40] != 1) {
+                                rightScore();                               
+                                error1[40] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
                 }
-                int h2value = Integer.parseInt(H2.getText());
-                if(!(h2value == 8)){
-                   wrongScore();
-                   H2.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        H2.setForeground(Color.BLACK);
-                        H2.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                if (!(H2.getText().isEmpty())) {
+                    if (H2.getName().equals("H2")) {
+                        if (!(Integer.parseInt(H2.getText()) == 8)){
+                            H2.setForeground(Color.RED);
+                            if (error[41] != 1) {
+                                wrongScore();
+                                error[41] = 1;
+                            } 
+                        } else {   
+                            try {
+                                H2.setForeground(Color.BLACK);
+                                H2.setEnabled(false);
+                                if (error1[41] != 1) {
+                                rightScore();                               
+                                error1[41] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
                 }
-                int h3value = Integer.parseInt(H3.getText());
-                if(!(h3value == 1)){
-                   wrongScore();
-                   H3.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        H3.setForeground(Color.BLACK);
-                        H3.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                if (!(H3.getText().isEmpty())) {
+                    if (H3.getName().equals("H3")) {
+                        if (!(Integer.parseInt(H3.getText()) == 1)){
+                            H3.setForeground(Color.RED);
+                            if (error[42] != 1) {
+                                wrongScore();
+                                error[42] = 1;
+                            } 
+                        } else {   
+                            try {
+                                H3.setForeground(Color.BLACK);
+                                H3.setEnabled(false);
+                                if (error1[42] != 1) {
+                                rightScore();                               
+                                error1[42] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
                 }
-                int h4value = Integer.parseInt(H4.getText());
-                if(!(h4value == 3)){
-                   wrongScore();
-                   H4.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        H4.setForeground(Color.BLACK);
-                        H4.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                if (!(H4.getText().isEmpty())) {
+                    if (H4.getName().equals("H4")) {
+                        if (!(Integer.parseInt(H4.getText()) == 3)){
+                            H4.setForeground(Color.RED);
+                            if (error[43] != 1) {
+                                wrongScore();
+                                error[43] = 1;
+                            } 
+                        } else {   
+                            try {
+                                H4.setForeground(Color.BLACK);
+                                H4.setEnabled(false);
+                                if (error1[43] != 1) {
+                                rightScore();                               
+                                error1[43] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
                 }
-                int h5value = Integer.parseInt(H5.getText());
-                if(!(h5value == 4)){
-                   wrongScore();
-                   H5.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        H5.setForeground(Color.BLACK);
-                        H5.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                if (!(H5.getText().isEmpty())) {
+                    if (H5.getName().equals("H5")) {
+                        if (!(Integer.parseInt(H5.getText()) == 4)){
+                            H5.setForeground(Color.RED);
+                            if (error[44] != 1) {
+                                wrongScore();
+                                error[44] = 1;
+                            } 
+                        } else {   
+                            try {
+                                H5.setForeground(Color.BLACK);
+                                H5.setEnabled(false);
+                                if (error1[44] != 1) {
+                                rightScore();                               
+                                error1[44] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
                 }
-                int h6value = Integer.parseInt(H6.getText());
-                if(!(h6value == 5)){
-                   wrongScore();
-                   H6.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        H6.setForeground(Color.BLACK);
-                        H6.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                if (!(H6.getText().isEmpty())) {
+                    if (H6.getName().equals("H6")) {
+                        if (!(Integer.parseInt(H6.getText()) == 5)){
+                            H6.setForeground(Color.RED);
+                            if (error[45] != 1) {
+                                wrongScore();
+                                error[45] = 1;
+                            } 
+                        } else {   
+                            try {
+                                H6.setForeground(Color.BLACK);
+                                H6.setEnabled(false);
+                                if (error1[45] != 1) {
+                                rightScore();                               
+                                error1[45] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
                 }
-                int h8value = Integer.parseInt(H8.getText());
-                if(!(h8value == 6)){
-                   wrongScore();
-                   H8.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        H8.setForeground(Color.BLACK);
-                        H8.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                if (!(H8.getText().isEmpty())) {
+                    if (H8.getName().equals("H8")) {
+                        if (!(Integer.parseInt(H8.getText()) == 6)){
+                            H8.setForeground(Color.RED);
+                            if (error[46] != 1) {
+                                wrongScore();
+                                error[46] = 1;
+                            } 
+                        } else {   
+                            try {
+                                H8.setForeground(Color.BLACK);
+                                H8.setEnabled(false);
+                                if (error1[46] != 1) {
+                                rightScore();                               
+                                error1[46] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
                 }
                 
-                // I Panel 
-                int i1value = Integer.parseInt(I1.getText());
-                if(!(i1value == 3)){
-                    wrongScore();
-                    I1.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        I1.setForeground(Color.BLACK);
-                        I1.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                // PANEL I 
+                if (!(I1.getText().isEmpty())) {
+                    if (I1.getName().equals("I1")) {
+                        if (!(Integer.parseInt(I1.getText()) == 3)){
+                            I1.setForeground(Color.RED);
+                            if (error[47] != 1) {
+                                wrongScore();
+                                error[47] = 1;
+                            } 
+                        } else {   
+                            try {
+                                I1.setForeground(Color.BLACK);
+                                I1.setEnabled(false);
+                                if (error1[47] != 1) {
+                                rightScore();                               
+                                error1[47] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
                 }
-                int i3value = Integer.parseInt(I3.getText());
-                if(!(i3value == 4)){
-                    wrongScore();
-                    I3.setForeground(Color.RED);
-                }else{
-                    try {
-                        rightScore();
-                        I3.setForeground(Color.BLACK);
-                        I3.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                if (!(I3.getText().isEmpty())) {
+                    if (I3.getName().equals("I3")) {
+                        if (!(Integer.parseInt(I3.getText()) == 4)){
+                            I3.setForeground(Color.RED);
+                            if (error[48] != 1) {
+                                wrongScore();
+                                error[48] = 1;
+                            } 
+                        } else {   
+                            try {
+                                I3.setForeground(Color.BLACK);
+                                I3.setEnabled(false);
+                                if (error1[48] != 1) {
+                                rightScore();                               
+                                error1[48] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
                 }
-                int i4value = Integer.parseInt(I4.getText());
-                if(!(i4value == 2)){
-                    wrongScore();
-                    I4.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        I4.setForeground(Color.BLACK);
-                        I4.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                if (!(I4.getText().isEmpty())) {
+                    if (I4.getName().equals("I4")) {
+                        if (!(Integer.parseInt(I4.getText()) == 2)){
+                            I4.setForeground(Color.RED);
+                            if (error[49] != 1) {
+                                wrongScore();
+                                error[49] = 1;
+                            } 
+                        } else {   
+                            try {
+                                I4.setForeground(Color.BLACK);
+                                I4.setEnabled(false);
+                                if (error1[49] != 1) {
+                                rightScore();                               
+                                error1[49] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
                 }
-                int i5value = Integer.parseInt(I5.getText());
-                if(!(i5value == 7)){
-                    wrongScore(); 
-                    I5.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        I5.setForeground(Color.BLACK);
-                        I5.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                if (!(I5.getText().isEmpty())) {
+                    if (I5.getName().equals("I5")) {
+                        if (!(Integer.parseInt(I5.getText()) == 7)){
+                            I5.setForeground(Color.RED);
+                            if (error[50] != 1) {
+                                wrongScore();
+                                error[50] = 1;
+                            } 
+                        } else {   
+                            try {
+                                I5.setForeground(Color.BLACK);
+                                I5.setEnabled(false);
+                                if (error1[50] != 1) {
+                                rightScore();                               
+                                error1[50] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
                 }
-                int i6value = Integer.parseInt(I6.getText());
-                if(!(i6value == 6)){
-                    wrongScore();
-                    I6.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        I6.setForeground(Color.BLACK);
-                        I6.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                if (!(I6.getText().isEmpty())) {
+                    if (I6.getName().equals("I6")) {
+                        if (!(Integer.parseInt(I6.getText()) == 6)){
+                            I6.setForeground(Color.RED);
+                            if (error[51] != 1) {
+                                wrongScore();
+                                error[51] = 1;
+                            } 
+                        } else {   
+                            try {
+                                I6.setForeground(Color.BLACK);
+                                I6.setEnabled(false);
+                                if (error1[51] != 1) {
+                                rightScore();                               
+                                error1[51] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
                 }
-                int i7value = Integer.parseInt(I7.getText());
-                if(!(i7value == 8)){
-                    wrongScore();
-                    I7.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        I7.setForeground(Color.BLACK);
-                        I7.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                if (!(I7.getText().isEmpty())) {
+                    if (I7.getName().equals("I7")) {
+                        if (!(Integer.parseInt(I7.getText()) == 8)){
+                            I7.setForeground(Color.RED);
+                            if (error[52] != 1) {
+                                wrongScore();
+                                error[52] = 1;
+                            } 
+                        } else {   
+                            try {
+                                I7.setForeground(Color.BLACK);
+                                I7.setEnabled(false);
+                                if (error1[52] != 1) {
+                                rightScore();                               
+                                error1[52] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
                 }
-                int i8value = Integer.parseInt(I8.getText());
-                if(!(i8value == 1)){
-                    wrongScore(); 
-                    I8.setForeground(Color.RED);
-                }
-                else{
-                    try {
-                        rightScore();
-                        I8.setForeground(Color.BLACK);
-                        I8.setEnabled(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                if (!(I8.getText().isEmpty())) {
+                    if (I8.getName().equals("I8")) {
+                        if (!(Integer.parseInt(I8.getText()) == 1)){
+                            I8.setForeground(Color.RED);
+                            if (error[53] != 1) {
+                                wrongScore();
+                                error[53] = 1;
+                            } 
+                        } else {   
+                            try {
+                                I8.setForeground(Color.BLACK);
+                                I8.setEnabled(false);
+                                if (error1[53] != 1) {
+                                rightScore();                               
+                                error1[53] = 1;
+                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
                     }
-                } */
+                }      
             }
         }); 
         

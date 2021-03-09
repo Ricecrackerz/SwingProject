@@ -1,6 +1,8 @@
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -11,12 +13,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /*
  * @author TonyDiaz stans
  */
 
-public class EndScreen extends javax.swing.JFrame {
+public class EndScreen extends javax.swing.JFrame implements KeyListener {
 
     public static int INDEX = 0;
     public static int NEW_SCORE = 0;
@@ -26,6 +29,9 @@ public class EndScreen extends javax.swing.JFrame {
         getContentPane().setBackground(new java.awt.Color(252, 248, 232));
         setSize(600,400);
         setLocationRelativeTo(null);
+        addKeyListener(this); 
+        setFocusable(true);
+        setFocusTraversalKeysEnabled(false); 
     }
     
     // To display SCORE on screen
@@ -34,6 +40,9 @@ public class EndScreen extends javax.swing.JFrame {
         getContentPane().setBackground(new java.awt.Color(252, 248, 232));
         setSize(600,400);
         setLocationRelativeTo(null);
+        addKeyListener(this); 
+        setFocusable(true);
+        setFocusTraversalKeysEnabled(false); 
         
         ScoreLabel.setText(para);
     }
@@ -43,6 +52,9 @@ public class EndScreen extends javax.swing.JFrame {
         getContentPane().setBackground(new java.awt.Color(252, 248, 232));
         setSize(600,400);
         setLocationRelativeTo(null);
+        addKeyListener(this); 
+        setFocusable(true);
+        setFocusTraversalKeysEnabled(false); 
         hsLabel.setVisible(false);
         hsLabel1.setVisible(false);
         hsButton.setVisible(false);
@@ -55,6 +67,44 @@ public class EndScreen extends javax.swing.JFrame {
         
         checkScore(s);
     }
+     @Override
+    public void keyTyped(KeyEvent e) {
+        System.out.println("key typed"); 
+        if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
+            System.exit(0);
+        }
+        if(e.getKeyCode() == KeyEvent.VK_F1){
+            JOptionPane.showMessageDialog(this, "Vincent Hoang #013410449 \n" + "Bryant Hong #014176552 \n" + "Lan Nguyen #013327561 \n" + 
+                    "Nhi Nguyen #013925392 \n" + "Term: Spring 2021", "Swing Project", JOptionPane.PLAIN_MESSAGE);
+        }
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) { 
+        if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
+            System.exit(0);
+        }
+        if(e.getKeyCode() == KeyEvent.VK_F1){
+            JOptionPane.showMessageDialog(this, "Vincent Hoang #013410449 \n" + "Bryant Hong #014176552 \n" + "Lan Nguyen #013327561 \n" + 
+                    "Nhi Nguyen #013925392 \n" + "Term: Spring 2021", "Swing Project", JOptionPane.PLAIN_MESSAGE);
+        }
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+    
+    @Override
+    public void keyReleased(KeyEvent e) {
+        if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
+            System.exit(0);
+        }
+        
+        if(e.getKeyCode() == KeyEvent.VK_F1){
+            JOptionPane.showMessageDialog(this, "Vincent Hoang #013410449 \n" + "Bryant Hong #014176552 \n" + "Lan Nguyen #013327561 \n" + 
+                    "Nhi Nguyen #013925392 \n" + "Term: Spring 2021", "Swing Project", JOptionPane.PLAIN_MESSAGE);
+        }
+        throw new UnsupportedOperationException("Not supported yet.");
+        
+    } 
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
