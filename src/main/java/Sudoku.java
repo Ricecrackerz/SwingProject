@@ -12,6 +12,8 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import java.awt.Toolkit;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 /**
  * @author TonyDiaz stans
@@ -19,8 +21,34 @@ import java.awt.Toolkit;
 public class Sudoku extends javax.swing.JFrame implements KeyListener {
     
     int sudokuScore = 540; 
-    int finalScore; 
-    int correctBoxes = 54; 
+    int finalScore;
+    int score;
+    int correctBoxes = 54;
+    
+    // 2d array = [[name of the textfield][input of the textfield]];
+    /*["A5"][], ["A6"][], ["A7"][], ["A9"][],
+                             ["B2"][], ["B3"][], ["B4"[], ["B5"][], ["B6"][], ["B7"][], ["B8"][], ["B9"][],
+                             ["C1"][], ["C2"][], ["C5"][], ["C6"][], ["C9"][],
+                             ["D2"][], ["D4"][], ["D5"][], ["D6"][], ["D7"][],
+                             ["E1"][], ["E3"][], ["E4"][], ["E6"][], ["E7"][], ["E9"][],
+                             ["F3"][], ["F4"][], ["F5"][], ["F6"][], ["F8"[],
+                             ["G1"][], ["G4"][], ["G5"][], ["G8"][], ["G9"][],
+                             ["H1"][], ["H2"][], ["H3"[], ["H4"][], ["H5"][],["H6"][], ["H8"][],
+                             ["I1"][], ["I3"][], ["I4"][], ["I5"][], ["I6"][], ["I7"][], ["I8"][] */
+    
+    public String[][] tdArray = {{"A2","3"},{"A3","5"},{"A4","2"}};
+    
+    public String[] array = {"A2",  "A3" , "A4", "A5", "A6", "A7", "A9",
+                             "B2", "B3", "B4", "B5", "B6", "B7", "B8", "B9",
+                             "C1", "C2", "C5", "C6", "C9",
+                             "D2", "D4", "D5", "D6", "D7",
+                             "E1", "E3", "E4", "E6", "E7", "E9",
+                             "F3", "F4", "F5", "F6", "F8",
+                             "G1", "G4", "G5", "G8", "G9",
+                             "H1", "H2", "H3", "H4", "H5","H6", "H8",
+                             "I1", "I3", "I4", "I5", "I6", "I7", "I8"};
+        
+    public int[] error = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
     
     Timer timer; 
     public Sudoku() {
@@ -34,7 +62,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
         checkGame();
     }
     
-    public Sudoku(int score){
+    public Sudoku(int s){
         initComponents();
         getContentPane().setBackground(new java.awt.Color(250, 250, 250));
         setLocationRelativeTo(null);
@@ -43,7 +71,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
         setFocusable(true);
         setFocusTraversalKeysEnabled(false);
         checkGame(); 
-        int finalScore = score; 
+        score = s; 
     }
     
     @Override
@@ -106,15 +134,15 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
     public void wrongScore(){
         sudokuScore -= 10;
+        System.out.println(sudokuScore);
     }
     
     public void rightScore() throws IOException {
         correctBoxes--; 
         if(correctBoxes == 0){
-            finalScore += sudokuScore;  
+            score += sudokuScore;  
             setVisible(false);
-            //new ColorGame(SCORE).setVisible(true);
-            new EndScreen(finalScore).setVisible(true);
+            new EndScreen(score).setVisible(true);
             setVisible(false);
             this.dispose();
         }
@@ -125,10 +153,53 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
             public void actionPerformed(ActionEvent e){
                 // A Panel 
                 int a2value = Integer.parseInt(A2.getText());
-                if(!(a2value == 3) ){
-                   wrongScore();
-                   A2.setForeground(Color.RED);
+                /*int i = 0;
+                int j = 0;
+
+                if ( (tdArray[i][j].equals(A2.getName())) && !(A2.getText().equals(tdArray[i][j+1]))) {
+                    if (error[i] != 1) {
+                        wrongScore();
+                        A2.setForeground(Color.RED);
+                        error[i] = 1;
+                        System.out.println(A2.getText());
+                                
+                        System.out.println(tdArray[i][j]);
+                    } else {
+                        System.out.println("no more subtracting points");
+                    } 
                 }
+                else {
+                    System.out.println("correct!");    
+                }
+                if ( (tdArray[i+1][j+1].equals(A3.getName())) && !(A3.getText().equals(tdArray[i+1][j+2]))) {
+                    if (error[i+1] != 1) {
+                        wrongScore();
+                        A3.setForeground(Color.RED);
+                        error[i+1] = 1;
+                        System.out.println(A3.getText());
+                                
+                        System.out.println(tdArray[i+1][j+1]);
+                    } else {
+                        System.out.println("no more subtracting points");
+                    } 
+                }
+                else {
+                    System.out.println("correct!");    
+                }
+                */    
+                
+                if(!(a2value == 3)){
+                for (int i = 0; i < array.length; i++) {
+                        if (A2.getName().equals(array[i])) {
+                                if (error[i] != 1) {
+                                    wrongScore();
+                                    A2.setForeground(Color.RED);
+                                    error[i] = 1;
+                                } else {
+                                    System.out.println("no more subtracting points");
+                                } 
+                        }                      
+                } }
                 else{
                     try {
                         rightScore();
@@ -140,8 +211,17 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
                 }
                 int a3value = Integer.parseInt(A3.getText());
                 if (!(a3value == 5)){
-                   wrongScore(); 
-                   A3.setForeground(Color.RED);
+                   for (int i = 0; i < array.length; i++) {
+                        if (A3.getName().equals(array[i])) {
+                                if (error[i] != 1) {
+                                    wrongScore();
+                                    A3.setForeground(Color.RED);
+                                    error[i] = 1;
+                                } else {
+                                    System.out.println("no more subtracting points");
+                                } 
+                        }                      
+                }
                 }
                 else{
                     try {
@@ -154,8 +234,17 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
                 }
                 int a4value = Integer.parseInt(A4.getText());
                 if(!(a4value == 2)){
-                    wrongScore(); 
-                    A4.setForeground(Color.RED);
+                    for (int i = 0; i < array.length; i++) {
+                        if (A4.getName().equals(array[i])) {
+                                if (error[i] != 1) {
+                                    wrongScore();
+                                    A4.setForeground(Color.RED);
+                                    error[i] = 1;
+                                } else {
+                                    System.out.println("no more subtracting points");
+                                } 
+                        }                      
+                }
                 }
                 else{
                     try {
@@ -168,8 +257,17 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
                 }
                 int a5value = Integer.parseInt(A5.getText());
                 if(!(a5value == 9)){
-                    wrongScore(); 
-                    A5.setForeground(Color.RED);
+                    for (int i = 0; i < array.length; i++) {
+                        if (A5.getName().equals(array[i])) {
+                                if (error[i] != 1) {
+                                    wrongScore();
+                                    A5.setForeground(Color.RED);
+                                    error[i] = 1;
+                                } else {
+                                    System.out.println("no more subtracting points");
+                                } 
+                        }                      
+                }
                 }
                 else{
                     try {
@@ -182,8 +280,17 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
                 }
                 int a6value = Integer.parseInt(A6.getText());
                 if(!(a6value == 6)){
-                    wrongScore(); 
-                    A6.setForeground(Color.RED);
+                    for (int i = 0; i < array.length; i++) {
+                        if (A6.getName().equals(array[i])) {
+                                if (error[i] != 1) {
+                                    wrongScore();
+                                    A6.setForeground(Color.RED);
+                                    error[i] = 1;
+                                } else {
+                                    System.out.println("no more subtracting points");
+                                } 
+                        }                      
+                }
                 }
                 else{
                     try {
@@ -196,8 +303,17 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
                 }
                 int a7value = Integer.parseInt(A7.getText());
                 if(!(a7value == 4)){
-                    wrongScore(); 
-                    A7.setForeground(Color.RED);
+                    for (int i = 0; i < array.length; i++) {
+                        if (A7.getName().equals(array[i])) {
+                                if (error[i] != 1) {
+                                    wrongScore();
+                                    A7.setForeground(Color.RED);
+                                    error[i] = 1;
+                                } else {
+                                    System.out.println("no more subtracting points");
+                                } 
+                        }                      
+                }
                 }
                 else{
                     try {
@@ -210,8 +326,17 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
                 }
                 int a9value = Integer.parseInt(A9.getText());
                 if(!(a9value == 7)){
-                    wrongScore(); 
-                    A9.setForeground(Color.RED);
+                    for (int i = 0; i < array.length; i++) {
+                        if (A9.getName().equals(array[i])) {
+                                if (error[i] != 1) {
+                                    wrongScore();
+                                    A9.setForeground(Color.RED);
+                                    error[i] = 1;
+                                } else {
+                                    System.out.println("no more subtracting points");
+                                } 
+                        }                      
+                }
                 }
                 else{
                     try {
@@ -1009,7 +1134,6 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
         time_dateLabel.setPreferredSize(new java.awt.Dimension(131, 121));
 
         jPanel1.setMaximumSize(null);
-        jPanel1.setMinimumSize(null);
         jPanel1.setPreferredSize(new java.awt.Dimension(151, 121));
 
         A1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1017,7 +1141,10 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
         A1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         A2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        A2.setToolTipText("");
+        A2.setActionCommand("<Not Set>");
         A2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        A2.setName("A2"); // NOI18N
         A2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 A2KeyTyped(evt);
@@ -1026,6 +1153,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         A3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         A3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        A3.setName("A3"); // NOI18N
         A3.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 A3KeyTyped(evt);
@@ -1034,6 +1162,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         A5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         A5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        A5.setName("A5"); // NOI18N
         A5.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 A5KeyTyped(evt);
@@ -1042,6 +1171,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         A4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         A4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        A4.setName("A4"); // NOI18N
         A4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 A4KeyTyped(evt);
@@ -1050,6 +1180,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         A6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         A6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        A6.setName("A6"); // NOI18N
         A6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 A6KeyTyped(evt);
@@ -1058,6 +1189,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         A7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         A7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        A7.setName("A7"); // NOI18N
         A7.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 A7KeyTyped(evt);
@@ -1066,6 +1198,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         A9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         A9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        A9.setName("A9"); // NOI18N
         A9.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 A9KeyTyped(evt);
@@ -1126,11 +1259,11 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
         );
 
         jPanel2.setMaximumSize(null);
-        jPanel2.setMinimumSize(null);
         jPanel2.setPreferredSize(new java.awt.Dimension(151, 121));
 
         I3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         I3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        I3.setName("I3"); // NOI18N
         I3.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 I3KeyTyped(evt);
@@ -1139,6 +1272,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         I5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         I5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        I5.setName("I5"); // NOI18N
         I5.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 I5KeyTyped(evt);
@@ -1147,6 +1281,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         I4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         I4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        I4.setName("I4"); // NOI18N
         I4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 I4KeyTyped(evt);
@@ -1155,6 +1290,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         I6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         I6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        I6.setName("I6"); // NOI18N
         I6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 I6KeyTyped(evt);
@@ -1163,6 +1299,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         I7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         I7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        I7.setName("I7"); // NOI18N
         I7.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 I7KeyTyped(evt);
@@ -1171,14 +1308,16 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         I8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         I8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        I8.setName("I8"); // NOI18N
         I8.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 I8KeyTyped(evt);
             }
         });
 
-        I1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        I1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         I1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        I1.setName("I1"); // NOI18N
         I1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 I1KeyTyped(evt);
@@ -1242,7 +1381,6 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
         );
 
         jPanel3.setMaximumSize(null);
-        jPanel3.setMinimumSize(null);
         jPanel3.setPreferredSize(new java.awt.Dimension(151, 121));
 
         B1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1251,6 +1389,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         B2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         B2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        B2.setName("B2"); // NOI18N
         B2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 B2KeyTyped(evt);
@@ -1259,6 +1398,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         B5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         B5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        B5.setName("B5"); // NOI18N
         B5.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 B5KeyTyped(evt);
@@ -1267,6 +1407,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         B4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         B4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        B4.setName("B4"); // NOI18N
         B4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 B4KeyTyped(evt);
@@ -1275,6 +1416,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         B6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         B6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        B6.setName("B6"); // NOI18N
         B6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 B6KeyTyped(evt);
@@ -1283,6 +1425,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         B7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         B7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        B7.setName("B7"); // NOI18N
         B7.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 B7KeyTyped(evt);
@@ -1291,6 +1434,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         B8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         B8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        B8.setName("B8"); // NOI18N
         B8.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 B8KeyTyped(evt);
@@ -1299,6 +1443,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         B9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         B9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        B9.setName("B9"); // NOI18N
         B9.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 B9KeyTyped(evt);
@@ -1358,11 +1503,11 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
         );
 
         jPanel4.setMaximumSize(null);
-        jPanel4.setMinimumSize(null);
         jPanel4.setPreferredSize(new java.awt.Dimension(151, 121));
 
         C2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         C2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        C2.setName("C2"); // NOI18N
         C2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 C2KeyTyped(evt);
@@ -1371,6 +1516,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         C5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         C5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        C5.setName("C5"); // NOI18N
         C5.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 C5KeyTyped(evt);
@@ -1379,6 +1525,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         C6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         C6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        C6.setName("C6"); // NOI18N
         C6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 C6KeyTyped(evt);
@@ -1387,6 +1534,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         C9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         C9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        C9.setName("C9"); // NOI18N
         C9.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 C9KeyTyped(evt);
@@ -1395,6 +1543,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         C1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         C1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        C1.setName("C1"); // NOI18N
         C1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 C1KeyTyped(evt);
@@ -1466,11 +1615,11 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
         );
 
         jPanel5.setMaximumSize(null);
-        jPanel5.setMinimumSize(null);
         jPanel5.setPreferredSize(new java.awt.Dimension(151, 121));
 
         E3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         E3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        E3.setName("E3"); // NOI18N
         E3.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 E3KeyTyped(evt);
@@ -1479,6 +1628,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         E4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         E4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        E4.setName("E4"); // NOI18N
         E4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 E4KeyTyped(evt);
@@ -1487,6 +1637,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         E6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         E6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        E6.setName("E6"); // NOI18N
         E6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 E6KeyTyped(evt);
@@ -1495,6 +1646,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         E7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         E7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        E7.setName("E7"); // NOI18N
         E7.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 E7KeyTyped(evt);
@@ -1503,6 +1655,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         E9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         E9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        E9.setName("E9"); // NOI18N
         E9.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 E9KeyTyped(evt);
@@ -1511,6 +1664,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         E1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         E1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        E1.setName("E1"); // NOI18N
         E1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 E1KeyTyped(evt);
@@ -1580,7 +1734,6 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
         );
 
         jPanel6.setMaximumSize(null);
-        jPanel6.setMinimumSize(null);
         jPanel6.setPreferredSize(new java.awt.Dimension(151, 121));
 
         F1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1589,6 +1742,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         F3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         F3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        F3.setName("F3"); // NOI18N
         F3.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 F3KeyTyped(evt);
@@ -1597,6 +1751,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         F5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         F5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        F5.setName("F5"); // NOI18N
         F5.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 F5KeyTyped(evt);
@@ -1605,6 +1760,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         F4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         F4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        F4.setName("F4"); // NOI18N
         F4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 F4KeyTyped(evt);
@@ -1613,6 +1769,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         F6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         F6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        F6.setName("F6"); // NOI18N
         F6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 F6KeyTyped(evt);
@@ -1621,6 +1778,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         F8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         F8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        F8.setName("F8"); // NOI18N
         F8.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 F8KeyTyped(evt);
@@ -1691,7 +1849,6 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
         );
 
         jPanel7.setMaximumSize(null);
-        jPanel7.setMinimumSize(null);
         jPanel7.setPreferredSize(new java.awt.Dimension(151, 121));
 
         D1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1700,6 +1857,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         D2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         D2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        D2.setName("D2"); // NOI18N
         D2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 D2KeyTyped(evt);
@@ -1708,6 +1866,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         D5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         D5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        D5.setName("D5"); // NOI18N
         D5.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 D5KeyTyped(evt);
@@ -1716,6 +1875,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         D4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         D4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        D4.setName("D4"); // NOI18N
         D4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 D4KeyTyped(evt);
@@ -1724,6 +1884,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         D6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         D6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        D6.setName("D6"); // NOI18N
         D6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 D6KeyTyped(evt);
@@ -1732,6 +1893,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         D7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         D7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        D7.setName("D7"); // NOI18N
         D7.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 D7KeyTyped(evt);
@@ -1798,11 +1960,11 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
         );
 
         jPanel8.setMaximumSize(null);
-        jPanel8.setMinimumSize(null);
         jPanel8.setPreferredSize(new java.awt.Dimension(151, 121));
 
         G5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         G5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        G5.setName("G5"); // NOI18N
         G5.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 G5KeyTyped(evt);
@@ -1811,6 +1973,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         G4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         G4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        G4.setName("G4"); // NOI18N
         G4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 G4KeyTyped(evt);
@@ -1819,6 +1982,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         G8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         G8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        G8.setName("G8"); // NOI18N
         G8.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 G8KeyTyped(evt);
@@ -1827,6 +1991,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         G9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         G9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        G9.setName("G9"); // NOI18N
         G9.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 G9KeyTyped(evt);
@@ -1835,6 +2000,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         G1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         G1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        G1.setName("G1"); // NOI18N
         G1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 G1KeyTyped(evt);
@@ -1903,11 +2069,11 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
         );
 
         jPanel9.setMaximumSize(null);
-        jPanel9.setMinimumSize(null);
         jPanel9.setPreferredSize(new java.awt.Dimension(151, 121));
 
         H2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         H2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        H2.setName("H2"); // NOI18N
         H2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 H2KeyTyped(evt);
@@ -1916,6 +2082,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         H3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         H3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        H3.setName("H3"); // NOI18N
         H3.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 H3KeyTyped(evt);
@@ -1924,6 +2091,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         H5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         H5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        H5.setName("H5"); // NOI18N
         H5.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 H5KeyTyped(evt);
@@ -1932,6 +2100,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         H4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         H4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        H4.setName("H4"); // NOI18N
         H4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 H4KeyTyped(evt);
@@ -1940,6 +2109,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         H6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         H6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        H6.setName("H6"); // NOI18N
         H6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 H6KeyTyped(evt);
@@ -1948,6 +2118,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         H8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         H8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        H8.setName("H8"); // NOI18N
         H8.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 H8KeyTyped(evt);
@@ -1956,6 +2127,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         H1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         H1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        H1.setName("H1"); // NOI18N
         H1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 H1KeyTyped(evt);
@@ -2027,6 +2199,11 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
         });
 
         quitButton.setText("Quit");
+        quitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quitButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -2075,7 +2252,6 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(time_dateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(89, 89, 89)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -2091,7 +2267,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
                         .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(quitButton))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         pack();
@@ -2594,6 +2770,16 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
        } else {        
        }
     }//GEN-LAST:event_I8KeyTyped
+
+    private void quitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitButtonActionPerformed
+        try {
+            setVisible(false);
+            new EndScreen(score).setVisible(true);
+            this.dispose();
+        } catch (IOException ex) {
+            Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_quitButtonActionPerformed
  
     /* * @param args the command line arguments
      */

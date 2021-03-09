@@ -80,7 +80,6 @@
                       <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                       <Component id="jPanel7" alignment="0" max="32767" attributes="0"/>
@@ -101,7 +100,7 @@
                   <Component id="jPanel2" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="quitButton" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="41" max="32767" attributes="0"/>
+              <EmptySpace pref="47" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -127,9 +126,6 @@
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="null"/>
-        </Property>
-        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="null"/>
         </Property>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -214,11 +210,14 @@
         <Component class="javax.swing.JTextField" name="A2">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="actionCommand" type="java.lang.String" value="&lt;Not Set&gt;"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="A2" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="A2KeyTyped"/>
@@ -232,6 +231,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="A3" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="A3KeyTyped"/>
@@ -245,6 +245,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="A5" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="A5KeyTyped"/>
@@ -258,6 +259,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="A4" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="A4KeyTyped"/>
@@ -271,6 +273,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="A6" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="A6KeyTyped"/>
@@ -284,6 +287,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="A7" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="A7KeyTyped"/>
@@ -297,6 +301,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="A9" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="A9KeyTyped"/>
@@ -318,9 +323,6 @@
     <Container class="javax.swing.JPanel" name="jPanel2">
       <Properties>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="null"/>
-        </Property>
-        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="null"/>
         </Property>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -398,6 +400,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="I3" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="I3KeyTyped"/>
@@ -411,6 +414,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="I5" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="I5KeyTyped"/>
@@ -424,6 +428,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="I4" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="I4KeyTyped"/>
@@ -437,6 +442,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="I6" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="I6KeyTyped"/>
@@ -450,6 +456,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="I7" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="I7KeyTyped"/>
@@ -463,6 +470,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="I8" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="I8KeyTyped"/>
@@ -470,12 +478,13 @@
         </Component>
         <Component class="javax.swing.JTextField" name="I1">
           <Properties>
-            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="I1" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="I1KeyTyped"/>
@@ -508,9 +517,6 @@
     <Container class="javax.swing.JPanel" name="jPanel3">
       <Properties>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="null"/>
-        </Property>
-        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="null"/>
         </Property>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -599,6 +605,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="B2" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="B2KeyTyped"/>
@@ -612,6 +619,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="B5" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="B5KeyTyped"/>
@@ -625,6 +633,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="B4" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="B4KeyTyped"/>
@@ -638,6 +647,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="B6" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="B6KeyTyped"/>
@@ -651,6 +661,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="B7" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="B7KeyTyped"/>
@@ -664,6 +675,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="B8" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="B8KeyTyped"/>
@@ -677,6 +689,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="B9" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="B9KeyTyped"/>
@@ -698,9 +711,6 @@
     <Container class="javax.swing.JPanel" name="jPanel4">
       <Properties>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="null"/>
-        </Property>
-        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="null"/>
         </Property>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -778,6 +788,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="C2" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="C2KeyTyped"/>
@@ -791,6 +802,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="C5" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="C5KeyTyped"/>
@@ -804,6 +816,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="C6" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="C6KeyTyped"/>
@@ -817,6 +830,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="C9" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="C9KeyTyped"/>
@@ -830,6 +844,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="C1" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="C1KeyTyped"/>
@@ -884,9 +899,6 @@
     <Container class="javax.swing.JPanel" name="jPanel5">
       <Properties>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="null"/>
-        </Property>
-        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="null"/>
         </Property>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -965,6 +977,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="E3" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="E3KeyTyped"/>
@@ -978,6 +991,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="E4" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="E4KeyTyped"/>
@@ -991,6 +1005,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="E6" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="E6KeyTyped"/>
@@ -1004,6 +1019,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="E7" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="E7KeyTyped"/>
@@ -1017,6 +1033,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="E9" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="E9KeyTyped"/>
@@ -1030,6 +1047,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="E1" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="E1KeyTyped"/>
@@ -1073,9 +1091,6 @@
     <Container class="javax.swing.JPanel" name="jPanel6">
       <Properties>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="null"/>
-        </Property>
-        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="null"/>
         </Property>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -1166,6 +1181,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="F3" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="F3KeyTyped"/>
@@ -1179,6 +1195,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="F5" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="F5KeyTyped"/>
@@ -1192,6 +1209,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="F4" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="F4KeyTyped"/>
@@ -1205,6 +1223,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="F6" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="F6KeyTyped"/>
@@ -1218,6 +1237,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="F8" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="F8KeyTyped"/>
@@ -1261,9 +1281,6 @@
     <Container class="javax.swing.JPanel" name="jPanel7">
       <Properties>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="null"/>
-        </Property>
-        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="null"/>
         </Property>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -1351,6 +1368,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="D2" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="D2KeyTyped"/>
@@ -1364,6 +1382,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="D5" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="D5KeyTyped"/>
@@ -1377,6 +1396,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="D4" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="D4KeyTyped"/>
@@ -1390,6 +1410,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="D6" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="D6KeyTyped"/>
@@ -1403,6 +1424,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="D7" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="D7KeyTyped"/>
@@ -1446,9 +1468,6 @@
     <Container class="javax.swing.JPanel" name="jPanel8">
       <Properties>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="null"/>
-        </Property>
-        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="null"/>
         </Property>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -1520,6 +1539,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="G5" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="G5KeyTyped"/>
@@ -1533,6 +1553,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="G4" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="G4KeyTyped"/>
@@ -1546,6 +1567,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="G8" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="G8KeyTyped"/>
@@ -1559,6 +1581,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="G9" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="G9KeyTyped"/>
@@ -1572,6 +1595,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="G1" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="G1KeyTyped"/>
@@ -1626,9 +1650,6 @@
     <Container class="javax.swing.JPanel" name="jPanel9">
       <Properties>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="null"/>
-        </Property>
-        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="null"/>
         </Property>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -1707,6 +1728,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="H2" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="H2KeyTyped"/>
@@ -1720,6 +1742,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="H3" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="H3KeyTyped"/>
@@ -1733,6 +1756,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="H5" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="H5KeyTyped"/>
@@ -1746,6 +1770,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="H4" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="H4KeyTyped"/>
@@ -1759,6 +1784,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="H6" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="H6KeyTyped"/>
@@ -1772,6 +1798,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="H8" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="H8KeyTyped"/>
@@ -1785,6 +1812,7 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="name" type="java.lang.String" value="H1" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="H1KeyTyped"/>
@@ -1826,6 +1854,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Quit"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="quitButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
