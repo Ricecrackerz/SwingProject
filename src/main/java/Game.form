@@ -57,6 +57,7 @@
           <Color blue="d4" green="e2" red="d4" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="B"/>
+        <Property name="toolTipText" type="java.lang.String" value="Click &quot;B&quot; to guess the letter B!"/>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
@@ -72,6 +73,7 @@
           <Color blue="d4" green="e2" red="d4" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="C"/>
+        <Property name="toolTipText" type="java.lang.String" value="Click &quot;C&quot; to guess the letter C!"/>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
@@ -87,6 +89,7 @@
           <Color blue="d4" green="e2" red="d4" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="D"/>
+        <Property name="toolTipText" type="java.lang.String" value="Click &quot;D&quot; to guess the letter D!"/>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
@@ -102,6 +105,7 @@
           <Color blue="d4" green="e2" red="d4" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="E"/>
+        <Property name="toolTipText" type="java.lang.String" value="Click &quot;E&quot; to guess the letter E!"/>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
@@ -117,6 +121,7 @@
           <Color blue="d4" green="e2" red="d4" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="F"/>
+        <Property name="toolTipText" type="java.lang.String" value="Click &quot;F&quot; to guess the letter F!"/>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
@@ -132,6 +137,7 @@
           <Color blue="d4" green="e2" red="d4" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="I"/>
+        <Property name="toolTipText" type="java.lang.String" value="Click &quot;I&quot; to guess the letter I!"/>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
@@ -147,6 +153,7 @@
           <Color blue="d4" green="e2" red="d4" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="L"/>
+        <Property name="toolTipText" type="java.lang.String" value="Click &quot;L&quot; to guess the letter L!"/>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
@@ -162,6 +169,7 @@
           <Color blue="d4" green="e2" red="d4" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="G"/>
+        <Property name="toolTipText" type="java.lang.String" value="Click &quot;G&quot; to guess the letter G!"/>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
@@ -177,6 +185,7 @@
           <Color blue="d4" green="e2" red="d4" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="H"/>
+        <Property name="toolTipText" type="java.lang.String" value="Click &quot;H&quot; to guess the letter H!"/>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
@@ -192,6 +201,7 @@
           <Color blue="d4" green="e2" red="d4" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Q"/>
+        <Property name="toolTipText" type="java.lang.String" value="Click &quot;Q&quot; to guess the letter Q!"/>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
@@ -207,6 +217,7 @@
           <Color blue="d4" green="e2" red="d4" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="R"/>
+        <Property name="toolTipText" type="java.lang.String" value="Click &quot;R&quot; to guess the letter R."/>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
@@ -222,6 +233,7 @@
           <Color blue="d4" green="e2" red="d4" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="N"/>
+        <Property name="toolTipText" type="java.lang.String" value="Click &quot;N&quot; to guess the letter N!"/>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
@@ -237,6 +249,7 @@
           <Color blue="d4" green="e2" red="d4" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="M"/>
+        <Property name="toolTipText" type="java.lang.String" value="Click &quot;M&quot; to guess the letter M!"/>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
@@ -252,6 +265,7 @@
           <Color blue="d4" green="e2" red="d4" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="O"/>
+        <Property name="toolTipText" type="java.lang.String" value="Click &quot;O&quot; to guess the letter O!"/>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
@@ -267,6 +281,7 @@
           <Color blue="d4" green="e2" red="d4" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Z"/>
+        <Property name="toolTipText" type="java.lang.String" value="Click &quot;Z&quot; to guess the letter Z!"/>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
@@ -282,6 +297,7 @@
           <Color blue="d4" green="e2" red="d4" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Y"/>
+        <Property name="toolTipText" type="java.lang.String" value="Click &quot;Y&quot; to guess the letter Y!"/>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
@@ -297,6 +313,7 @@
           <Color blue="d4" green="e2" red="d4" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="X"/>
+        <Property name="toolTipText" type="java.lang.String" value="Click &quot;X&quot; to guess the letter X!"/>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
@@ -312,6 +329,7 @@
           <Color blue="d4" green="e2" red="d4" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="W"/>
+        <Property name="toolTipText" type="java.lang.String" value="Click &quot;W&quot; to guess the letter W!"/>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
@@ -327,6 +345,7 @@
           <Color blue="d4" green="e2" red="d4" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="V"/>
+        <Property name="toolTipText" type="java.lang.String" value="Click &quot;V&quot; to guess the letter V!"/>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
@@ -342,6 +361,7 @@
           <Color blue="d4" green="e2" red="d4" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="U"/>
+        <Property name="toolTipText" type="java.lang.String" value="Click &quot;U&quot; to guess the letter U!"/>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
@@ -357,6 +377,7 @@
           <Color blue="d4" green="e2" red="d4" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="T"/>
+        <Property name="toolTipText" type="java.lang.String" value="Click &quot;T&quot; to guess the letter T!"/>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
@@ -372,6 +393,7 @@
           <Color blue="d4" green="e2" red="d4" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="S"/>
+        <Property name="toolTipText" type="java.lang.String" value="Click &quot;S&quot; to guess the letter S!"/>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
@@ -726,6 +748,7 @@
               <Font name="Comic Sans MS" size="11" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Skip"/>
+            <Property name="toolTipText" type="java.lang.String" value="Click &quot;Skip&quot; to skip this game!"/>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="focusPainted" type="boolean" value="false"/>
           </Properties>
@@ -1051,6 +1074,7 @@
           <Color blue="d4" green="e2" red="d4" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="K"/>
+        <Property name="toolTipText" type="java.lang.String" value="Click &quot;K&quot; to guess the letter K!"/>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
@@ -1066,6 +1090,7 @@
           <Color blue="d4" green="e2" red="d4" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="P"/>
+        <Property name="toolTipText" type="java.lang.String" value="Click &quot;P&quot; to guess the letter P!"/>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
@@ -1081,6 +1106,7 @@
           <Color blue="d4" green="e2" red="d4" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="J"/>
+        <Property name="toolTipText" type="java.lang.String" value="Click &quot;J&quot; to guess the letter J!"/>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
@@ -1096,6 +1122,7 @@
           <Color blue="d4" green="e2" red="d4" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="A"/>
+        <Property name="toolTipText" type="java.lang.String" value="Click &quot;A&quot; to guess the letter A!"/>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>

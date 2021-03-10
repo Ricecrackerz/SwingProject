@@ -1410,132 +1410,154 @@ public class Game extends javax.swing.JFrame implements KeyListener {
 
         bButton.setBackground(new java.awt.Color(212, 226, 212));
         bButton.setText("B");
+        bButton.setToolTipText("Click \"B\" to guess the letter B!");
         bButton.setBorderPainted(false);
         bButton.setFocusPainted(false);
         getContentPane().add(bButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, -1, -1));
 
         cButton.setBackground(new java.awt.Color(212, 226, 212));
         cButton.setText("C");
+        cButton.setToolTipText("Click \"C\" to guess the letter C!");
         cButton.setBorderPainted(false);
         cButton.setFocusPainted(false);
         getContentPane().add(cButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, -1, -1));
 
         dButton.setBackground(new java.awt.Color(212, 226, 212));
         dButton.setText("D");
+        dButton.setToolTipText("Click \"D\" to guess the letter D!");
         dButton.setBorderPainted(false);
         dButton.setFocusPainted(false);
         getContentPane().add(dButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, -1, -1));
 
         eButton.setBackground(new java.awt.Color(212, 226, 212));
         eButton.setText("E");
+        eButton.setToolTipText("Click \"E\" to guess the letter E!");
         eButton.setBorderPainted(false);
         eButton.setFocusPainted(false);
         getContentPane().add(eButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, -1, -1));
 
         fButton.setBackground(new java.awt.Color(212, 226, 212));
         fButton.setText("F");
+        fButton.setToolTipText("Click \"F\" to guess the letter F!");
         fButton.setBorderPainted(false);
         fButton.setFocusPainted(false);
         getContentPane().add(fButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, -1, -1));
 
         iButton.setBackground(new java.awt.Color(212, 226, 212));
         iButton.setText("I");
+        iButton.setToolTipText("Click \"I\" to guess the letter I!");
         iButton.setBorderPainted(false);
         iButton.setFocusPainted(false);
         getContentPane().add(iButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 270, 44, -1));
 
         lButton.setBackground(new java.awt.Color(212, 226, 212));
         lButton.setText("L");
+        lButton.setToolTipText("Click \"L\" to guess the letter L!");
         lButton.setBorderPainted(false);
         lButton.setFocusPainted(false);
         getContentPane().add(lButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, -1, -1));
 
         gButton.setBackground(new java.awt.Color(212, 226, 212));
         gButton.setText("G");
+        gButton.setToolTipText("Click \"G\" to guess the letter G!");
         gButton.setBorderPainted(false);
         gButton.setFocusPainted(false);
         getContentPane().add(gButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, -1, -1));
 
         hButton.setBackground(new java.awt.Color(212, 226, 212));
         hButton.setText("H");
+        hButton.setToolTipText("Click \"H\" to guess the letter H!");
         hButton.setBorderPainted(false);
         hButton.setFocusPainted(false);
         getContentPane().add(hButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 270, -1, -1));
 
         qButton.setBackground(new java.awt.Color(212, 226, 212));
         qButton.setText("Q");
+        qButton.setToolTipText("Click \"Q\" to guess the letter Q!");
         qButton.setBorderPainted(false);
         qButton.setFocusPainted(false);
         getContentPane().add(qButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 300, -1, -1));
 
         rButton.setBackground(new java.awt.Color(212, 226, 212));
         rButton.setText("R");
+        rButton.setToolTipText("Click \"R\" to guess the letter R.");
         rButton.setBorderPainted(false);
         rButton.setFocusPainted(false);
         getContentPane().add(rButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 300, -1, -1));
 
         nButton.setBackground(new java.awt.Color(212, 226, 212));
         nButton.setText("N");
+        nButton.setToolTipText("Click \"N\" to guess the letter N!");
         nButton.setBorderPainted(false);
         nButton.setFocusPainted(false);
         getContentPane().add(nButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, -1, -1));
 
         mButton.setBackground(new java.awt.Color(212, 226, 212));
         mButton.setText("M");
+        mButton.setToolTipText("Click \"M\" to guess the letter M!");
         mButton.setBorderPainted(false);
         mButton.setFocusPainted(false);
         getContentPane().add(mButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, -1, -1));
 
         oButton.setBackground(new java.awt.Color(212, 226, 212));
         oButton.setText("O");
+        oButton.setToolTipText("Click \"O\" to guess the letter O!");
         oButton.setBorderPainted(false);
         oButton.setFocusPainted(false);
         getContentPane().add(oButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, -1, -1));
 
         zButton.setBackground(new java.awt.Color(212, 226, 212));
         zButton.setText("Z");
+        zButton.setToolTipText("Click \"Z\" to guess the letter Z!");
         zButton.setBorderPainted(false);
         zButton.setFocusPainted(false);
         getContentPane().add(zButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, -1, -1));
 
         yButton.setBackground(new java.awt.Color(212, 226, 212));
         yButton.setText("Y");
+        yButton.setToolTipText("Click \"Y\" to guess the letter Y!");
         yButton.setBorderPainted(false);
         yButton.setFocusPainted(false);
         getContentPane().add(yButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 330, -1, -1));
 
         xButton.setBackground(new java.awt.Color(212, 226, 212));
         xButton.setText("X");
+        xButton.setToolTipText("Click \"X\" to guess the letter X!");
         xButton.setBorderPainted(false);
         xButton.setFocusPainted(false);
         getContentPane().add(xButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, -1, -1));
 
         wButton.setBackground(new java.awt.Color(212, 226, 212));
         wButton.setText("W");
+        wButton.setToolTipText("Click \"W\" to guess the letter W!");
         wButton.setBorderPainted(false);
         wButton.setFocusPainted(false);
         getContentPane().add(wButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, -1, -1));
 
         vButton.setBackground(new java.awt.Color(212, 226, 212));
         vButton.setText("V");
+        vButton.setToolTipText("Click \"V\" to guess the letter V!");
         vButton.setBorderPainted(false);
         vButton.setFocusPainted(false);
         getContentPane().add(vButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, -1, -1));
 
         uButton.setBackground(new java.awt.Color(212, 226, 212));
         uButton.setText("U");
+        uButton.setToolTipText("Click \"U\" to guess the letter U!");
         uButton.setBorderPainted(false);
         uButton.setFocusPainted(false);
         getContentPane().add(uButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, -1, -1));
 
         tButton.setBackground(new java.awt.Color(212, 226, 212));
         tButton.setText("T");
+        tButton.setToolTipText("Click \"T\" to guess the letter T!");
         tButton.setBorderPainted(false);
         tButton.setFocusPainted(false);
         getContentPane().add(tButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, -1, -1));
 
         sButton.setBackground(new java.awt.Color(212, 226, 212));
         sButton.setText("S");
+        sButton.setToolTipText("Click \"S\" to guess the letter S!");
         sButton.setBorderPainted(false);
         sButton.setFocusPainted(false);
         getContentPane().add(sButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, -1));
@@ -1551,6 +1573,7 @@ public class Game extends javax.swing.JFrame implements KeyListener {
         skipButton.setBackground(new java.awt.Color(212, 226, 212));
         skipButton.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         skipButton.setText("Skip");
+        skipButton.setToolTipText("Click \"Skip\" to skip this game!");
         skipButton.setBorderPainted(false);
         skipButton.setFocusPainted(false);
         skipButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1847,24 +1870,28 @@ public class Game extends javax.swing.JFrame implements KeyListener {
 
         kButton.setBackground(new java.awt.Color(212, 226, 212));
         kButton.setText("K");
+        kButton.setToolTipText("Click \"K\" to guess the letter K!");
         kButton.setBorderPainted(false);
         kButton.setFocusPainted(false);
         getContentPane().add(kButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, -1, -1));
 
         pButton.setBackground(new java.awt.Color(212, 226, 212));
         pButton.setText("P");
+        pButton.setToolTipText("Click \"P\" to guess the letter P!");
         pButton.setBorderPainted(false);
         pButton.setFocusPainted(false);
         getContentPane().add(pButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 300, -1, -1));
 
         jButton.setBackground(new java.awt.Color(212, 226, 212));
         jButton.setText("J");
+        jButton.setToolTipText("Click \"J\" to guess the letter J!");
         jButton.setBorderPainted(false);
         jButton.setFocusPainted(false);
         getContentPane().add(jButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
 
         aButton.setBackground(new java.awt.Color(212, 226, 212));
         aButton.setText("A");
+        aButton.setToolTipText("Click \"A\" to guess the letter A!");
         aButton.setBorderPainted(false);
         aButton.setFocusPainted(false);
         getContentPane().add(aButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, -1, -1));

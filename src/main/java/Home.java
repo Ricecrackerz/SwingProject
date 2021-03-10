@@ -77,6 +77,7 @@ public class Home extends javax.swing.JFrame implements KeyListener{
         playButton.setBackground(new java.awt.Color(236, 179, 144));
         playButton.setFont(new java.awt.Font("Comic Sans MS", 0, 25)); // NOI18N
         playButton.setText("Play");
+        playButton.setToolTipText("Click \"Play\" to start playing!");
         playButton.setBorder(null);
         playButton.setBorderPainted(false);
         playButton.setFocusable(false);
@@ -89,6 +90,7 @@ public class Home extends javax.swing.JFrame implements KeyListener{
         highButton.setBackground(new java.awt.Color(236, 179, 144));
         highButton.setFont(new java.awt.Font("Comic Sans MS", 0, 25)); // NOI18N
         highButton.setText("Highscores");
+        highButton.setToolTipText("Click \"Highscores\" to view the latest highscores!");
         highButton.setBorder(null);
         highButton.setBorderPainted(false);
         highButton.setFocusable(false);
@@ -101,6 +103,7 @@ public class Home extends javax.swing.JFrame implements KeyListener{
         creditButton.setBackground(new java.awt.Color(236, 179, 144));
         creditButton.setFont(new java.awt.Font("Comic Sans MS", 0, 25)); // NOI18N
         creditButton.setText("Credits");
+        creditButton.setToolTipText("Click \"Credits\" to view the creators of this program!");
         creditButton.setBorder(null);
         creditButton.setBorderPainted(false);
         creditButton.setFocusable(false);
@@ -146,7 +149,7 @@ public class Home extends javax.swing.JFrame implements KeyListener{
                 .addGap(31, 31, 31))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(616, 439));
     }// </editor-fold>//GEN-END:initComponents
 
     // To enter Highscore screen

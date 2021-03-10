@@ -367,7 +367,6 @@ public class ColorGame extends javax.swing.JFrame implements KeyListener {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(600, 400));
-        setPreferredSize(new java.awt.Dimension(600, 400));
         setResizable(false);
 
         time_dateLabel.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
@@ -377,30 +376,35 @@ public class ColorGame extends javax.swing.JFrame implements KeyListener {
         gameLabel.setText("Color ");
 
         redButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/redButton.png"))); // NOI18N
+        redButton.setToolTipText("Click the red square to guess red!");
         redButton.setContentAreaFilled(false);
         redButton.setMaximumSize(new java.awt.Dimension(50, 50));
         redButton.setMinimumSize(new java.awt.Dimension(50, 50));
         redButton.setPreferredSize(new java.awt.Dimension(50, 50));
 
         blueButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/blueButton.png"))); // NOI18N
+        blueButton.setToolTipText("Click the blue square to guess blue!");
         blueButton.setContentAreaFilled(false);
         blueButton.setMaximumSize(new java.awt.Dimension(50, 50));
         blueButton.setMinimumSize(new java.awt.Dimension(50, 50));
         blueButton.setPreferredSize(new java.awt.Dimension(50, 50));
 
         yellowButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/yellowButton.png"))); // NOI18N
+        yellowButton.setToolTipText("Click the yellow square to guess yellow!");
         yellowButton.setContentAreaFilled(false);
         yellowButton.setMaximumSize(new java.awt.Dimension(50, 50));
         yellowButton.setMinimumSize(new java.awt.Dimension(50, 50));
         yellowButton.setPreferredSize(new java.awt.Dimension(50, 50));
 
         greenButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/greenButton.png"))); // NOI18N
+        greenButton.setToolTipText("Click the green square to guess green!");
         greenButton.setContentAreaFilled(false);
         greenButton.setMaximumSize(new java.awt.Dimension(50, 50));
         greenButton.setMinimumSize(new java.awt.Dimension(50, 50));
         greenButton.setPreferredSize(new java.awt.Dimension(50, 50));
 
         orangeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/orangeButton.png"))); // NOI18N
+        orangeButton.setToolTipText("Click the orange square to guess orange!");
         orangeButton.setContentAreaFilled(false);
         orangeButton.setMaximumSize(new java.awt.Dimension(50, 50));
         orangeButton.setMinimumSize(new java.awt.Dimension(50, 50));
