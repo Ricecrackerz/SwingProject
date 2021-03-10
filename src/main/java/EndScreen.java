@@ -275,9 +275,11 @@ public class EndScreen extends javax.swing.JFrame implements KeyListener {
                 INDEX = i;
                 NEW_SCORE = score;
                 break;
+            } else {
+                hsLabel.setVisible(true);
+                hsLabel.setText("Aw, you didn't get a highscore! Better luck next time.");
             }
         }
-        
         hsButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 scoreArray.add(INDEX,NEW_SCORE);
