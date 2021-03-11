@@ -133,6 +133,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
                             if (error[0] != 1) {
                                 wrongScore();
                                 error[0] = 1;
+                                System.out.println(sudokuScore);
                             } 
                         } else {   
                             try {
