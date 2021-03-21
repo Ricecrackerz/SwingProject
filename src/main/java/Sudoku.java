@@ -2579,11 +2579,6 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
         submitButton.setToolTipText("Click this button to submit your answer! MAKE SURE TO HAVE ALL YOUR ANSWERS FILLED!");
         submitButton.setBorderPainted(false);
         submitButton.setFocusPainted(false);
-        submitButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitButtonActionPerformed(evt);
-            }
-        });
 
         quitButton.setBackground(new java.awt.Color(212, 226, 212));
         quitButton.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
@@ -2668,10 +2663,6 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
-
-    }//GEN-LAST:event_submitButtonActionPerformed
 
     private void A2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A2KeyTyped
         int c = evt.getKeyChar(); 
@@ -3178,225 +3169,116 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
           && I3.getText().isEmpty() && I4.getText().isEmpty() && I5.getText().isEmpty() && I6.getText().isEmpty() && I7.getText().isEmpty() && I8.getText().isEmpty()){
             sudokuScore = 0;
         }
-        if (A2.getText().isEmpty()){
-            sudokuScore -= 10;
-                }
+        if (A2.getText().isEmpty()){ sudokuScore -= 10;}
 
-        if (A3.getText().isEmpty()){
-                    sudokuScore -= 10;
-                }
+        if (A3.getText().isEmpty()){ sudokuScore -= 10;}
 
-        if (A4.getText().isEmpty()){
-                    sudokuScore -= 10;
-                }
+        if (A4.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (A5.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (A5.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (A6.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (A6.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (A7.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (A7.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (A9.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (A9.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (B2.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (B2.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (B3.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (B3.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (B4.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (B4.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (B5.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (B5.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (B6.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (B6.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (B7.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (B7.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (B8.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (B8.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (B9.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (B9.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (C1.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (C1.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (C2.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (C2.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (C5.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (C5.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (C6.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (C6.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (C9.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (C9.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (D2.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (D2.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (D4.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (D4.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (D5.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (D5.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (D6.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (D6.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (D7.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (D7.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (E1.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (E1.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (E3.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (E3.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (E4.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (E4.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (E6.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (E6.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (E7.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (E7.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (E9.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (E9.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (F3.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (F3.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (F4.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (F4.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (F5.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (F5.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (F6.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (F6.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (F8.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (F8.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (G1.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (G1.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (G4.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (G4.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (G5.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (G5.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (G8.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (G8.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (G9.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (G9.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (H1.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (H1.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (H2.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (H2.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (H3.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (H3.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (H4.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (H4.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (H5.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (H5.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (H6.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (H6.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (H8.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (H8.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (I1.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (I1.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (I3.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (I3.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (I4.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (I4.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (I5.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (I5.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (I6.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (I6.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (I7.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (I7.getText().isEmpty()){ sudokuScore -= 10;}
 
-         if (I8.getText().isEmpty()){
-                    sudokuScore -= 10;
-               }
+        if (I8.getText().isEmpty()){ sudokuScore -= 10;}
+        
         try {
             score += sudokuScore;
             setVisible(false);
@@ -3410,30 +3292,6 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
     /* * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Sudoku.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Sudoku.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Sudoku.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Sudoku.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Sudoku().setVisible(true);

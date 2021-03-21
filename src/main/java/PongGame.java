@@ -1,18 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- *
  * @author Bryant
  */
-public class PongGame {
+import javax.swing.JFrame;
 
-	public static void main(String[] args) {
-		
-		GameFrame frame = new GameFrame();
-		
-	}
+/*public class PongGame extends JFrame {
+    public static void main(String args[]) {
+        // variable name is never read --> perhaps use this to solve dispose() issue
+        GameFrame frame = new GameFrame();
+    }
+    
+    
 }
+*/

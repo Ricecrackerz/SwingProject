@@ -1,16 +1,17 @@
-
+/*
+ * @author TonyDiaz stans
+ */
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.FileNotFoundException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-/*
- * @author TonyDiaz stans
- */
-
-public class Home extends javax.swing.JFrame implements KeyListener{
+public class Home extends javax.swing.JFrame implements KeyListener {
+    
+    static GameFrame game;
 
     // To generate the Home screen
     public Home() {
@@ -85,11 +86,6 @@ public class Home extends javax.swing.JFrame implements KeyListener{
         pongButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 pongButtonMouseReleased(evt);
-            }
-        });
-        pongButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pongButtonActionPerformed(evt);
             }
         });
 
@@ -192,11 +188,11 @@ public class Home extends javax.swing.JFrame implements KeyListener{
         credits.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_creditButtonMouseReleased
-
-    // To play the Hangman game
+ 
+    // To play the Hangman game 
     private void pongButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pongButtonMouseReleased
         setVisible(false); 
-        GameFrame game = new GameFrame(); 
+        game = new GameFrame(); 
         game.setVisible(true); 
         this.dispose(); 
     }//GEN-LAST:event_pongButtonMouseReleased
@@ -207,10 +203,6 @@ public class Home extends javax.swing.JFrame implements KeyListener{
         game.setVisible(true);
         this.dispose(); 
     }//GEN-LAST:event_playButtonMouseReleased
-
-    private void pongButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pongButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pongButtonActionPerformed
 
     // Main method
     public static void main(String args[]) {

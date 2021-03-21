@@ -1,270 +1,247 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- *
- * @author Bryant
+ * @author TDiaz stans
  */
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JFrame;
 
-public class GamePanel extends JPanel implements Runnable, KeyListener{
+public class GamePanel extends JPanel implements Runnable, KeyListener {
 
-	static final int GAME_WIDTH = 400;
-        static final int GAME_HEIGHT = 350; 
-	//static final int GAME_HEIGHT = (int)(GAME_WIDTH * (0.5555));
-	static final Dimension SCREEN_SIZE = new Dimension(400,350);
-        //static final Dimension SCREEN_SIZE = new Dimension(GAME_WIDTH,GAME_HEIGHT);
-	static final int BALL_DIAMETER = 15;
-	static final int PADDLE_WIDTH = 15;
-	static final int PADDLE_HEIGHT = 50;
-	Thread gameThread;
-	Image image;
-	Graphics graphics;
-	Random random;
-	Paddle paddle1;
-	Paddle paddle2;
-	Ball ball;
-	Score score;
-        boolean gameCheck = false; 
-        
+    // Set game interface with game components to set size
+    static final int SCREEN_WIDTH = 400;
+    static final int SCREEN_HEIGHT = 350; 
+    static final Dimension SCREEN_SIZE = new Dimension(SCREEN_WIDTH,SCREEN_HEIGHT);
+    static final int BALL_DIAMETER = 15;
+    static final int PADDLE_WIDTH = 15;
+    static final int PADDLE_HEIGHT = 50;
+    
+    Thread thread;
+    Image image;
+    Graphics graphics;
+    Random rand;
+    Paddle pad1;
+    Paddle pad2;
+    Ball ball;
+    Score score;
+    boolean gameCheck = false;
+    
 	
-	GamePanel(){
-		newPaddles();
-		newBall();
-		score = new Score(GAME_WIDTH,GAME_HEIGHT);
-		this.setFocusable(true);
-		this.addKeyListener(new AL());
-		this.setPreferredSize(SCREEN_SIZE);
-                setBorder(new EmptyBorder(10,10,10,10));
+    GamePanel() {
+        
+        // Generating the game in the constructor
+	newPaddles();
+	newBall();
+	score = new Score(SCREEN_WIDTH,SCREEN_HEIGHT);
+	this.setFocusable(true);
+	this.addKeyListener(new AL());
+	this.setPreferredSize(SCREEN_SIZE);
+        setBorder(new EmptyBorder(10,10,10,10));
                 
-                addKeyListener(this); 
-                setFocusable(true);
-                setFocusTraversalKeysEnabled(false);
-		
-		gameThread = new Thread(this);
-		gameThread.start();
-	}
+        addKeyListener(this); 
+        setFocusable(true);
+        setFocusTraversalKeysEnabled(false);
 	
-	public void newBall() {
-		random = new Random();
-		ball = new Ball((GAME_WIDTH/2)-(BALL_DIAMETER/2),random.nextInt(GAME_HEIGHT-BALL_DIAMETER),BALL_DIAMETER,BALL_DIAMETER);
-	}
-	public void newPaddles() {
-            paddle1 = new Paddle(0,(GAME_HEIGHT/3)-(PADDLE_HEIGHT/3),PADDLE_WIDTH,PADDLE_HEIGHT,1);
-            paddle2 = new Paddle(GAME_WIDTH-PADDLE_WIDTH,(GAME_HEIGHT/3)-(PADDLE_HEIGHT/3),PADDLE_WIDTH,PADDLE_HEIGHT,2);
-            
-	}
-	public void paint(Graphics g) {
-		image = createImage(getWidth(),getHeight());
-		graphics = image.getGraphics();
-		draw(graphics);
-		g.drawImage(image,0,0,this);
-	}
-	public void draw(Graphics g) {
-		paddle1.draw(g);
-		paddle2.draw(g);
-		ball.draw(g);
-		score.draw(g);
-Toolkit.getDefaultToolkit().sync(); // I forgot to add this line of code in the video, it helps with the animation
-
-	}
-	public void move() {
-                 
-		paddle1.move();
-		paddle2.move();
-                /*
-                if(c == KeyEvent.VK_SPACE){
-                    ball.move();
-                }
-                */
-                
-                
-                 
-                ball.move();
-              
-		
-	}
-        
-	public void checkCollision() {
-		
-		//bounce ball off top & bottom window edges
-		if(ball.y <=0) {
-			ball.setYDirection(-ball.yVelocity);
-		}
-		if(ball.y >= GAME_HEIGHT-BALL_DIAMETER) {
-			ball.setYDirection(-ball.yVelocity);
-		}
-		//bounce ball off paddles
-		if(ball.intersects(paddle1)) {
-			ball.xVelocity = Math.abs(ball.xVelocity);
-			ball.xVelocity++; //optional for more difficulty
-			if(ball.yVelocity>0)
-				ball.yVelocity++; //optional for more difficulty
-			else
-				ball.yVelocity--;
-			ball.setXDirection(ball.xVelocity);
-			ball.setYDirection(ball.yVelocity);
-	}
-		if(ball.intersects(paddle2)) {
-			ball.xVelocity = Math.abs(ball.xVelocity);
-			ball.xVelocity++; //optional for more difficulty
-			if(ball.yVelocity>0)
-				ball.yVelocity++; //optional for more difficulty
-			else
-				ball.yVelocity--;
-			ball.setXDirection(-ball.xVelocity);
-			ball.setYDirection(ball.yVelocity);
-		}
-		//stops paddles at window edges
-		if(paddle1.y<=0)
-			paddle1.y=0;
-		if(paddle1.y >= (GAME_HEIGHT-PADDLE_HEIGHT))
-			paddle1.y = GAME_HEIGHT-PADDLE_HEIGHT;
-		if(paddle2.y<=0)
-			paddle2.y=0;
-		if(paddle2.y >= (GAME_HEIGHT-PADDLE_HEIGHT))
-			paddle2.y = GAME_HEIGHT-PADDLE_HEIGHT;
-		//give a player 1 point and creates new paddles & ball
-		if(ball.x <=0) {
-                        //player2Score++; 
-			score.player2+=10;
-			newPaddles();
-			newBall();
-                        gameCheck = false; 
-                        checkScore(); 
-                        //score(player1Score); 
-                        //System.out.println(String.valueOf(score.player2)); 
-                       
-			//System.out.println("Player 2: "+score.player2);
-		}
-		if(ball.x >= GAME_WIDTH-BALL_DIAMETER) {
-                        //player1Score++; 
-			score.player1+=10;
-			newPaddles();
-			newBall();
-                        gameCheck = false; 
-                        checkScore(); 
-                        //score1(player2Score); 
-			//System.out.println("Player 1: "+score.player1);
-		}
-	}
-        
-        public void checkScore(){
-            if(score.player1 == 10){
-                
-                
-                int input = JOptionPane.showOptionDialog(null, "Player 1 has won", "Pong Winner", JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
-
-                if(input == JOptionPane.OK_OPTION)
-                {
-                    setVisible(false);
-                        Home end = new Home();
-                        end.setVisible(true);
-                        dispose(); 
-                }
-                
-                if(input == JOptionPane.OK_CANCEL_OPTION)
-                {
-                    setVisible(false);
-                        Home end = new Home();
-                        end.setVisible(true);
-                        dispose(); 
-                }
-            }
-            
-            if(score.player2 == 10){
-                
-                int input = JOptionPane.showOptionDialog(null, "Player 2 has won", "Pong Winner", JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
-                        
-
-                if(input == JOptionPane.OK_OPTION)
-                {
-                    setVisible(false);
-                        Home end = new Home();
-                        end.setVisible(true);
-                        dispose(); 
-                }
-                
-                if(input == JOptionPane.OK_CANCEL_OPTION)
-                {
-                    setVisible(false);
-                        Home end = new Home();
-                        end.setVisible(true);
-                        dispose(); 
-                }
-            }
-        }
-        
-            public void dispose() {
-                JFrame parent = (JFrame) this.getTopLevelAncestor();
-                parent.dispose();
-            }
-        
-        
-	public void run() {
-		//game loop
-		long lastTime = System.nanoTime();
-		double amountOfTicks =60.0;
-		double ns = 1000000000 / amountOfTicks;
-		double delta = 0;
-		while(true) {
-			long now = System.nanoTime();
-			delta += (now -lastTime)/ns;
-			lastTime = now;
-			if(delta >=1) {
-                            if(gameCheck == true){
-                                move();
-                            }
-				checkCollision();
-				repaint();
-                                
-				delta--;
-			}
-		}
-	}
-
-    @Override
-    public void keyTyped(KeyEvent e) {
-         //To change body of generated methods, choose Tools | Templates.
-        if(e.getKeyCode() == KeyEvent.VK_SPACE){
-            gameCheck = true; 
-            System.out.println(gameCheck); 
-        }
-        throw new UnsupportedOperationException("Not supported yet.");
+        // Create a thread as a main path for the program execution
+	thread = new Thread(this);
+	thread.start();
+    }
+    
+    // Generate a new ball for each round
+    public void newBall() {
+        rand = new Random();
+	ball = new Ball((SCREEN_WIDTH / 2) - (BALL_DIAMETER / 2), rand.nextInt(SCREEN_HEIGHT - BALL_DIAMETER), BALL_DIAMETER, BALL_DIAMETER);
     }
 
+    // Generate new paddles for each round
+    public void newPaddles() {
+            pad1 = new Paddle(0,(SCREEN_HEIGHT / 3) - (PADDLE_HEIGHT / 3),PADDLE_WIDTH, PADDLE_HEIGHT, 1);
+            pad2 = new Paddle(SCREEN_WIDTH - PADDLE_WIDTH,(SCREEN_HEIGHT / 3) - (PADDLE_HEIGHT / 3),PADDLE_WIDTH, PADDLE_HEIGHT, 2);
+    }
+    
+    // Paint the image
+    public void paint(Graphics g) {
+	image = createImage(getWidth(), getHeight());
+	graphics = image.getGraphics();
+	draw(graphics);
+	g.drawImage(image, 0, 0, this);
+    }
+    
+    // Redraw to update the gameplay and score
+    public void draw(Graphics g) {
+	pad1.draw(g);
+	pad2.draw(g);
+	ball.draw(g);
+	score.draw(g);
+        Toolkit.getDefaultToolkit().sync(); // helps with the animation
+    }
+
+    // Allow paddles and ball to move on screen
+    public void move() {
+        pad1.move();
+	pad2.move();
+        ball.move();
+    }
+    
+    // Ensure all collisions work for all components
+    public void checkCollision() {
+		
+	// Set boundary for ball with top and bottom border
+	if(ball.y <= 0) { ball.setYPath(-ball.ySpeed);}
+        
+	if(ball.y >= SCREEN_HEIGHT - BALL_DIAMETER) {
+            ball.setYPath(-ball.ySpeed);
+	}
+        
+	// Prevent ball and paddle overlapping each other
+	if(ball.intersects(pad1)) {
+            ball.xSpeed = Math.abs(ball.xSpeed);
+            ball.xSpeed++;
+            if(ball.ySpeed > 0) {
+		ball.ySpeed++; 
+            } else {
+		ball.ySpeed--;
+            }
+            ball.setXPath(ball.xSpeed);
+            ball.setYPath(ball.ySpeed);
+	}
+        
+	if(ball.intersects(pad2)) {
+            ball.xSpeed = Math.abs(ball.xSpeed);
+            ball.xSpeed++; 
+            if(ball.ySpeed > 0) {
+		ball.ySpeed++;
+            } else {
+		ball.ySpeed--;
+            }
+            ball.setXPath(-ball.xSpeed);
+            ball.setYPath(ball.ySpeed);
+        }
+        
+	// Set boundary for paddles with top and bottom border panel
+	if(pad1.y <= 0) { pad1.y = 0;}
+	if(pad1.y >= (SCREEN_HEIGHT - PADDLE_HEIGHT)) { pad1.y = SCREEN_HEIGHT - PADDLE_HEIGHT;}
+		
+        if(pad2.y <= 0) { pad2.y = 0;}
+	if(pad2.y >= (SCREEN_HEIGHT - PADDLE_HEIGHT)) { pad2.y = SCREEN_HEIGHT - PADDLE_HEIGHT;}
+	
+        //give a player 10 points and creates new paddles & ball
+	if (ball.x <= 0) {
+            score.player2 += 10;
+            newPaddles();
+            newBall();
+            gameCheck = false; 
+            checkScore(); 
+	}
+	if(ball.x >= SCREEN_WIDTH - BALL_DIAMETER) {
+            score.player1 += 10;
+            newPaddles();
+            newBall();
+            gameCheck = false; 
+            checkScore(); 
+	}
+    }
+    
+    // To calculate the score and determine the winner
+    public void checkScore() {
+        if(score.player1 == 10) {
+            // Show Popup dialogue when player 1 wins 
+            int input = JOptionPane.showOptionDialog(null, "Player 1 has won", "Pong Winner", JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
+            if(input == JOptionPane.OK_OPTION) {
+                setVisible(false);
+                Home end = new Home();
+                end.setVisible(true);
+                dispose(); 
+            }
+                
+            if(input == JOptionPane.OK_CANCEL_OPTION) {
+                setVisible(false);
+                Home end = new Home();
+                end.setVisible(true);
+                dispose();
+            }
+        }
+            
+        if(score.player2 == 10) {
+            // Show Popup dialogue when player 2 wins
+            int input = JOptionPane.showOptionDialog(null, "Player 2 has won", "Pong Winner", JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
+            if(input == JOptionPane.OK_OPTION) {
+                setVisible(false);
+                Home end = new Home();
+                end.setVisible(true);
+                dispose();
+            }
+                
+            if(input == JOptionPane.OK_CANCEL_OPTION) {
+                setVisible(false);
+                Home end = new Home();
+                end.setVisible(true);
+                dispose();
+            }
+        }
+    }
+    
+    // To dispose the current screen
+    public void dispose() {
+        Home.game.setVisible(false);
+    } 
+    
+    // To run the actual pong game
+    public void run() {
+	long lastTime = System.nanoTime();
+	double amountOfTicks =60.0;
+	double ns = 1000000000 / amountOfTicks;
+	double delta = 0;
+        
+        // Game loop
+	while(true) {
+            long now = System.nanoTime();
+            delta += (now -lastTime)/ns;
+            lastTime = now;
+            if(delta >=1) {
+                if(gameCheck == true) {
+                    move();
+                }
+		checkCollision();
+		repaint();
+                delta--;
+            }
+	}
+    }
+
+    // To start game when space button is pressed
+    @Override
+    public void keyTyped(KeyEvent e) {
+        if(e.getKeyCode() == KeyEvent.VK_SPACE) {
+            gameCheck = true;  
+        }
+    }
+  
     @Override
     public void keyPressed(KeyEvent e) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        if(e.getKeyCode() == KeyEvent.VK_SPACE){
+        if(e.getKeyCode() == KeyEvent.VK_SPACE) {
             gameCheck = true;
         }
-        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-        if(e.getKeyCode() == KeyEvent.VK_SPACE){
+        if(e.getKeyCode() == KeyEvent.VK_SPACE) {
             gameCheck = true;
         }
-       throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-       
     }
-	public class AL extends KeyAdapter{
-		public void keyPressed(KeyEvent e) {
-			paddle1.keyPressed(e);
-			paddle2.keyPressed(e);
-		}
-		public void keyReleased(KeyEvent e) {
-			paddle1.keyReleased(e);
-			paddle2.keyReleased(e);
-		}
+
+    // Allow user to control paddles with W, S keys and Up, Down keys
+    public class AL extends KeyAdapter {
+	public void keyPressed(KeyEvent e) {
+            pad1.keyPressed(e);
+            pad2.keyPressed(e);
 	}
+	public void keyReleased(KeyEvent e) {
+            pad1.keyReleased(e);
+            pad2.keyReleased(e);
+	}
+    }
 }

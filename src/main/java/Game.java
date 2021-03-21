@@ -15,9 +15,10 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-public class Game extends javax.swing.JFrame implements KeyListener {
+public class Game extends JFrame implements KeyListener {
 
     // Establishing variables
     Timer timer; 

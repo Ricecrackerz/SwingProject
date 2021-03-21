@@ -1,50 +1,51 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- *
- * @author Bryant
+ * @author TDiaz stans
  */
 import java.awt.*;
 import java.util.*;
 
-public class Ball extends Rectangle{
-
-	Random random;
-	int xVelocity;
-	int yVelocity;
-	int initialSpeed = 2;
+public class Ball extends Rectangle {
+    
+    Random rand;
+    int xSpeed;
+    int ySpeed;
+    int initSpeed = 2;
 	
-	Ball(int x, int y, int width, int height){
-		super(x,y,width,height);
-		random = new Random();
-		int randomXDirection = random.nextInt(2);
-		if(randomXDirection == 0)
-			randomXDirection--;
-		setXDirection(randomXDirection*initialSpeed);
-		
-		int randomYDirection = random.nextInt(2);
-		if(randomYDirection == 0)
-			randomYDirection--;
-		setYDirection(randomYDirection*initialSpeed);
-		
-	}
+    // Ball constructor to create the speed to set xSpeed and ySpeed
+    Ball(int x, int y, int width, int height) {
+           
+        super(x,y,width,height);
+        // Generate random X position and speed
+        rand = new Random();
+        int randXPath = rand.nextInt(2);
+        if(randXPath == 0) { randXPath--;}
+        setXPath(randXPath * initSpeed);
+            
+        // Generate random Y position and speed
+        int randYPath = rand.nextInt(2);
+        if(randYPath == 0) { randYPath--;}
+        setYPath(randYPath * initSpeed);	
+    }
 	
-	public void setXDirection(int randomXDirection) {
-		xVelocity = randomXDirection;
-	}
-	public void setYDirection(int randomYDirection) {
-		yVelocity = randomYDirection;
-	}
-	public void move() {
-		x += xVelocity;
-		y += yVelocity;
-	}
-	public void draw(Graphics g) {
-		g.setColor(Color.white);
-		g.fillOval(x, y, height, width);
-	}
+    // set X speed 
+    public void setXPath(int randXPath) {
+        xSpeed = randXPath;
+    }
+        
+    // Set Y speed
+    public void setYPath(int randYPath) {
+        ySpeed = randYPath;
+    }
+        
+    // Calculate X and Y speed of the ball  
+    public void move() {
+        x += xSpeed;
+        y += ySpeed;
+    }
+        
+    // To generate the ball on the screen
+    public void draw(Graphics g) {
+	g.setColor(Color.white);
+	g.fillOval(x, y, height, width);
+    }
 }

@@ -92,7 +92,6 @@
       </Properties>
       <Events>
         <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pongButtonMouseReleased"/>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pongButtonActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="highButton">

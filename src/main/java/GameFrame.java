@@ -1,74 +1,73 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- *
- * @author Bryant
+ * @author TDiaz stans
  */
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.FileNotFoundException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.*;
+import javax.swing.JFrame;
 
-public class GameFrame extends JFrame{
+public class GameFrame extends JFrame {
         
+    GamePanel p;
+    JPanel mPanel, btnPanel;
+    Timer timer; 
+    JLabel timeLabel = new JLabel(); 
+    JButton exitButton = new JButton("Quit"); 
         
-	GamePanel panel;
-	JPanel mainPanel, buttonPanel;
-        Timer timer; 
-        JLabel timeLabel = new JLabel(); 
-        JButton exitButton = new JButton("Quit"); 
+    GameFrame() {
         
-	GameFrame(){
-		panel = new GamePanel();
-                buttonPanel = new JPanel();
-                Dimension panelD = new Dimension(170,350); 
-                buttonPanel.setPreferredSize(panelD);
-                mainPanel = new JPanel(); 
-                mainPanel.add(panel); 
-                mainPanel.add(buttonPanel); 
-                startTimer(); 
-                buttonPanel.add(timeLabel,BorderLayout.PAGE_START);
-                JButton exitButton = new JButton("Quit"); 
-                buttonPanel.add(exitButton, BorderLayout.CENTER);
-                
-                
-                this.add(mainPanel); 
-		this.setTitle("Pong Game");
-		this.setResizable(false);
-		this.setBackground(Color.black);
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
-		this.pack();
-		this.setVisible(true);
-		this.setLocationRelativeTo(null);
-                
-                
-                exitButton.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        setVisible(false);
-                        Home end = new Home();
-                        end.setVisible(true);
-                        dispose1(); 
-                        //this.dispose();
-                    }
-                });
-                
-	}
+        // Generate the panels for components to display on screen
+        // We have seperate panels since paint component don't co-exist with Swing widgets
+	p = new GamePanel();
+        btnPanel = new JPanel();
+        Dimension panelD = new Dimension(170,350); 
+        btnPanel.setPreferredSize(panelD);
         
-        public void dispose1(){
-            this.dispose(); 
-        }
+        // Create a main panel to include all components for the game
+        mPanel = new JPanel(); 
+        mPanel.add(p); 
+        mPanel.add(btnPanel); 
         
-        public void startTimer() {
+        // Add timer and exit button
+        startTimer(); 
+        btnPanel.add(timeLabel,BorderLayout.PAGE_START);
+        btnPanel.add(exitButton, BorderLayout.CENTER);
+                
+        // Ensure all settings is in this Pong frame
+        this.add(mPanel); 
+	this.setTitle("Pong Game");
+	this.setResizable(false);
+	this.setBackground(Color.black);
+	this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+	this.pack();
+	this.setVisible(true);
+	this.setLocationRelativeTo(null);
+                
+        // Set actionListener to register user click on exit button        
+        exitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                Home end = new Home();
+                end.setVisible(true);
+                dispose(); 
+            }
+        });
+    }
+    
+    // We use this method instead of calling this.dispose in button 
+    // to prevent override issues
+    @Override
+    public void dispose() {
+        this.dispose(); 
+    }
+    
+    // Add real timer in the code
+    public void startTimer() {
         ActionListener actionListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -86,7 +85,5 @@ public class GameFrame extends JFrame{
         timer = new Timer(1000, actionListener); 
         timer.setInitialDelay(0); 
         timer.start();
-    }
-        
-        
+    }       
 }
