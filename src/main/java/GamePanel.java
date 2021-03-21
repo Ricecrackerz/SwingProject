@@ -32,6 +32,8 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
 	Paddle paddle2;
 	Ball ball;
 	Score score;
+        boolean gameCheck = false; 
+        
 	
 	GamePanel(){
 		newPaddles();
@@ -42,6 +44,9 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
 		this.setPreferredSize(SCREEN_SIZE);
                 setBorder(new EmptyBorder(10,10,10,10));
                 
+                addKeyListener(this); 
+                setFocusable(true);
+                setFocusTraversalKeysEnabled(false);
 		
 		gameThread = new Thread(this);
 		gameThread.start();
@@ -55,10 +60,6 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
             paddle1 = new Paddle(0,(GAME_HEIGHT/3)-(PADDLE_HEIGHT/3),PADDLE_WIDTH,PADDLE_HEIGHT,1);
             paddle2 = new Paddle(GAME_WIDTH-PADDLE_WIDTH,(GAME_HEIGHT/3)-(PADDLE_HEIGHT/3),PADDLE_WIDTH,PADDLE_HEIGHT,2);
             
-            /*
-            paddle1 = new Paddle(0,(GAME_HEIGHT/2)-(PADDLE_HEIGHT/2),PADDLE_WIDTH,PADDLE_HEIGHT,1);
-		paddle2 = new Paddle(GAME_WIDTH-PADDLE_WIDTH,(GAME_HEIGHT/2)-(PADDLE_HEIGHT/2),PADDLE_WIDTH,PADDLE_HEIGHT,2);
-            */
 	}
 	public void paint(Graphics g) {
 		image = createImage(getWidth(),getHeight());
@@ -75,6 +76,7 @@ Toolkit.getDefaultToolkit().sync(); // I forgot to add this line of code in the 
 
 	}
 	public void move() {
+                 
 		paddle1.move();
 		paddle2.move();
                 /*
@@ -82,9 +84,14 @@ Toolkit.getDefaultToolkit().sync(); // I forgot to add this line of code in the 
                     ball.move();
                 }
                 */
+                
+                
+                 
                 ball.move();
+              
 		
 	}
+        
 	public void checkCollision() {
 		
 		//bounce ball off top & bottom window edges
@@ -104,7 +111,7 @@ Toolkit.getDefaultToolkit().sync(); // I forgot to add this line of code in the 
 				ball.yVelocity--;
 			ball.setXDirection(ball.xVelocity);
 			ball.setYDirection(ball.yVelocity);
-		}
+	}
 		if(ball.intersects(paddle2)) {
 			ball.xVelocity = Math.abs(ball.xVelocity);
 			ball.xVelocity++; //optional for more difficulty
@@ -126,18 +133,81 @@ Toolkit.getDefaultToolkit().sync(); // I forgot to add this line of code in the 
 			paddle2.y = GAME_HEIGHT-PADDLE_HEIGHT;
 		//give a player 1 point and creates new paddles & ball
 		if(ball.x <=0) {
-			score.player2++;
+                        //player2Score++; 
+			score.player2+=10;
 			newPaddles();
 			newBall();
-			System.out.println("Player 2: "+score.player2);
+                        gameCheck = false; 
+                        checkScore(); 
+                        //score(player1Score); 
+                        //System.out.println(String.valueOf(score.player2)); 
+                       
+			//System.out.println("Player 2: "+score.player2);
 		}
 		if(ball.x >= GAME_WIDTH-BALL_DIAMETER) {
-			score.player1++;
+                        //player1Score++; 
+			score.player1+=10;
 			newPaddles();
 			newBall();
-			System.out.println("Player 1: "+score.player1);
+                        gameCheck = false; 
+                        checkScore(); 
+                        //score1(player2Score); 
+			//System.out.println("Player 1: "+score.player1);
 		}
 	}
+        
+        public void checkScore(){
+            if(score.player1 == 10){
+                
+                
+                int input = JOptionPane.showOptionDialog(null, "Player 1 has won", "Pong Winner", JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
+
+                if(input == JOptionPane.OK_OPTION)
+                {
+                    setVisible(false);
+                        Home end = new Home();
+                        end.setVisible(true);
+                        dispose(); 
+                }
+                
+                if(input == JOptionPane.OK_CANCEL_OPTION)
+                {
+                    setVisible(false);
+                        Home end = new Home();
+                        end.setVisible(true);
+                        dispose(); 
+                }
+            }
+            
+            if(score.player2 == 10){
+                
+                int input = JOptionPane.showOptionDialog(null, "Player 2 has won", "Pong Winner", JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
+                        
+
+                if(input == JOptionPane.OK_OPTION)
+                {
+                    setVisible(false);
+                        Home end = new Home();
+                        end.setVisible(true);
+                        dispose(); 
+                }
+                
+                if(input == JOptionPane.OK_CANCEL_OPTION)
+                {
+                    setVisible(false);
+                        Home end = new Home();
+                        end.setVisible(true);
+                        dispose(); 
+                }
+            }
+        }
+        
+            public void dispose() {
+                JFrame parent = (JFrame) this.getTopLevelAncestor();
+                parent.dispose();
+            }
+        
+        
 	public void run() {
 		//game loop
 		long lastTime = System.nanoTime();
@@ -149,9 +219,12 @@ Toolkit.getDefaultToolkit().sync(); // I forgot to add this line of code in the 
 			delta += (now -lastTime)/ns;
 			lastTime = now;
 			if(delta >=1) {
-				move();
+                            if(gameCheck == true){
+                                move();
+                            }
 				checkCollision();
 				repaint();
+                                
 				delta--;
 			}
 		}
@@ -159,24 +232,27 @@ Toolkit.getDefaultToolkit().sync(); // I forgot to add this line of code in the 
 
     @Override
     public void keyTyped(KeyEvent e) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         //To change body of generated methods, choose Tools | Templates.
         if(e.getKeyCode() == KeyEvent.VK_SPACE){
-            ball.move();
+            gameCheck = true; 
+            System.out.println(gameCheck); 
         }
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         if(e.getKeyCode() == KeyEvent.VK_SPACE){
-            ball.move();
+            gameCheck = true;
         }
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
         if(e.getKeyCode() == KeyEvent.VK_SPACE){
-            ball.move();
+            gameCheck = true;
         }
        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
        

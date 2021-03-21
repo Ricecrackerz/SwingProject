@@ -11,17 +11,22 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 
 public class GameFrame extends JFrame{
-
+        
+        
 	GamePanel panel;
 	JPanel mainPanel, buttonPanel;
         Timer timer; 
         JLabel timeLabel = new JLabel(); 
+        JButton exitButton = new JButton("Quit"); 
         
 	GameFrame(){
 		panel = new GamePanel();
@@ -32,9 +37,10 @@ public class GameFrame extends JFrame{
                 mainPanel.add(panel); 
                 mainPanel.add(buttonPanel); 
                 startTimer(); 
-                buttonPanel.add(timeLabel,BorderLayout.PAGE_START); 
+                buttonPanel.add(timeLabel,BorderLayout.PAGE_START);
                 JButton exitButton = new JButton("Quit"); 
                 buttonPanel.add(exitButton, BorderLayout.CENTER);
+                
                 
                 this.add(mainPanel); 
 		this.setTitle("Pong Game");
@@ -44,7 +50,23 @@ public class GameFrame extends JFrame{
 		this.pack();
 		this.setVisible(true);
 		this.setLocationRelativeTo(null);
+                
+                
+                exitButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        setVisible(false);
+                        Home end = new Home();
+                        end.setVisible(true);
+                        dispose1(); 
+                        //this.dispose();
+                    }
+                });
+                
 	}
+        
+        public void dispose1(){
+            this.dispose(); 
+        }
         
         public void startTimer() {
         ActionListener actionListener = new ActionListener() {
@@ -65,4 +87,6 @@ public class GameFrame extends JFrame{
         timer.setInitialDelay(0); 
         timer.start();
     }
+        
+        
 }
