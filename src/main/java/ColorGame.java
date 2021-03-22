@@ -42,7 +42,7 @@ public class ColorGame extends javax.swing.JFrame implements KeyListener {
     public ColorGame(int s) throws FileNotFoundException{
         score = s;
         initComponents();
-        getContentPane().setBackground(new java.awt.Color(250, 250, 250));
+        getContentPane().setBackground(new java.awt.Color(252, 248, 232));
         setSize(600,400);
         setLocationRelativeTo(null);
         

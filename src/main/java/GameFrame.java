@@ -26,6 +26,9 @@ public class GameFrame extends JFrame {
         btnPanel = new JPanel();
         Dimension panelD = new Dimension(170,350); 
         btnPanel.setPreferredSize(panelD);
+        exitButton.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
+        exitButton.setBackground(new Color(212, 226, 212));
+        btnPanel.setBackground(new Color(251, 230, 194));
         
         // Create a main panel to include all components for the game
         mPanel = new JPanel(); 
@@ -41,7 +44,7 @@ public class GameFrame extends JFrame {
         this.add(mPanel); 
 	this.setTitle("Pong Game");
 	this.setResizable(false);
-	this.setBackground(Color.white);
+	this.setBackground(new Color(252, 248, 232));
 	this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 	this.pack();
 	this.setVisible(true);

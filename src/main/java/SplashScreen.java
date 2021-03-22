@@ -17,6 +17,7 @@ public class SplashScreen extends javax.swing.JFrame {
 
         title = new javax.swing.JLabel();
         name = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 204, 204));
@@ -31,6 +32,8 @@ public class SplashScreen extends javax.swing.JFrame {
         name.setFont(new java.awt.Font("Comic Sans MS", 1, 30)); // NOI18N
         name.setText("By: T.Diaz Stans");
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tonydiazlogobig.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -42,17 +45,21 @@ public class SplashScreen extends javax.swing.JFrame {
                         .addComponent(title))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(name)))
-                .addContainerGap(186, Short.MAX_VALUE))
+                        .addComponent(name))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(jLabel1)))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(64, 64, 64)
                 .addComponent(title)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 231, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(name)
-                .addContainerGap())
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         pack();
@@ -79,6 +86,7 @@ public class SplashScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel name;
     private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
