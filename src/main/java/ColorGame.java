@@ -53,6 +53,7 @@ public class ColorGame extends javax.swing.JFrame implements KeyListener {
         addKeyListener(this); 
         setFocusable(true);
         setFocusTraversalKeysEnabled(false);
+        scoreLabel.setText(String.valueOf(score));
     }
     
     @Override
@@ -168,10 +169,12 @@ public class ColorGame extends javax.swing.JFrame implements KeyListener {
             public void actionPerformed(ActionEvent e) {
                 if(gameLabel.getForeground() == redButton.getForeground()){
                     score +=100;
+                    scoreLabel.setText(String.valueOf(score));
                     setGameLabel();  
                     setButton(); 
                 }       
                 else{
+                    scoreLabel.setText(String.valueOf(score));
                     setGameLabel(); 
                     setButton();
                 }
@@ -188,10 +191,12 @@ public class ColorGame extends javax.swing.JFrame implements KeyListener {
             public void actionPerformed(ActionEvent e) {
                 if(gameLabel.getForeground() == greenButton.getForeground()){
                     score +=100;
+                    scoreLabel.setText(String.valueOf(score));
                     setGameLabel(); 
                     setButton(); 
                 }       
                 else{
+                    scoreLabel.setText(String.valueOf(score));
                     setGameLabel(); 
                     setButton(); 
                 }
@@ -208,6 +213,7 @@ public class ColorGame extends javax.swing.JFrame implements KeyListener {
             public void actionPerformed(ActionEvent e) {
                 if(gameLabel.getForeground() == blueButton.getForeground()){
                     score +=100;
+                    scoreLabel.setText(String.valueOf(score));
                     setGameLabel(); 
                     setButton(); 
                 }       
@@ -228,10 +234,12 @@ public class ColorGame extends javax.swing.JFrame implements KeyListener {
             public void actionPerformed(ActionEvent e) {
                 if(gameLabel.getForeground() == yellowButton.getForeground()){
                     score +=100;
+                    scoreLabel.setText(String.valueOf(score));
                     setGameLabel(); 
                     setButton(); 
                 }       
                 else{
+                    scoreLabel.setText(String.valueOf(score));
                     setGameLabel(); 
                     setButton(); 
                 }
@@ -248,10 +256,12 @@ public class ColorGame extends javax.swing.JFrame implements KeyListener {
             public void actionPerformed(ActionEvent e) {
                 if(gameLabel.getForeground() == orangeButton.getForeground()){
                     score +=100;
+                    scoreLabel.setText(String.valueOf(score));
                     setGameLabel(); 
                     setButton(); 
                 }       
                 else{
+                    scoreLabel.setText(String.valueOf(score));
                     setGameLabel(); 
                     setButton();  
                 }
@@ -364,9 +374,12 @@ public class ColorGame extends javax.swing.JFrame implements KeyListener {
         yellowButton = new javax.swing.JButton();
         greenButton = new javax.swing.JButton();
         orangeButton = new javax.swing.JButton();
+        scoreHandle = new javax.swing.JLabel();
+        scoreLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(600, 400));
+        setPreferredSize(new java.awt.Dimension(600, 400));
         setResizable(false);
 
         time_dateLabel.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
@@ -410,64 +423,72 @@ public class ColorGame extends javax.swing.JFrame implements KeyListener {
         orangeButton.setMinimumSize(new java.awt.Dimension(50, 50));
         orangeButton.setPreferredSize(new java.awt.Dimension(50, 50));
 
+        scoreHandle.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        scoreHandle.setText("Score:");
+
+        scoreLabel.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(gameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(time_dateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(scoreHandle, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(scoreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addComponent(redButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(120, 120, 120)
                 .addComponent(blueButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 237, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(yellowButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(62, 62, 62))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(gameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(123, 123, 123)
-                        .addComponent(greenButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(time_dateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(orangeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addGap(150, 150, 150)
+                .addComponent(greenButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
+                .addComponent(orangeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(183, 183, 183))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(time_dateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(35, 35, 35)
-                                .addComponent(gameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(71, 71, 71)
-                                .addComponent(yellowButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(63, 63, 63)
-                                .addComponent(redButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap()
+                        .addComponent(time_dateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(scoreHandle, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(scoreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(134, 134, 134)
-                        .addComponent(blueButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(35, 35, 35)
+                        .addComponent(gameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(84, 84, 84)
-                        .addComponent(orangeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(greenButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(22, 22, 22))))
+                        .addGap(71, 71, 71)
+                        .addComponent(yellowButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(63, 63, 63)
+                        .addComponent(redButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(orangeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(74, 74, 74))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(134, 134, 134)
+                .addComponent(blueButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(greenButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47))
         );
 
         pack();
@@ -488,6 +509,8 @@ public class ColorGame extends javax.swing.JFrame implements KeyListener {
     private javax.swing.JButton greenButton;
     private javax.swing.JButton orangeButton;
     private javax.swing.JButton redButton;
+    private javax.swing.JLabel scoreHandle;
+    private javax.swing.JLabel scoreLabel;
     private javax.swing.JLabel time_dateLabel;
     private javax.swing.JButton yellowButton;
     // End of variables declaration//GEN-END:variables

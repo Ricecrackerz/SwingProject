@@ -127,12 +127,16 @@ public class EndScreen extends javax.swing.JFrame implements KeyListener {
         setResizable(false);
 
         Title.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        Title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Title.setText("Game Over");
 
         End.setBackground(new java.awt.Color(212, 226, 212));
         End.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         End.setText("End");
         End.setBorderPainted(false);
+        End.setMaximumSize(new java.awt.Dimension(82, 44));
+        End.setMinimumSize(new java.awt.Dimension(82, 44));
+        End.setPreferredSize(new java.awt.Dimension(82, 44));
         End.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 EndMouseReleased(evt);
@@ -178,16 +182,11 @@ public class EndScreen extends javax.swing.JFrame implements KeyListener {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(163, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(highScorePromptLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(initialsTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(129, 129, 129))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(Title)
-                        .addGap(265, 265, 265))))
+                .addContainerGap(112, Short.MAX_VALUE)
+                .addComponent(highScorePromptLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(initialsTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(129, 129, 129))
             .addGroup(layout.createSequentialGroup()
                 .addGap(199, 199, 199)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -206,11 +205,13 @@ public class EndScreen extends javax.swing.JFrame implements KeyListener {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(269, 269, 269)
-                        .addComponent(hsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(240, 240, 240)
+                        .addComponent(Title))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(End, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(234, 234, 234)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(End, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(hsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -232,9 +233,9 @@ public class EndScreen extends javax.swing.JFrame implements KeyListener {
                 .addComponent(hsButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(hsLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(End)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(End, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
         pack();
@@ -277,7 +278,7 @@ public class EndScreen extends javax.swing.JFrame implements KeyListener {
                 break;
             } else {
                 hsLabel.setVisible(true);
-                hsLabel.setText("Aw, you didn't get a highscore! Better luck next time.");
+                hsLabel.setText("               Aw, you didn't get a highscore! Better luck next time.");
             }
         }
         hsButton.addActionListener(new ActionListener() {

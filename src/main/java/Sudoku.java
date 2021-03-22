@@ -35,6 +35,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
         setFocusable(true);
         setFocusTraversalKeysEnabled(false);  
         checkGame();
+        scoreLabel.setText(String.valueOf(sudokuScore));
     }
     
     public Sudoku(int s){
@@ -46,7 +47,8 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
         setFocusable(true);
         setFocusTraversalKeysEnabled(false);
         checkGame(); 
-        score = s; 
+        score = s;
+        scoreLabel.setText(String.valueOf(sudokuScore));
     }
     
     @Override
@@ -109,6 +111,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
     public void wrongScore(){
         sudokuScore -= 10;
+        scoreLabel.setText(String.valueOf(sudokuScore));
     }
     
     public void rightScore() throws IOException {
@@ -130,7 +133,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
                     if (A2.getName().equals("A2")) {
                         if (!(Integer.parseInt(A2.getText()) == 3)){
                             A2.setForeground(Color.RED);
-                            if (error[0] != 1) {
+                            if (error[0] != 1) {                                
                                 wrongScore();
                                 error[0] = 1;
                                 System.out.println(sudokuScore);
@@ -1443,6 +1446,8 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
         E2 = new javax.swing.JLabel();
         E5 = new javax.swing.JLabel();
         E8 = new javax.swing.JLabel();
+        scoreLabel = new javax.swing.JLabel();
+        scoreHandle = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(252, 248, 232));
@@ -2265,6 +2270,11 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
 
         jPanel10.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 115, -1));
 
+        scoreLabel.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+
+        scoreHandle.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        scoreHandle.setText("Score:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -2279,7 +2289,11 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(submitButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(quitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(time_dateLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(time_dateLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(scoreHandle, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(scoreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -2287,7 +2301,11 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(time_dateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(159, 159, 159)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(scoreHandle, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(scoreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(111, 111, 111)
                 .addComponent(submitButton)
                 .addGap(23, 23, 23)
                 .addComponent(quitButton)
@@ -3030,6 +3048,8 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JButton quitButton;
+    private javax.swing.JLabel scoreHandle;
+    private javax.swing.JLabel scoreLabel;
     private javax.swing.JButton submitButton;
     private javax.swing.JLabel time_dateLabel;
     // End of variables declaration//GEN-END:variables

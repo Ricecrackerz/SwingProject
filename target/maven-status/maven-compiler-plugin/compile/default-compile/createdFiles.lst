@@ -4,6 +4,7 @@ Sudoku$42.class
 Sudoku$22.class
 Highscore$2.class
 ColorGame$7.class
+GamePanel.class
 Game$115.class
 Game$7.class
 Game$108.class
@@ -32,6 +33,7 @@ Credits$2.class
 Sudoku$47.class
 Game$17.class
 Game$99.class
+GameFrame$1.class
 Game$130.class
 Sudoku$30.class
 Sudoku$48.class
@@ -58,6 +60,7 @@ Game$101.class
 Game$31.class
 Game$121.class
 Game$91.class
+GameFrame.class
 Game$84.class
 Game$11.class
 Game$34.class
@@ -106,8 +109,10 @@ Sudoku$39.class
 Game$78.class
 Sudoku$32.class
 Sudoku$52.class
+Home$5.class
 Game$15.class
 Sudoku$12.class
+GamePanel$AL.class
 Sudoku$45.class
 Game$125.class
 EndScreen$5.class
@@ -146,6 +151,7 @@ Game$120.class
 Sudoku$40.class
 Game$29.class
 Sudoku$13.class
+GameFrame$2.class
 Sudoku$6.class
 Game$47.class
 Game$87.class
@@ -161,6 +167,7 @@ Sudoku$59.class
 Game$71.class
 Sudoku$29.class
 Game$131.class
+Score.class
 ColorGame$3.class
 EndScreen$1.class
 Game$111.class
@@ -171,6 +178,7 @@ Game$74.class
 Home$1.class
 EndScreen.class
 Game$44.class
+Paddle.class
 Game$94.class
 Game$14.class
 Game$64.class
@@ -194,6 +202,7 @@ Sudoku$49.class
 Sudoku$1.class
 ColorGame$5.class
 Game$43.class
+Ball.class
 Game$66.class
 Game$96.class
 Sudoku$27.class
