@@ -1350,36 +1350,9 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
     private void initComponents() {
 
         time_dateLabel = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        A1 = new javax.swing.JLabel();
-        A2 = new javax.swing.JTextField();
-        A3 = new javax.swing.JTextField();
-        A5 = new javax.swing.JTextField();
-        A4 = new javax.swing.JTextField();
-        A6 = new javax.swing.JTextField();
-        A7 = new javax.swing.JTextField();
-        A9 = new javax.swing.JTextField();
-        A8 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        I3 = new javax.swing.JTextField();
-        I5 = new javax.swing.JTextField();
-        I4 = new javax.swing.JTextField();
-        I6 = new javax.swing.JTextField();
-        I7 = new javax.swing.JTextField();
-        I8 = new javax.swing.JTextField();
-        I1 = new javax.swing.JTextField();
-        I2 = new javax.swing.JLabel();
-        I9 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        B1 = new javax.swing.JLabel();
-        B2 = new javax.swing.JTextField();
-        B5 = new javax.swing.JTextField();
-        B4 = new javax.swing.JTextField();
-        B6 = new javax.swing.JTextField();
-        B7 = new javax.swing.JTextField();
-        B8 = new javax.swing.JTextField();
-        B9 = new javax.swing.JTextField();
-        B3 = new javax.swing.JLabel();
+        submitButton = new javax.swing.JButton();
+        quitButton = new javax.swing.JButton();
+        jPanel10 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         C2 = new javax.swing.JTextField();
         C5 = new javax.swing.JTextField();
@@ -1390,46 +1363,36 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
         C7 = new javax.swing.JLabel();
         C8 = new javax.swing.JLabel();
         C3 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        E3 = new javax.swing.JTextField();
-        E4 = new javax.swing.JTextField();
-        E6 = new javax.swing.JTextField();
-        E7 = new javax.swing.JTextField();
-        E9 = new javax.swing.JTextField();
-        E1 = new javax.swing.JTextField();
-        E2 = new javax.swing.JLabel();
-        E5 = new javax.swing.JLabel();
-        E8 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        F1 = new javax.swing.JLabel();
-        F3 = new javax.swing.JTextField();
-        F5 = new javax.swing.JTextField();
-        F4 = new javax.swing.JTextField();
-        F6 = new javax.swing.JTextField();
-        F8 = new javax.swing.JTextField();
-        F2 = new javax.swing.JLabel();
-        F7 = new javax.swing.JLabel();
-        F9 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
-        D1 = new javax.swing.JLabel();
-        D2 = new javax.swing.JTextField();
-        D5 = new javax.swing.JTextField();
-        D4 = new javax.swing.JTextField();
-        D6 = new javax.swing.JTextField();
-        D7 = new javax.swing.JTextField();
-        D3 = new javax.swing.JLabel();
-        D8 = new javax.swing.JLabel();
-        D9 = new javax.swing.JLabel();
-        jPanel8 = new javax.swing.JPanel();
-        G5 = new javax.swing.JTextField();
-        G4 = new javax.swing.JTextField();
-        G8 = new javax.swing.JTextField();
-        G9 = new javax.swing.JTextField();
-        G1 = new javax.swing.JTextField();
-        G2 = new javax.swing.JLabel();
-        G3 = new javax.swing.JLabel();
-        G6 = new javax.swing.JLabel();
-        G7 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        B1 = new javax.swing.JLabel();
+        B2 = new javax.swing.JTextField();
+        B5 = new javax.swing.JTextField();
+        B4 = new javax.swing.JTextField();
+        B6 = new javax.swing.JTextField();
+        B7 = new javax.swing.JTextField();
+        B8 = new javax.swing.JTextField();
+        B9 = new javax.swing.JTextField();
+        B3 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        I3 = new javax.swing.JTextField();
+        I5 = new javax.swing.JTextField();
+        I4 = new javax.swing.JTextField();
+        I6 = new javax.swing.JTextField();
+        I7 = new javax.swing.JTextField();
+        I8 = new javax.swing.JTextField();
+        I1 = new javax.swing.JTextField();
+        I2 = new javax.swing.JLabel();
+        I9 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        A1 = new javax.swing.JLabel();
+        A2 = new javax.swing.JTextField();
+        A3 = new javax.swing.JTextField();
+        A5 = new javax.swing.JTextField();
+        A4 = new javax.swing.JTextField();
+        A6 = new javax.swing.JTextField();
+        A7 = new javax.swing.JTextField();
+        A9 = new javax.swing.JTextField();
+        A8 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         H2 = new javax.swing.JTextField();
         H3 = new javax.swing.JTextField();
@@ -1440,1138 +1403,56 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
         H1 = new javax.swing.JTextField();
         H9 = new javax.swing.JLabel();
         H7 = new javax.swing.JLabel();
-        submitButton = new javax.swing.JButton();
-        quitButton = new javax.swing.JButton();
+        jPanel8 = new javax.swing.JPanel();
+        G5 = new javax.swing.JTextField();
+        G4 = new javax.swing.JTextField();
+        G8 = new javax.swing.JTextField();
+        G9 = new javax.swing.JTextField();
+        G1 = new javax.swing.JTextField();
+        G2 = new javax.swing.JLabel();
+        G3 = new javax.swing.JLabel();
+        G6 = new javax.swing.JLabel();
+        G7 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        D1 = new javax.swing.JLabel();
+        D2 = new javax.swing.JTextField();
+        D5 = new javax.swing.JTextField();
+        D4 = new javax.swing.JTextField();
+        D6 = new javax.swing.JTextField();
+        D7 = new javax.swing.JTextField();
+        D3 = new javax.swing.JLabel();
+        D8 = new javax.swing.JLabel();
+        D9 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        F1 = new javax.swing.JLabel();
+        F3 = new javax.swing.JTextField();
+        F5 = new javax.swing.JTextField();
+        F4 = new javax.swing.JTextField();
+        F6 = new javax.swing.JTextField();
+        F8 = new javax.swing.JTextField();
+        F2 = new javax.swing.JLabel();
+        F7 = new javax.swing.JLabel();
+        F9 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        E3 = new javax.swing.JTextField();
+        E4 = new javax.swing.JTextField();
+        E6 = new javax.swing.JTextField();
+        E7 = new javax.swing.JTextField();
+        E9 = new javax.swing.JTextField();
+        E1 = new javax.swing.JTextField();
+        E2 = new javax.swing.JLabel();
+        E5 = new javax.swing.JLabel();
+        E8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(252, 248, 232));
+        setMaximumSize(new java.awt.Dimension(600, 400));
+        setPreferredSize(new java.awt.Dimension(600, 400));
         setResizable(false);
 
         time_dateLabel.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         time_dateLabel.setText("Time and Date");
         time_dateLabel.setPreferredSize(new java.awt.Dimension(131, 121));
-
-        jPanel1.setBackground(new java.awt.Color(252, 248, 232));
-        jPanel1.setMaximumSize(null);
-        jPanel1.setPreferredSize(new java.awt.Dimension(151, 121));
-
-        A1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        A1.setText("8");
-        A1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        A2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        A2.setToolTipText("Insert a number from 1-9 in this box!");
-        A2.setActionCommand("<Not Set>");
-        A2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        A2.setName("A2"); // NOI18N
-        A2.setSelectionEnd(1);
-        A2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                A2KeyTyped(evt);
-            }
-        });
-
-        A3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        A3.setToolTipText("Insert a number from 1-9 in this box!");
-        A3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        A3.setName("A3"); // NOI18N
-        A3.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                A3KeyTyped(evt);
-            }
-        });
-
-        A5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        A5.setToolTipText("Insert a number from 1-9 in this box!");
-        A5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        A5.setName("A5"); // NOI18N
-        A5.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                A5KeyTyped(evt);
-            }
-        });
-
-        A4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        A4.setToolTipText("Insert a number from 1-9 in this box!");
-        A4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        A4.setName("A4"); // NOI18N
-        A4.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                A4KeyTyped(evt);
-            }
-        });
-
-        A6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        A6.setToolTipText("Insert a number from 1-9 in this box!");
-        A6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        A6.setName("A6"); // NOI18N
-        A6.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                A6KeyTyped(evt);
-            }
-        });
-
-        A7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        A7.setToolTipText("Insert a number from 1-9 in this box!");
-        A7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        A7.setName("A7"); // NOI18N
-        A7.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                A7KeyTyped(evt);
-            }
-        });
-
-        A9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        A9.setToolTipText("Insert a number from 1-9 in this box!");
-        A9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        A9.setName("A9"); // NOI18N
-        A9.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                A9KeyTyped(evt);
-            }
-        });
-
-        A8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        A8.setText("1");
-        A8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(A4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(A5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(A1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(A2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(A3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(A6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(A7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(A8, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(A9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(A1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(A2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(A3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(A5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(A4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(A6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(A7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(A9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(A8, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
-
-        jPanel2.setBackground(new java.awt.Color(252, 248, 232));
-        jPanel2.setMaximumSize(null);
-        jPanel2.setPreferredSize(new java.awt.Dimension(151, 121));
-
-        I3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        I3.setToolTipText("Insert a number from 1-9 in this box!");
-        I3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        I3.setName("I3"); // NOI18N
-        I3.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                I3KeyTyped(evt);
-            }
-        });
-
-        I5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        I5.setToolTipText("Insert a number from 1-9 in this box!");
-        I5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        I5.setName("I5"); // NOI18N
-        I5.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                I5KeyTyped(evt);
-            }
-        });
-
-        I4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        I4.setToolTipText("Insert a number from 1-9 in this box!");
-        I4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        I4.setName("I4"); // NOI18N
-        I4.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                I4KeyTyped(evt);
-            }
-        });
-
-        I6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        I6.setToolTipText("Insert a number from 1-9 in this box!");
-        I6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        I6.setName("I6"); // NOI18N
-        I6.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                I6KeyTyped(evt);
-            }
-        });
-
-        I7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        I7.setToolTipText("Insert a number from 1-9 in this box!");
-        I7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        I7.setName("I7"); // NOI18N
-        I7.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                I7KeyTyped(evt);
-            }
-        });
-
-        I8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        I8.setToolTipText("Insert a number from 1-9 in this box!");
-        I8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        I8.setName("I8"); // NOI18N
-        I8.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                I8KeyTyped(evt);
-            }
-        });
-
-        I1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        I1.setToolTipText("Insert a number from 1-9 in this box!");
-        I1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        I1.setName("I1"); // NOI18N
-        I1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                I1KeyTyped(evt);
-            }
-        });
-
-        I2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        I2.setText("9");
-        I2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        I9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        I9.setText("5");
-        I9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(I4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(I5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(I1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(I2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(I3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(I6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(I7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(I8, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(I9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(I3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(I1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(I2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(I5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(I4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(I6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(I7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(I8, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(I9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
-
-        jPanel3.setBackground(new java.awt.Color(252, 248, 232));
-        jPanel3.setMaximumSize(null);
-        jPanel3.setPreferredSize(new java.awt.Dimension(151, 121));
-
-        B1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        B1.setText("4");
-        B1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        B2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        B2.setToolTipText("Insert a number from 1-9 in this box!");
-        B2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        B2.setName("B2"); // NOI18N
-        B2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                B2KeyTyped(evt);
-            }
-        });
-
-        B5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        B5.setToolTipText("Insert a number from 1-9 in this box!");
-        B5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        B5.setName("B5"); // NOI18N
-        B5.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                B5KeyTyped(evt);
-            }
-        });
-
-        B4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        B4.setToolTipText("Insert a number from 1-9 in this box!");
-        B4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        B4.setName("B4"); // NOI18N
-        B4.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                B4KeyTyped(evt);
-            }
-        });
-
-        B6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        B6.setToolTipText("Insert a number from 1-9 in this box!");
-        B6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        B6.setName("B6"); // NOI18N
-        B6.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                B6KeyTyped(evt);
-            }
-        });
-
-        B7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        B7.setToolTipText("Insert a number from 1-9 in this box!");
-        B7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        B7.setName("B7"); // NOI18N
-        B7.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                B7KeyTyped(evt);
-            }
-        });
-
-        B8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        B8.setToolTipText("Insert a number from 1-9 in this box!");
-        B8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        B8.setName("B8"); // NOI18N
-        B8.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                B8KeyTyped(evt);
-            }
-        });
-
-        B9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        B9.setToolTipText("Insert a number from 1-9 in this box!");
-        B9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        B9.setName("B9"); // NOI18N
-        B9.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                B9KeyTyped(evt);
-            }
-        });
-
-        B3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        B3.setText("6");
-        B3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(B4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(B1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(B6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(B7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(B8, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(B9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(B1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(B2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(B3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(B5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(B4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(B6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(B7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(B8, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(B9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        jPanel4.setBackground(new java.awt.Color(252, 248, 232));
-        jPanel4.setMaximumSize(null);
-        jPanel4.setPreferredSize(new java.awt.Dimension(151, 121));
-
-        C2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        C2.setToolTipText("Insert a number from 1-9 in this box!");
-        C2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        C2.setName("C2"); // NOI18N
-        C2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                C2KeyTyped(evt);
-            }
-        });
-
-        C5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        C5.setToolTipText("Insert a number from 1-9 in this box!");
-        C5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        C5.setName("C5"); // NOI18N
-        C5.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                C5KeyTyped(evt);
-            }
-        });
-
-        C6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        C6.setToolTipText("Insert a number from 1-9 in this box!");
-        C6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        C6.setName("C6"); // NOI18N
-        C6.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                C6KeyTyped(evt);
-            }
-        });
-
-        C9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        C9.setToolTipText("Insert a number from 1-9 in this box!");
-        C9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        C9.setName("C9"); // NOI18N
-        C9.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                C9KeyTyped(evt);
-            }
-        });
-
-        C1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        C1.setToolTipText("Insert a number from 1-9 in this box!");
-        C1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        C1.setName("C1"); // NOI18N
-        C1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                C1KeyTyped(evt);
-            }
-        });
-
-        C4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        C4.setText("4");
-        C4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        C7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        C7.setText("6");
-        C7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        C8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        C8.setText("5");
-        C8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        C3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        C3.setText("7");
-        C3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(C7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(C8, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(C9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(C4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(C5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(C1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(C2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(C6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(C3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(C2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(C1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(C3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(C5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(C6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(C4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(C7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(C8, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(C9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 10, Short.MAX_VALUE))
-        );
-
-        jPanel5.setBackground(new java.awt.Color(252, 248, 232));
-        jPanel5.setMaximumSize(null);
-        jPanel5.setPreferredSize(new java.awt.Dimension(151, 121));
-
-        E3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        E3.setToolTipText("Insert a number from 1-9 in this box!");
-        E3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        E3.setName("E3"); // NOI18N
-        E3.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                E3KeyTyped(evt);
-            }
-        });
-
-        E4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        E4.setToolTipText("Insert a number from 1-9 in this box!");
-        E4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        E4.setName("E4"); // NOI18N
-        E4.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                E4KeyTyped(evt);
-            }
-        });
-
-        E6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        E6.setToolTipText("Insert a number from 1-9 in this box!");
-        E6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        E6.setName("E6"); // NOI18N
-        E6.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                E6KeyTyped(evt);
-            }
-        });
-
-        E7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        E7.setToolTipText("Insert a number from 1-9 in this box!");
-        E7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        E7.setName("E7"); // NOI18N
-        E7.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                E7KeyTyped(evt);
-            }
-        });
-
-        E9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        E9.setToolTipText("Insert a number from 1-9 in this box!");
-        E9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        E9.setName("E9"); // NOI18N
-        E9.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                E9KeyTyped(evt);
-            }
-        });
-
-        E1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        E1.setToolTipText("Insert a number from 1-9 in this box!");
-        E1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        E1.setName("E1"); // NOI18N
-        E1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                E1KeyTyped(evt);
-            }
-        });
-
-        E2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        E2.setText("3");
-        E2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        E5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        E5.setText("7");
-        E5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        E8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        E8.setText("2");
-        E8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(E1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(E2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(8, 8, 8)
-                        .addComponent(E3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(E4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(E5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(8, 8, 8)
-                                .addComponent(E6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addComponent(E7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(E8, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(8, 8, 8)
-                                .addComponent(E9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap())
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(E3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(E1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(E2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(E4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(E6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(E5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(E7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(E9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(E8, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(1, 1, 1))
-        );
-
-        jPanel6.setBackground(new java.awt.Color(252, 248, 232));
-        jPanel6.setMaximumSize(null);
-        jPanel6.setPreferredSize(new java.awt.Dimension(151, 121));
-
-        F1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        F1.setText("7");
-        F1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        F3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        F3.setToolTipText("Insert a number from 1-9 in this box!");
-        F3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        F3.setName("F3"); // NOI18N
-        F3.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                F3KeyTyped(evt);
-            }
-        });
-
-        F5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        F5.setToolTipText("Insert a number from 1-9 in this box!");
-        F5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        F5.setName("F5"); // NOI18N
-        F5.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                F5KeyTyped(evt);
-            }
-        });
-
-        F4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        F4.setToolTipText("Insert a number from 1-9 in this box!");
-        F4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        F4.setName("F4"); // NOI18N
-        F4.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                F4KeyTyped(evt);
-            }
-        });
-
-        F6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        F6.setToolTipText("Insert a number from 1-9 in this box!n this box!");
-        F6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        F6.setName("F6"); // NOI18N
-        F6.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                F6KeyTyped(evt);
-            }
-        });
-
-        F8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        F8.setToolTipText("Insert a number from 1-9 in this box!");
-        F8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        F8.setName("F8"); // NOI18N
-        F8.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                F8KeyTyped(evt);
-            }
-        });
-
-        F2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        F2.setText("8");
-        F2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        F7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        F7.setText("1");
-        F7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        F9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        F9.setText("3");
-        F9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(F1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(F4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(F5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(F6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addComponent(F7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(F8, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(F9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap())
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(F1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(F3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(F2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(F5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(F4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(F6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(F8, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(F7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(F9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-
-        jPanel7.setBackground(new java.awt.Color(252, 248, 232));
-        jPanel7.setMaximumSize(null);
-        jPanel7.setPreferredSize(new java.awt.Dimension(151, 121));
-
-        D1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        D1.setText("5");
-        D1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        D2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        D2.setToolTipText("Insert a number from 1-9 in this box!");
-        D2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        D2.setName("D2"); // NOI18N
-        D2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                D2KeyTyped(evt);
-            }
-        });
-
-        D5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        D5.setToolTipText("Insert a number from 1-9 in this box!");
-        D5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        D5.setName("D5"); // NOI18N
-        D5.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                D5KeyTyped(evt);
-            }
-        });
-
-        D4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        D4.setToolTipText("Insert a number from 1-9 in this box!");
-        D4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        D4.setName("D4"); // NOI18N
-        D4.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                D4KeyTyped(evt);
-            }
-        });
-
-        D6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        D6.setToolTipText("Insert a number from 1-9 in this box!");
-        D6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        D6.setName("D6"); // NOI18N
-        D6.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                D6KeyTyped(evt);
-            }
-        });
-
-        D7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        D7.setToolTipText("Insert a number from 1-9 in this box!");
-        D7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        D7.setName("D7"); // NOI18N
-        D7.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                D7KeyTyped(evt);
-            }
-        });
-
-        D3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        D3.setText("9");
-        D3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        D8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        D8.setText("4");
-        D8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        D9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        D9.setText("8");
-        D9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addComponent(D4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(D5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addComponent(D1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(D2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(D6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(D3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(D7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(D8, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(D9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(D1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(D2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(D3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(D5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(D4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(D6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(D7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(D8, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(D9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
-
-        jPanel8.setBackground(new java.awt.Color(252, 248, 232));
-        jPanel8.setMaximumSize(null);
-        jPanel8.setPreferredSize(new java.awt.Dimension(151, 121));
-
-        G5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        G5.setToolTipText("Insert a number from 1-9 in this box!");
-        G5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        G5.setName("G5"); // NOI18N
-        G5.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                G5KeyTyped(evt);
-            }
-        });
-
-        G4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        G4.setToolTipText("Insert a number from 1-9 in this box!");
-        G4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        G4.setName("G4"); // NOI18N
-        G4.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                G4KeyTyped(evt);
-            }
-        });
-
-        G8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        G8.setToolTipText("Insert a number from 1-9 in this box!");
-        G8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        G8.setName("G8"); // NOI18N
-        G8.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                G8KeyTyped(evt);
-            }
-        });
-
-        G9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        G9.setToolTipText("Insert a number from 1-9 in this box!");
-        G9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        G9.setName("G9"); // NOI18N
-        G9.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                G9KeyTyped(evt);
-            }
-        });
-
-        G1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        G1.setToolTipText("Insert a number from 1-9 in this box!");
-        G1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        G1.setName("G1"); // NOI18N
-        G1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                G1KeyTyped(evt);
-            }
-        });
-
-        G2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        G2.setText("5");
-        G2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        G3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        G3.setText("2");
-        G3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        G6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        G6.setText("1");
-        G6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        G7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        G7.setText("3");
-        G7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addComponent(G1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(G2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(G3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addComponent(G7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(G8, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(G9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addComponent(G4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(G5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(G6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(G1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(G2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(G3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(G5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(G4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(G6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(G8, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(G9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(G7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
-
-        jPanel9.setBackground(new java.awt.Color(252, 248, 232));
-        jPanel9.setMaximumSize(null);
-        jPanel9.setPreferredSize(new java.awt.Dimension(151, 121));
-
-        H2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        H2.setToolTipText("Insert a number from 1-9 in this box!");
-        H2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        H2.setName("H2"); // NOI18N
-        H2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                H2KeyTyped(evt);
-            }
-        });
-
-        H3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        H3.setToolTipText("Insert a number from 1-9 in this box!");
-        H3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        H3.setName("H3"); // NOI18N
-        H3.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                H3KeyTyped(evt);
-            }
-        });
-
-        H5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        H5.setToolTipText("Insert a number from 1-9 in this box!");
-        H5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        H5.setName("H5"); // NOI18N
-        H5.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                H5KeyTyped(evt);
-            }
-        });
-
-        H4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        H4.setToolTipText("Insert a number from 1-9 in this box!");
-        H4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        H4.setName("H4"); // NOI18N
-        H4.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                H4KeyTyped(evt);
-            }
-        });
-
-        H6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        H6.setToolTipText("Insert a number from 1-9 in this box!");
-        H6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        H6.setName("H6"); // NOI18N
-        H6.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                H6KeyTyped(evt);
-            }
-        });
-
-        H8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        H8.setToolTipText("Insert a number from 1-9 in this box!");
-        H8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        H8.setName("H8"); // NOI18N
-        H8.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                H8KeyTyped(evt);
-            }
-        });
-
-        H1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        H1.setToolTipText("Insert a number from 1-9 in this box!");
-        H1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        H1.setName("H1"); // NOI18N
-        H1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                H1KeyTyped(evt);
-            }
-        });
-
-        H9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        H9.setText("2");
-        H9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        H7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        H7.setText("9");
-        H7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addComponent(H4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(H5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addComponent(H1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(H2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(H3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(H6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(H7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(H8, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(H9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(H2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(H3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(H1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(H5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(H4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(H6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(H8, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(H9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(H7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
 
         submitButton.setBackground(new java.awt.Color(212, 226, 212));
         submitButton.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
@@ -2592,73 +1473,826 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
             }
         });
 
+        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel4.setBackground(new java.awt.Color(252, 248, 232));
+        jPanel4.setPreferredSize(new java.awt.Dimension(151, 121));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        C2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        C2.setToolTipText("Insert a number from 1-9 in this box!");
+        C2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        C2.setName("C2"); // NOI18N
+        C2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                C2KeyTyped(evt);
+            }
+        });
+        jPanel4.add(C2, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 0, 33, 33));
+
+        C5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        C5.setToolTipText("Insert a number from 1-9 in this box!");
+        C5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        C5.setName("C5"); // NOI18N
+        C5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                C5KeyTyped(evt);
+            }
+        });
+        jPanel4.add(C5, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 39, 33, 33));
+
+        C6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        C6.setToolTipText("Insert a number from 1-9 in this box!");
+        C6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        C6.setName("C6"); // NOI18N
+        C6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                C6KeyTyped(evt);
+            }
+        });
+        jPanel4.add(C6, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 39, 33, 33));
+
+        C9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        C9.setToolTipText("Insert a number from 1-9 in this box!");
+        C9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        C9.setName("C9"); // NOI18N
+        C9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                C9KeyTyped(evt);
+            }
+        });
+        jPanel4.add(C9, new org.netbeans.lib.awtextra.AbsoluteConstraints(76, 78, 33, 33));
+
+        C1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        C1.setToolTipText("Insert a number from 1-9 in this box!");
+        C1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        C1.setName("C1"); // NOI18N
+        C1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                C1KeyTyped(evt);
+            }
+        });
+        jPanel4.add(C1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 33, 33));
+
+        C4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        C4.setText("4");
+        C4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel4.add(C4, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 39, 33, 33));
+
+        C7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        C7.setText("6");
+        C7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel4.add(C7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 78, 33, 33));
+
+        C8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        C8.setText("5");
+        C8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel4.add(C8, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 78, 33, 33));
+
+        C3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        C3.setText("7");
+        C3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel4.add(C3, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 0, 33, 33));
+
+        jPanel10.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 115, -1));
+
+        jPanel3.setBackground(new java.awt.Color(252, 248, 232));
+        jPanel3.setPreferredSize(new java.awt.Dimension(151, 121));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        B1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        B1.setText("4");
+        B1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel3.add(B1, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 0, 33, 33));
+
+        B2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        B2.setToolTipText("Insert a number from 1-9 in this box!");
+        B2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        B2.setName("B2"); // NOI18N
+        B2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                B2KeyTyped(evt);
+            }
+        });
+        jPanel3.add(B2, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 0, 33, 33));
+
+        B5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        B5.setToolTipText("Insert a number from 1-9 in this box!");
+        B5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        B5.setName("B5"); // NOI18N
+        B5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                B5KeyTyped(evt);
+            }
+        });
+        jPanel3.add(B5, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 39, 33, 33));
+
+        B4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        B4.setToolTipText("Insert a number from 1-9 in this box!");
+        B4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        B4.setName("B4"); // NOI18N
+        B4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                B4KeyTyped(evt);
+            }
+        });
+        jPanel3.add(B4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 39, 33, 33));
+
+        B6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        B6.setToolTipText("Insert a number from 1-9 in this box!");
+        B6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        B6.setName("B6"); // NOI18N
+        B6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                B6KeyTyped(evt);
+            }
+        });
+        jPanel3.add(B6, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 39, 33, 33));
+
+        B7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        B7.setToolTipText("Insert a number from 1-9 in this box!");
+        B7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        B7.setName("B7"); // NOI18N
+        B7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                B7KeyTyped(evt);
+            }
+        });
+        jPanel3.add(B7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 78, 33, 33));
+
+        B8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        B8.setToolTipText("Insert a number from 1-9 in this box!");
+        B8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        B8.setName("B8"); // NOI18N
+        B8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                B8KeyTyped(evt);
+            }
+        });
+        jPanel3.add(B8, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 78, 33, 33));
+
+        B9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        B9.setToolTipText("Insert a number from 1-9 in this box!");
+        B9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        B9.setName("B9"); // NOI18N
+        B9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                B9KeyTyped(evt);
+            }
+        });
+        jPanel3.add(B9, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 78, 33, 33));
+
+        B3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        B3.setText("6");
+        B3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel3.add(B3, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 0, 33, 33));
+
+        jPanel10.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 115, -1));
+
+        jPanel2.setBackground(new java.awt.Color(252, 248, 232));
+        jPanel2.setPreferredSize(new java.awt.Dimension(151, 121));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        I3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        I3.setToolTipText("Insert a number from 1-9 in this box!");
+        I3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        I3.setName("I3"); // NOI18N
+        I3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                I3KeyTyped(evt);
+            }
+        });
+        jPanel2.add(I3, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 0, 33, 33));
+
+        I5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        I5.setToolTipText("Insert a number from 1-9 in this box!");
+        I5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        I5.setName("I5"); // NOI18N
+        I5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                I5KeyTyped(evt);
+            }
+        });
+        jPanel2.add(I5, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 39, 33, 33));
+
+        I4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        I4.setToolTipText("Insert a number from 1-9 in this box!");
+        I4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        I4.setName("I4"); // NOI18N
+        I4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                I4KeyTyped(evt);
+            }
+        });
+        jPanel2.add(I4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 39, 33, 33));
+
+        I6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        I6.setToolTipText("Insert a number from 1-9 in this box!");
+        I6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        I6.setName("I6"); // NOI18N
+        I6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                I6KeyTyped(evt);
+            }
+        });
+        jPanel2.add(I6, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 39, 33, 33));
+
+        I7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        I7.setToolTipText("Insert a number from 1-9 in this box!");
+        I7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        I7.setName("I7"); // NOI18N
+        I7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                I7KeyTyped(evt);
+            }
+        });
+        jPanel2.add(I7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 78, 33, 33));
+
+        I8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        I8.setToolTipText("Insert a number from 1-9 in this box!");
+        I8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        I8.setName("I8"); // NOI18N
+        I8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                I8KeyTyped(evt);
+            }
+        });
+        jPanel2.add(I8, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 78, 33, 33));
+
+        I1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        I1.setToolTipText("Insert a number from 1-9 in this box!");
+        I1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        I1.setName("I1"); // NOI18N
+        I1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                I1KeyTyped(evt);
+            }
+        });
+        jPanel2.add(I1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 33, 33));
+
+        I2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        I2.setText("9");
+        I2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(I2, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 0, 33, 33));
+
+        I9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        I9.setText("5");
+        I9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(I9, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 78, 33, 33));
+
+        jPanel10.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 115, -1));
+
+        jPanel1.setBackground(new java.awt.Color(252, 248, 232));
+        jPanel1.setPreferredSize(new java.awt.Dimension(151, 121));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        A1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        A1.setText("8");
+        A1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(A1, new org.netbeans.lib.awtextra.AbsoluteConstraints(4, 0, 33, 33));
+
+        A2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        A2.setToolTipText("Insert a number from 1-9 in this box!");
+        A2.setActionCommand("<Not Set>");
+        A2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        A2.setName("A2"); // NOI18N
+        A2.setSelectionEnd(1);
+        A2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A2ActionPerformed(evt);
+            }
+        });
+        A2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                A2KeyTyped(evt);
+            }
+        });
+        jPanel1.add(A2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 33, 33));
+
+        A3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        A3.setToolTipText("Insert a number from 1-9 in this box!");
+        A3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        A3.setName("A3"); // NOI18N
+        A3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                A3KeyTyped(evt);
+            }
+        });
+        jPanel1.add(A3, new org.netbeans.lib.awtextra.AbsoluteConstraints(82, 0, 33, 33));
+
+        A5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        A5.setToolTipText("Insert a number from 1-9 in this box!");
+        A5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        A5.setName("A5"); // NOI18N
+        A5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                A5KeyTyped(evt);
+            }
+        });
+        jPanel1.add(A5, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 39, 33, 33));
+
+        A4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        A4.setToolTipText("Insert a number from 1-9 in this box!");
+        A4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        A4.setName("A4"); // NOI18N
+        A4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                A4KeyTyped(evt);
+            }
+        });
+        jPanel1.add(A4, new org.netbeans.lib.awtextra.AbsoluteConstraints(4, 39, 33, 33));
+
+        A6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        A6.setToolTipText("Insert a number from 1-9 in this box!");
+        A6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        A6.setName("A6"); // NOI18N
+        A6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                A6KeyTyped(evt);
+            }
+        });
+        jPanel1.add(A6, new org.netbeans.lib.awtextra.AbsoluteConstraints(82, 39, 33, 33));
+
+        A7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        A7.setToolTipText("Insert a number from 1-9 in this box!");
+        A7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        A7.setName("A7"); // NOI18N
+        A7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                A7KeyTyped(evt);
+            }
+        });
+        jPanel1.add(A7, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 78, 33, 33));
+
+        A9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        A9.setToolTipText("Insert a number from 1-9 in this box!");
+        A9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        A9.setName("A9"); // NOI18N
+        A9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                A9KeyTyped(evt);
+            }
+        });
+        jPanel1.add(A9, new org.netbeans.lib.awtextra.AbsoluteConstraints(82, 78, 33, 33));
+
+        A8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        A8.setText("1");
+        A8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(A8, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 78, 33, 33));
+
+        jPanel10.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 125, -1));
+
+        jPanel9.setBackground(new java.awt.Color(252, 248, 232));
+        jPanel9.setPreferredSize(new java.awt.Dimension(151, 121));
+        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        H2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        H2.setToolTipText("Insert a number from 1-9 in this box!");
+        H2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        H2.setName("H2"); // NOI18N
+        H2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                H2KeyTyped(evt);
+            }
+        });
+        jPanel9.add(H2, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 0, 33, 33));
+
+        H3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        H3.setToolTipText("Insert a number from 1-9 in this box!");
+        H3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        H3.setName("H3"); // NOI18N
+        H3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                H3KeyTyped(evt);
+            }
+        });
+        jPanel9.add(H3, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 0, 33, 33));
+
+        H5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        H5.setToolTipText("Insert a number from 1-9 in this box!");
+        H5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        H5.setName("H5"); // NOI18N
+        H5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                H5KeyTyped(evt);
+            }
+        });
+        jPanel9.add(H5, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 39, 33, 33));
+
+        H4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        H4.setToolTipText("Insert a number from 1-9 in this box!");
+        H4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        H4.setName("H4"); // NOI18N
+        H4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                H4KeyTyped(evt);
+            }
+        });
+        jPanel9.add(H4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 39, 33, 33));
+
+        H6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        H6.setToolTipText("Insert a number from 1-9 in this box!");
+        H6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        H6.setName("H6"); // NOI18N
+        H6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                H6KeyTyped(evt);
+            }
+        });
+        jPanel9.add(H6, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 39, 33, 33));
+
+        H8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        H8.setToolTipText("Insert a number from 1-9 in this box!");
+        H8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        H8.setName("H8"); // NOI18N
+        H8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                H8KeyTyped(evt);
+            }
+        });
+        jPanel9.add(H8, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 78, 33, 33));
+
+        H1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        H1.setToolTipText("Insert a number from 1-9 in this box!");
+        H1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        H1.setName("H1"); // NOI18N
+        H1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                H1KeyTyped(evt);
+            }
+        });
+        jPanel9.add(H1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 33, 33));
+
+        H9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        H9.setText("2");
+        H9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel9.add(H9, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 78, 33, 33));
+
+        H7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        H7.setText("9");
+        H7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel9.add(H7, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 78, 33, 33));
+
+        jPanel10.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 115, -1));
+
+        jPanel8.setBackground(new java.awt.Color(252, 248, 232));
+        jPanel8.setPreferredSize(new java.awt.Dimension(151, 121));
+        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        G5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        G5.setToolTipText("Insert a number from 1-9 in this box!");
+        G5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        G5.setName("G5"); // NOI18N
+        G5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                G5KeyTyped(evt);
+            }
+        });
+        jPanel8.add(G5, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 39, 33, 33));
+
+        G4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        G4.setToolTipText("Insert a number from 1-9 in this box!");
+        G4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        G4.setName("G4"); // NOI18N
+        G4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                G4KeyTyped(evt);
+            }
+        });
+        jPanel8.add(G4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 39, 33, 33));
+
+        G8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        G8.setToolTipText("Insert a number from 1-9 in this box!");
+        G8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        G8.setName("G8"); // NOI18N
+        G8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                G8KeyTyped(evt);
+            }
+        });
+        jPanel8.add(G8, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 78, 33, 33));
+
+        G9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        G9.setToolTipText("Insert a number from 1-9 in this box!");
+        G9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        G9.setName("G9"); // NOI18N
+        G9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                G9KeyTyped(evt);
+            }
+        });
+        jPanel8.add(G9, new org.netbeans.lib.awtextra.AbsoluteConstraints(76, 78, 33, 33));
+
+        G1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        G1.setToolTipText("Insert a number from 1-9 in this box!");
+        G1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        G1.setName("G1"); // NOI18N
+        G1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                G1KeyTyped(evt);
+            }
+        });
+        jPanel8.add(G1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 33, 33));
+
+        G2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        G2.setText("5");
+        G2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel8.add(G2, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 0, 33, 33));
+
+        G3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        G3.setText("2");
+        G3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel8.add(G3, new org.netbeans.lib.awtextra.AbsoluteConstraints(76, 0, 33, 33));
+
+        G6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        G6.setText("1");
+        G6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel8.add(G6, new org.netbeans.lib.awtextra.AbsoluteConstraints(76, 39, 33, 33));
+
+        G7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        G7.setText("3");
+        G7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel8.add(G7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 78, 33, 33));
+
+        jPanel10.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 125, -1));
+
+        jPanel7.setBackground(new java.awt.Color(252, 248, 232));
+        jPanel7.setPreferredSize(new java.awt.Dimension(151, 121));
+        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        D1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        D1.setText("5");
+        D1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel7.add(D1, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 0, 33, 33));
+
+        D2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        D2.setToolTipText("Insert a number from 1-9 in this box!");
+        D2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        D2.setName("D2"); // NOI18N
+        D2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                D2KeyTyped(evt);
+            }
+        });
+        jPanel7.add(D2, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 0, 33, 33));
+
+        D5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        D5.setToolTipText("Insert a number from 1-9 in this box!");
+        D5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        D5.setName("D5"); // NOI18N
+        D5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                D5KeyTyped(evt);
+            }
+        });
+        jPanel7.add(D5, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 39, 33, 33));
+
+        D4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        D4.setToolTipText("Insert a number from 1-9 in this box!");
+        D4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        D4.setName("D4"); // NOI18N
+        D4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                D4KeyTyped(evt);
+            }
+        });
+        jPanel7.add(D4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 39, 33, 33));
+
+        D6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        D6.setToolTipText("Insert a number from 1-9 in this box!");
+        D6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        D6.setName("D6"); // NOI18N
+        D6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                D6KeyTyped(evt);
+            }
+        });
+        jPanel7.add(D6, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 39, 33, 33));
+
+        D7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        D7.setToolTipText("Insert a number from 1-9 in this box!");
+        D7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        D7.setName("D7"); // NOI18N
+        D7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                D7KeyTyped(evt);
+            }
+        });
+        jPanel7.add(D7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 78, 33, 33));
+
+        D3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        D3.setText("9");
+        D3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel7.add(D3, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 0, 33, 33));
+
+        D8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        D8.setText("4");
+        D8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel7.add(D8, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 78, 33, 33));
+
+        D9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        D9.setText("8");
+        D9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel7.add(D9, new org.netbeans.lib.awtextra.AbsoluteConstraints(76, 78, 33, 33));
+
+        jPanel10.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 125, -1));
+
+        jPanel6.setBackground(new java.awt.Color(252, 248, 232));
+        jPanel6.setPreferredSize(new java.awt.Dimension(151, 121));
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        F1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        F1.setText("7");
+        F1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel6.add(F1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 33, 33));
+
+        F3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        F3.setToolTipText("Insert a number from 1-9 in this box!");
+        F3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        F3.setName("F3"); // NOI18N
+        F3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                F3KeyTyped(evt);
+            }
+        });
+        jPanel6.add(F3, new org.netbeans.lib.awtextra.AbsoluteConstraints(76, 0, 33, 33));
+
+        F5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        F5.setToolTipText("Insert a number from 1-9 in this box!");
+        F5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        F5.setName("F5"); // NOI18N
+        F5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                F5KeyTyped(evt);
+            }
+        });
+        jPanel6.add(F5, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 39, 33, 33));
+
+        F4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        F4.setToolTipText("Insert a number from 1-9 in this box!");
+        F4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        F4.setName("F4"); // NOI18N
+        F4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                F4KeyTyped(evt);
+            }
+        });
+        jPanel6.add(F4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 39, 33, 33));
+
+        F6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        F6.setToolTipText("Insert a number from 1-9 in this box!n this box!");
+        F6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        F6.setName("F6"); // NOI18N
+        F6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                F6KeyTyped(evt);
+            }
+        });
+        jPanel6.add(F6, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 39, 33, 33));
+
+        F8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        F8.setToolTipText("Insert a number from 1-9 in this box!");
+        F8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        F8.setName("F8"); // NOI18N
+        F8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                F8KeyTyped(evt);
+            }
+        });
+        jPanel6.add(F8, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 78, 33, 33));
+
+        F2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        F2.setText("8");
+        F2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel6.add(F2, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 0, 33, 33));
+
+        F7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        F7.setText("1");
+        F7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel6.add(F7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 78, 33, 33));
+
+        F9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        F9.setText("3");
+        F9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel6.add(F9, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 78, 33, 33));
+
+        jPanel10.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 115, 112));
+
+        jPanel5.setBackground(new java.awt.Color(252, 248, 232));
+        jPanel5.setPreferredSize(new java.awt.Dimension(151, 121));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        E3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        E3.setToolTipText("Insert a number from 1-9 in this box!");
+        E3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        E3.setName("E3"); // NOI18N
+        E3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                E3KeyTyped(evt);
+            }
+        });
+        jPanel5.add(E3, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 0, 33, 33));
+
+        E4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        E4.setToolTipText("Insert a number from 1-9 in this box!");
+        E4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        E4.setName("E4"); // NOI18N
+        E4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                E4KeyTyped(evt);
+            }
+        });
+        jPanel5.add(E4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 39, 33, 33));
+
+        E6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        E6.setToolTipText("Insert a number from 1-9 in this box!");
+        E6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        E6.setName("E6"); // NOI18N
+        E6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                E6KeyTyped(evt);
+            }
+        });
+        jPanel5.add(E6, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 39, 33, 33));
+
+        E7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        E7.setToolTipText("Insert a number from 1-9 in this box!");
+        E7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        E7.setName("E7"); // NOI18N
+        E7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                E7KeyTyped(evt);
+            }
+        });
+        jPanel5.add(E7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 78, 33, 33));
+
+        E9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        E9.setToolTipText("Insert a number from 1-9 in this box!");
+        E9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        E9.setName("E9"); // NOI18N
+        E9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                E9KeyTyped(evt);
+            }
+        });
+        jPanel5.add(E9, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 78, 33, 33));
+
+        E1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        E1.setToolTipText("Insert a number from 1-9 in this box!");
+        E1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        E1.setName("E1"); // NOI18N
+        E1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                E1KeyTyped(evt);
+            }
+        });
+        jPanel5.add(E1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 33, 33));
+
+        E2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        E2.setText("3");
+        E2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel5.add(E2, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 0, 33, 33));
+
+        E5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        E5.setText("7");
+        E5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel5.add(E5, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 39, 33, 33));
+
+        E8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        E8.setText("2");
+        E8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel5.add(E8, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 78, 33, 33));
+
+        jPanel10.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 115, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
-                    .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(9, 9, 9)
+                .addContainerGap()
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(94, 94, 94)
+                        .addGap(76, 76, 76)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(submitButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(quitButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(time_dateLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())))
+                            .addComponent(quitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(time_dateLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(13, 13, 13)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(time_dateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(159, 159, 159)
-                        .addComponent(submitButton)
-                        .addGap(23, 23, 23)
-                        .addComponent(quitButton))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jPanel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(25, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(time_dateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(159, 159, 159)
+                .addComponent(submitButton)
+                .addGap(23, 23, 23)
+                .addComponent(quitButton)
+                .addGap(132, 132, 132))
+            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -3288,6 +2922,10 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
             Logger.getLogger(Sudoku.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_quitButtonActionPerformed
+
+    private void A2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A2ActionPerformed
  
     /* * @param args the command line arguments
      */
@@ -3382,6 +3020,7 @@ public class Sudoku extends javax.swing.JFrame implements KeyListener {
     private javax.swing.JTextField I8;
     private javax.swing.JLabel I9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;

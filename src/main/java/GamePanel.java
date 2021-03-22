@@ -6,7 +6,6 @@ import java.awt.event.*;
 import java.util.*;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JFrame;
 
 public class GamePanel extends JPanel implements Runnable, KeyListener {
 
@@ -146,7 +145,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
     
     // To calculate the score and determine the winner
     public void checkScore() {
-        if(score.player1 == 10) {
+        if(score.player1 == 100) {
             // Show Popup dialogue when player 1 wins 
             int input = JOptionPane.showOptionDialog(null, "Player 1 has won", "Pong Winner", JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
             if(input == JOptionPane.OK_OPTION) {
@@ -164,7 +163,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
             }
         }
             
-        if(score.player2 == 10) {
+        if(score.player2 == 100) {
             // Show Popup dialogue when player 2 wins
             int input = JOptionPane.showOptionDialog(null, "Player 2 has won", "Pong Winner", JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
             if(input == JOptionPane.OK_OPTION) {
@@ -217,6 +216,13 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
         if(e.getKeyCode() == KeyEvent.VK_SPACE) {
             gameCheck = true;  
         }
+        if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
+            System.exit(0);
+        }
+        if(e.getKeyCode() == KeyEvent.VK_F1){
+            JOptionPane.showMessageDialog(this, "Vincent Hoang #013410449 \n" + "Bryant Hong #014176552 \n" + "Lan Nguyen #013327561 \n" + 
+                    "Nhi Nguyen #013925392 \n" + "Term: Spring 2021", "Swing Project", JOptionPane.PLAIN_MESSAGE);
+        }
     }
   
     @Override
@@ -224,12 +230,26 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
         if(e.getKeyCode() == KeyEvent.VK_SPACE) {
             gameCheck = true;
         }
+        if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
+            System.exit(0);
+        }
+        if(e.getKeyCode() == KeyEvent.VK_F1){
+            JOptionPane.showMessageDialog(this, "Vincent Hoang #013410449 \n" + "Bryant Hong #014176552 \n" + "Lan Nguyen #013327561 \n" + 
+                    "Nhi Nguyen #013925392 \n" + "Term: Spring 2021", "Swing Project", JOptionPane.PLAIN_MESSAGE);
+        }
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
         if(e.getKeyCode() == KeyEvent.VK_SPACE) {
             gameCheck = true;
+        }
+        if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
+            System.exit(0);
+        }
+        if(e.getKeyCode() == KeyEvent.VK_F1){
+            JOptionPane.showMessageDialog(this, "Vincent Hoang #013410449 \n" + "Bryant Hong #014176552 \n" + "Lan Nguyen #013327561 \n" + 
+                    "Nhi Nguyen #013925392 \n" + "Term: Spring 2021", "Swing Project", JOptionPane.PLAIN_MESSAGE);
         }
     }
 

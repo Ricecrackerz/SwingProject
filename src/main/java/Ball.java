@@ -45,7 +45,7 @@ public class Ball extends Rectangle {
         
     // To generate the ball on the screen
     public void draw(Graphics g) {
-	g.setColor(Color.white);
+	g.setColor(Color.pink);
 	g.fillOval(x, y, height, width);
     }
 }

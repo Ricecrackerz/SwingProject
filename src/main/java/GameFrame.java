@@ -41,7 +41,7 @@ public class GameFrame extends JFrame {
         this.add(mPanel); 
 	this.setTitle("Pong Game");
 	this.setResizable(false);
-	this.setBackground(Color.black);
+	this.setBackground(Color.white);
 	this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 	this.pack();
 	this.setVisible(true);
@@ -85,5 +85,44 @@ public class GameFrame extends JFrame {
         timer = new Timer(1000, actionListener); 
         timer.setInitialDelay(0); 
         timer.start();
-    }       
+    }
+    /*
+    @Override
+    public void keyTyped(KeyEvent e) {
+        System.out.println("key typed"); 
+        if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
+            System.exit(0);
+        }
+        if(e.getKeyCode() == KeyEvent.VK_F1){
+            JOptionPane.showMessageDialog(this, "Vincent Hoang #013410449 \n" + "Bryant Hong #014176552 \n" + "Lan Nguyen #013327561 \n" + 
+                    "Nhi Nguyen #013925392 \n" + "Term: Spring 2021", "Swing Project", JOptionPane.PLAIN_MESSAGE);
+        }
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) { 
+        if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
+            System.exit(0);
+        }
+        if(e.getKeyCode() == KeyEvent.VK_F1){
+            JOptionPane.showMessageDialog(this, "Vincent Hoang #013410449 \n" + "Bryant Hong #014176552 \n" + "Lan Nguyen #013327561 \n" + 
+                    "Nhi Nguyen #013925392 \n" + "Term: Spring 2021", "Swing Project", JOptionPane.PLAIN_MESSAGE);
+        }
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+    
+    @Override
+    public void keyReleased(KeyEvent e) {
+        if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
+            System.exit(0);
+        }
+        
+        if(e.getKeyCode() == KeyEvent.VK_F1){
+            JOptionPane.showMessageDialog(this, "Vincent Hoang #013410449 \n" + "Bryant Hong #014176552 \n" + "Lan Nguyen #013327561 \n" + 
+                    "Nhi Nguyen #013925392 \n" + "Term: Spring 2021", "Swing Project", JOptionPane.PLAIN_MESSAGE);
+        }
+        throw new UnsupportedOperationException("Not supported yet.");
+        
+    } */
 }
